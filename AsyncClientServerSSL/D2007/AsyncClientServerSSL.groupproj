@@ -1,0 +1,40 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{2fcfe8f2-4fdf-4cbb-ba31-b1ad629791a8}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+  <BorlandProject xmlns=""> <Default.Personality> </Default.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="ServerSSL">
+    <MSBuild Projects="ServerSSL\ServerSSL.dproj" Targets="" />
+  </Target>
+  <Target Name="ServerSSL:Clean">
+    <MSBuild Projects="ServerSSL\ServerSSL.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="ServerSSL:Make">
+    <MSBuild Projects="ServerSSL\ServerSSL.dproj" Targets="Make" />
+  </Target>
+  <Target Name="ClientSSL">
+    <MSBuild Projects="ClientSSL\ClientSSL.dproj" Targets="" />
+  </Target>
+  <Target Name="ClientSSL:Clean">
+    <MSBuild Projects="ClientSSL\ClientSSL.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="ClientSSL:Make">
+    <MSBuild Projects="ClientSSL\ClientSSL.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="ServerSSL;ClientSSL" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="ServerSSL:Clean;ClientSSL:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="ServerSSL:Make;ClientSSL:Make" />
+  </Target>
+</Project>

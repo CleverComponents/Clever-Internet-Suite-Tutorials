@@ -1,0 +1,9 @@
+From: john@example.com
+To: peter@domain.com
+Subject: subject line
+Date: Thu, 9 Jun 2016 18:35:40 +0300
+MIME-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: 8bit
+
+Text with umlauts ÄÖÜß
