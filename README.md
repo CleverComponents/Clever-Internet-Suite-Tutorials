@@ -1,6 +1,6 @@
 # Clever Internet Suite Tutorials
 
-<img align="left" src="https://www.clevercomponents.com/images/suitesamples3.jpg"/>
+<img align="left" src="https://www.clevercomponents.com/images/suitesamples-4.jpg"/>
 
 Now, more than ten years on the market, the Clever Internet Suite got lots of feedback and usage experience. Our customers asked us about code examples, demos and "How To" code snippets.   
 To summarize the experience, we decided to publish the most commonly asked examples and code snippets in our [Knowledge Base](https://www.clevercomponents.com/portal/KB/c1/all-articles.aspx)
