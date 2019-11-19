@@ -1,6 +1,6 @@
 # Reading Emails using GMail in C#
 
-The DecodeImapUtf7Names.dpr project represents a code example for the [Reading Emails using GMail in C#](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/GMailIMAP) tutorial.   
+The GMailIMAP.dpr project represents a code example for the [Reading Emails using GMail in C#](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/GMailIMAP) tutorial.   
 
 The sample connects to the GMail mailbox via the IMAP4 protocol, lists folders and reads Emails.   
 
