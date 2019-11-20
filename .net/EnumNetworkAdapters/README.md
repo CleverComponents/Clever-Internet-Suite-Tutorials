@@ -1,6 +1,6 @@
 # Enumerate Network adapters
 
-The EnumNetworkAdapters.dpr project represents a code example for the [Enumerate Network adapters](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/EnumNetworkAdapters) tutorial.   
+The EnumNetworkAdapters project represents a code example for the [Enumerate Network adapters](https://www.clevercomponents.com/portal/kb/a56/enumerate-network-adapters.aspx) tutorial.   
 
 Gets the IP addresses of Network interfaces on multi-homed PC.   
 

@@ -1,6 +1,6 @@
 # Wake up on LAN in C#
 
-The WakeOnLANCS.dpr project represents a code example for the [Wake up on LAN in C#](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/WakeOnLANCS) tutorial.   
+The WakeOnLANCS project represents a code example for the [Wake up on LAN in C#](https://www.clevercomponents.com/portal/kb/a55/wake-up-on-lan-in-c.aspx) tutorial.   
 
 Allows a computer to be turned on or awakened by a network message.   
 

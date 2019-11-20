@@ -1,6 +1,6 @@
 # Custom TCP client / server
 
-The CustomTcpNet.dpr project represents a code example for the [Custom TCP client / server](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/CustomTcpNet) tutorial.   
+The CustomTcpNet project represents a code example for the [Custom TCP client / server](https://www.clevercomponents.com/portal/kb/a67/custom-tcp-client-server.aspx) tutorial.   
 
 The example represents a fully functional TCP client and a multi-threaded TCP server.   
 

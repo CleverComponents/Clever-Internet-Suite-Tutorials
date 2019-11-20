@@ -1,6 +1,6 @@
 # TCP client /server connection
 
-The CustomSocketNet.dpr project represents a code example for the [TCP client /server connection](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/CustomSocketNet) tutorial.   
+The CustomSocketNet project represents a code example for the [TCP client /server connection](https://www.clevercomponents.com/portal/kb/a66/tcp-client-server-connection.aspx) tutorial.   
 
 There are two examples. The client creates a connection and sends data. The server accepts data and returns it to the client.   
 

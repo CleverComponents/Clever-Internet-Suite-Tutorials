@@ -1,6 +1,6 @@
 # Decode IMAP UTF7 mailbox names in C#
 
-The DecodeImapUtf7NamesNet.dpr project represents a code example for the [Decode IMAP UTF7 mailbox names in C#](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/DecodeImapUtf7NamesNet) tutorial.   
+The DecodeImapUtf7NamesNet project represents a code example for the [Decode IMAP UTF7 mailbox names in C#](https://www.clevercomponents.com/portal/kb/a103/decode-imap-utf7-mailbox-names-in-c.aspx) tutorial.   
 
 This C# example decodes IMAP mailbox names, which include Unicode international symbols, encoded in modified UTF-7 format (see RFC 2060).   
 
