@@ -1,6 +1,6 @@
 # Check if PC is connected to the Internet
 
-The CheckInternetConnection.dpr project represents a code example for the [Check if PC is connected to the Internet](https://www.clevercomponents.com/portal/kb/a83/check-if-pc-is-connected-to-the-internet.aspx) tutorial.   
+The CheckInternetConnection project represents a code example for the [Check if PC is connected to the Internet](https://www.clevercomponents.com/portal/kb/a83/check-if-pc-is-connected-to-the-internet.aspx) tutorial.   
 
 This example checks the Internet connected state and tries to access the specified web resource by using of the system connection settings: proxy, socks, etc.   
 
