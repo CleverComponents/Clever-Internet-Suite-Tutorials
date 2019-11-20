@@ -21,7 +21,7 @@ namespace Server {
 
 				server.TimeOut = 60000;
 				server.BatchSize = 8192;
-				server.Open(2110);
+				server.Listen(2110);
 				server.Accept();
 				textBox1.Text += "connected\r\n";
 
