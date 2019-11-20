@@ -1,6 +1,6 @@
 # Mail Sending Queue
 
-The MailQueue.dpr project represents a code example for the [Mail Sending Queue](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/MailQueue) tutorial.   
+The MailQueue project represents a code example for the [Mail Sending Queue](https://www.clevercomponents.com/portal/kb/a61/mail-sending-queue.aspx) tutorial.   
 
 The example watches the specified directory for new mail messages, loads, and relays them to recipients.   
 

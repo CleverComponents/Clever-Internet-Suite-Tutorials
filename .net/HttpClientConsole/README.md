@@ -1,6 +1,6 @@
 # Console HTTP client 
 
-The HttpClientConsole.dpr project represents a code example for the [Console HTTP client](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/HttpClientConsole) tutorial.   
+The HttpClientConsole project represents a code example for the [Console HTTP client](https://www.clevercomponents.com/portal/kb/a60/console-http-client.aspx) tutorial.   
 
 Is a simple HTTP client that allows you to download text or HTML content, and output it to the console window.   
 

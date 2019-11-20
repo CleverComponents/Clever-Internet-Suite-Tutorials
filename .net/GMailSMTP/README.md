@@ -1,6 +1,6 @@
 # OAuth Authorization using GMail in C# 
 
-The GMailSMTP.dpr project represents a code example for the [OAuth Authorization using GMail in C#](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/.net/GMailSMTP) tutorial.   
+The GMailSMTP project represents a code example for the [OAuth Authorization using GMail in C#](https://www.clevercomponents.com/portal/kb/a90/sending-emails-using-gmail-in-c.aspx) tutorial.   
 
 The example connects to a Google Account via the OAUTH protocol, obtains an authorization token and uses it for sending Email.   
 
