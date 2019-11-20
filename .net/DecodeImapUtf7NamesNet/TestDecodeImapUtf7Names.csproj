@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CleverComponents.InetSuite">
-      <HintPath>.\CleverComponents.InetSuite.dll</HintPath>
+      <HintPath>Lib\CleverComponents.InetSuite.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
