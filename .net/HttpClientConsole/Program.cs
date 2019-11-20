@@ -11,11 +11,8 @@ namespace HttpClientConsole {
 			}
 
 			using (Http http = new Http()) {
-				string[] result = http.Get(args[0]);
-
-				foreach (string s in result) {
-					Console.WriteLine(s);
-				}
+				var result = http.Get(args[0]);
+				Console.Write(result);
 			}
 		}
 	}

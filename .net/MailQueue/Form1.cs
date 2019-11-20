@@ -35,10 +35,10 @@ namespace MailQueue {
 			lock (this) {
 				edtLog.Text += e.Name + "\r\n";
 
-				DataStringCollection src = new DataStringCollection();
+				StringCollectionEx src = new StringCollectionEx();
 
 				using (Stream stream = File.OpenRead(e.FullPath)) {
-					src.LoadFromStream(stream);
+					src.LoadFromStream(stream, "");
 				}
 
 				relay.Send(src);
