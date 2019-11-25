@@ -1,8 +1,0 @@
-How to Build and Parse a JSON String with Objects
-
-See also:
-How to send a GET request with JSON data https://www.clevercomponents.com/portal/kb/a125/how-to-send-a-get-request-with-json-data.aspx
-How to Post JSON data: https://www.clevercomponents.com/portal/kb/a78/how-to-post-json-data.aspx
-How to make a PUT HTTP request with JSON data https://www.clevercomponents.com/portal/kb/a110/how-to-make-the-put-http-request-with-json-data.aspx
-
-[ Screenshot buildparsejson.jpg ]
