@@ -1,6 +1,6 @@
 # Sending Mail with Attachments from Memory Stream
 
-The SendMailAttachInMemory.dpr project represents a code example for the [Sending Mail with Attachments from Memory Stream](https://www.clevercomponents.com/portal/kb/a121/sending-mail-with-attachments-from-memory-stream.aspx) tutorial.   
+The SendMailAttachInMemory project represents a code example for the [Sending Mail with Attachments from Memory Stream](https://www.clevercomponents.com/portal/kb/a121/sending-mail-with-attachments-from-memory-stream.aspx) tutorial.   
 
 A new Knowledge Base example of sending E-mail messages with attachments from Memory Stream.   
 

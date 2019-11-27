@@ -1,6 +1,6 @@
 # Asynchronous HTTP download
 
-The HttpAsync.dpr project represents a code example for the [Asynchronous HTTP download](https://www.clevercomponents.com/portal/kb/a63/asynchronous-http-download.aspx) tutorial.   
+The HttpAsync project represents a code example for the [Asynchronous HTTP download](https://www.clevercomponents.com/portal/kb/a63/asynchronous-http-download.aspx) tutorial.   
 
 Download URLs asynchronously in multiple threads from thread pool.   
 

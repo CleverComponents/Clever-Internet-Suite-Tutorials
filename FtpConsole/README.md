@@ -1,6 +1,6 @@
 # Console FTP client
 
-The FtpConsole.dpr project represents a code example for the [Console FTP client](https://www.clevercomponents.com/portal/kb/a73/console-ftp-client.aspx) tutorial.   
+The FtpConsole project represents a code example for the [Console FTP client](https://www.clevercomponents.com/portal/kb/a73/console-ftp-client.aspx) tutorial.   
 
 The program represents fully functional command-line FTP client.   
 

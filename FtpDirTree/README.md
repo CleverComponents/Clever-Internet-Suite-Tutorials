@@ -1,6 +1,6 @@
 # Get the complete FTP directory tree.
 
-The FtpDirTree.dpr project represents a code example for the [Get the complete FTP directory tree.](https://www.clevercomponents.com/portal/kb/a72/get-the-complete-ftp-directory-tree_.aspx) tutorial.   
+The FtpDirTree project represents a code example for the [Get the complete FTP directory tree.](https://www.clevercomponents.com/portal/kb/a72/get-the-complete-ftp-directory-tree_.aspx) tutorial.   
 
 The sample connects to an FTP server and gets the complete FTP directory tree recursively.   
 

@@ -1,6 +1,6 @@
 # HTML parser for Firemonkey
 
-The HtmlParserFireMonkey.dpr project represents a code example for the [HTML parser for Firemonkey](https://www.clevercomponents.com/portal/kb/a52/html-parser-for-firemonkey.aspx) tutorial.   
+The HtmlParserFireMonkey project represents a code example for the [HTML parser for Firemonkey](https://www.clevercomponents.com/portal/kb/a52/html-parser-for-firemonkey.aspx) tutorial.   
 
 The sample parses HTML tags by using of TclHtmlParser component in Firemonkey.   
 

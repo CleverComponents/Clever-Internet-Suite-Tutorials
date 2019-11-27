@@ -1,6 +1,6 @@
 # VK Authorization, getting the OAUTH code in Delphi App using TWebBrowser
 
-The VKontakteOAuth.dpr project represents a code example for the [VK Authorization, getting the OAUTH code in Delphi App using TWebBrowser](https://www.clevercomponents.com/portal/kb/a111/vk-authorization-getting-the-oauth-code-in-delphi-app-using-twebbrowser.aspx) tutorial.   
+The VKontakteOAuth project represents a code example for the [VK Authorization, getting the OAUTH code in Delphi App using TWebBrowser](https://www.clevercomponents.com/portal/kb/a111/vk-authorization-getting-the-oauth-code-in-delphi-app-using-twebbrowser.aspx) tutorial.   
 
 This tutorial demonstrates how to authorize at VK.com social Network and get access to the user's photo gallery.   
 

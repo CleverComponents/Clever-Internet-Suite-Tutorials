@@ -1,6 +1,6 @@
 # Decode IMAP UTF7 mailbox names in Delphi
 
-The DecodeImapUtf7Names.dpr project represents a code example for the [Decode IMAP UTF7 mailbox names in Delphi](https://www.clevercomponents.com/portal/kb/a102/decode-imap-utf7-mailbox-names-in-delphi.aspx) tutorial.   
+The DecodeImapUtf7Names project represents a code example for the [Decode IMAP UTF7 mailbox names in Delphi](https://www.clevercomponents.com/portal/kb/a102/decode-imap-utf7-mailbox-names-in-delphi.aspx) tutorial.   
 
 This Delphi example decodes IMAP mailbox names that include Unicode international symbols being encoded in modified UTF-7 format (see RFC 2060).   
 

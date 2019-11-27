@@ -1,6 +1,6 @@
 # SSL client / server
 
-The TcpClientServerSSL.dpr project represents a code example for the [SSL client / server](https://www.clevercomponents.com/portal/kb/a65/ssl-client-server.aspx) tutorial.   
+The TcpClientServerSSL project represents a code example for the [SSL client / server](https://www.clevercomponents.com/portal/kb/a65/ssl-client-server.aspx) tutorial.   
 
 There are two programs that implement both simple TCP client and TCP server with SSL/TLS encryption.   
 

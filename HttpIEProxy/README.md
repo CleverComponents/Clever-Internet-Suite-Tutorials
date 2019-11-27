@@ -1,6 +1,6 @@
 # Get IE proxy settings for the Http client component
 
-The HttpClientProxy.dpr project represents a code example for the [Get IE proxy settings for the Http client component](https://www.clevercomponents.com/portal/kb/a82/get-ie-proxy-settings-for-the-http-client-component.aspx) tutorial.   
+The HttpClientProxy project represents a code example for the [Get IE proxy settings for the Http client component](https://www.clevercomponents.com/portal/kb/a82/get-ie-proxy-settings-for-the-http-client-component.aspx) tutorial.   
 
 This tutorial sets up the System Proxy settings in the Http client component. The supported proxy types: Http, Https, and Socks.   
 

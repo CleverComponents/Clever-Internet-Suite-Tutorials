@@ -1,6 +1,6 @@
 # Ping client
 
-The PingClient.dpr project represents a code example for the [Ping client](https://www.clevercomponents.com/portal/kb/a75/ping-client.aspx) tutorial. 
+The PingClient project represents a code example for the [Ping client](https://www.clevercomponents.com/portal/kb/a75/ping-client.aspx) tutorial. 
   
 The sample represents simple ICMP client with Ping functionality.   
 

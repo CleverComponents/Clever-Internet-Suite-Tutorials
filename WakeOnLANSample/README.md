@@ -1,6 +1,6 @@
 # Wake up on LAN
 
-The WakeOnLANSample.dpr project represents a code example for the [Wake up on LAN](https://www.clevercomponents.com/portal/kb/a54/wake-up-on-lan.aspx) tutorial.   
+The WakeOnLANSample project represents a code example for the [Wake up on LAN](https://www.clevercomponents.com/portal/kb/a54/wake-up-on-lan.aspx) tutorial.   
 
 Allows a computer to be turned on or awakened by a network message.   
 

@@ -1,6 +1,6 @@
 # Copy TWebBrowser cookies to TclHttp
 
-The WebBrowserCookies2clHttp.dpr project represents a code example for the [Copy TWebBrowser cookies to TclHttp](https://www.clevercomponents.com/portal/kb/a74/copy-twebbrowser-cookies-to-tclhttp.aspx) tutorial.   
+The WebBrowserCookies2clHttp project represents a code example for the [Copy TWebBrowser cookies to TclHttp](https://www.clevercomponents.com/portal/kb/a74/copy-twebbrowser-cookies-to-tclhttp.aspx) tutorial.   
 
 The examples opens the TWebBrowser, navigates to a website, copies the website cookies to the TclHttp and finally runs the TclHttp downloading.   
 

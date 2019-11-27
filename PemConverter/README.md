@@ -1,6 +1,6 @@
 # Convert RSA Public Key format to X509 Subject Key Info format
 
-The PemConverter.dpr project represents a code example for the [Convert RSA Public Key format to X509 Subject Key Info format](https://www.clevercomponents.com/portal/kb/a80/convert-rsa-public-key-format-to-x509-subject-key-info-format.aspx) tutorial.   
+The PemConverter project represents a code example for the [Convert RSA Public Key format to X509 Subject Key Info format](https://www.clevercomponents.com/portal/kb/a80/convert-rsa-public-key-format-to-x509-subject-key-info-format.aspx) tutorial.   
 
 There are two simple functions that convert RSA Public Key format to X509 Subject Key Info format in base64 and PEM representation.   
 

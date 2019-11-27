@@ -1,6 +1,6 @@
 # Setting Up HTTP Proxy Parameters in TCP-based Client Components
 
-The SettingUpHttpProxy.dpr project represents a code example for the [Setting Up HTTP Proxy Parameters in TCP-based Client Components](https://www.clevercomponents.com/portal/kb/a21/setting-up-http-proxy-parameters-in-tcp-based-client-components.aspx) tutorial.   
+The SettingUpHttpProxy project represents a code example for the [Setting Up HTTP Proxy Parameters in TCP-based Client Components](https://www.clevercomponents.com/portal/kb/a21/setting-up-http-proxy-parameters-in-tcp-based-client-components.aspx) tutorial.   
 
 This tutorial shows how to set up proxy parameters in the TclDownloader, TclUploader, TclHttp, TclFtp, TclSmtp, and other TCP-based client components.   
 

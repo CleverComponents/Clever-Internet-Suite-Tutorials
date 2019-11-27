@@ -1,6 +1,6 @@
 # Multithreaded Mail Sender
 
-The SmtpMultiThread.dpr project represents a code example for the [Multithreaded Mail Sender](https://www.clevercomponents.com/portal/kb/a62/multithreaded-mail-sender.aspx) tutorial.   
+The SmtpMultiThread project represents a code example for the [Multithreaded Mail Sender](https://www.clevercomponents.com/portal/kb/a62/multithreaded-mail-sender.aspx) tutorial.   
 
 Loads E-mails from a database and sends it asynchronously in a thread pool.   
 
