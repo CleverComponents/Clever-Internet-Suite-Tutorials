@@ -12,6 +12,7 @@ type
   TForm1 = class(TForm)
     clMailMessage1: TclMailMessage;
     btnSend: TButton;
+    clSmtp1: TclSmtp;
     procedure clMailMessage1LoadAttachment(Sender: TObject;
       ABody: TclAttachmentBody; var AFileName: string; var AData: TStream;
       var Handled: Boolean);
