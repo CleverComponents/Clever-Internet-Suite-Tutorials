@@ -1,6 +1,6 @@
 # Send SMTP email with Office365 account in .NET
 
-<img align="left" src="Smpt-Office365.jpg"/>
+<img align="left" src="FtpDirTree..jpg"/>
 
 The SmtpOffice365 project represents a code example for the [Send SMTP email with Office365 account](https://www.clevercomponents.com/portal/kb/a87/send-smtp-email-with-office365-account.aspx) tutorial.   
 
