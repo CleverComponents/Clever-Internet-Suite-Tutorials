@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, clHtmlParser;
+  Dialogs, StdCtrls, clHtmlParser, clUtils;
 
 type
   TForm1 = class(TForm)
@@ -78,7 +78,7 @@ begin
     tag := clHtmlParser1.Tags[i];
     if (tag.Name = 'div') and (tag.AttributeValue('class') = 'tvRow tvFirst hasLabel tvFirst') then
     begin
-      Memo2.Lines.Add(GetInnerHtml(tag.Owner, tag));
+      Memo2.Lines.Text := Memo2.Lines.Text + GetInnerHtml(tag.Owner, tag) + #13#10;
     end;
   end;
 end;
