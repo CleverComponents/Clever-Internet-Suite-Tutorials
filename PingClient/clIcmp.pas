@@ -9,7 +9,6 @@ unit clIcmp;
 
 interface
 
-{$I clVer.inc}
 
 uses
   Classes, clSocket, clUtils;
