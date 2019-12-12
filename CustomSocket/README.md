@@ -1,6 +1,6 @@
 # TCP client / server connection
 
-The CustomSocket.dpr project represents a code example for the [TCP client / server connection](https://www.clevercomponents.com/portal/kb/a68/tcp-client-server-connection.aspx) tutorial.   
+The CustomSocket project represents a code example for the [TCP client / server connection](https://www.clevercomponents.com/portal/kb/a68/tcp-client-server-connection.aspx) tutorial.   
 
 The client creates a connection and sends data. The server accepts data and returns it to the client.   
 

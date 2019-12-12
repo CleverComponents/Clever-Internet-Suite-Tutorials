@@ -8,9 +8,16 @@ uses
 
 type
   TForm1 = class(TForm)
-    Button1: TButton;
+    btnConverRsaKey: TButton;
+    Label2: TLabel;
+    memRsaPublicKey: TMemo;
+    Label3: TLabel;
+    memX509SubjectKeyInfo: TMemo;
+    btnConverRsaPemKey: TButton;
     Label1: TLabel;
-    procedure Button1Click(Sender: TObject);
+    memRsaPublicPemKey: TMemo;
+    procedure btnConverRsaKeyClick(Sender: TObject);
+    procedure btnConverRsaPemKeyClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,22 +76,26 @@ begin
   end;
 end;
 
-procedure TForm1.Button1Click(Sender: TObject);
+procedure TForm1.btnConverRsaKeyClick(Sender: TObject);
+var
+  RsaKey, x509KeyInfo: string;
+begin
+  RsaKey := memRsaPublicKey.Lines.Text;
+
+  x509KeyInfo := Rsa2X509Convert(RsaKey);
+
+  memX509SubjectKeyInfo.Lines.Text := x509KeyInfo;
+end;
+
+procedure TForm1.btnConverRsaPemKeyClick(Sender: TObject);
 var
   RsaKeyPem, x509KeyInfo: string;
 begin
-  x509KeyInfo := Rsa2X509Convert(
-'MEgCQQDCiZulctu+Tp2pZ7wfTyKhpSkYzqkRAwdmvNdvUVwgh8mwBAOdt9Mvhx+O' +
-'VokrzfLIJqeBBkbwTzxfgVeU6CL3AgMBAAE=');
-  ShowMessage(x509KeyInfo);
+  RsaKeyPem := memRsaPublicPemKey.Lines.Text;
 
-  RsaKeyPem :=
-'-----BEGIN RSA PUBLIC KEY-----'#$D#$A +
-'MEgCQQDCiZulctu+Tp2pZ7wfTyKhpSkYzqkRAwdmvNdvUVwgh8mwBAOdt9Mvhx+O'#$D#$A +
-'VokrzfLIJqeBBkbwTzxfgVeU6CL3AgMBAAE='#$D#$A +
-'-----END RSA PUBLIC KEY-----'#$D#$A;
   x509KeyInfo := Rsa2X509PemConvert(RsaKeyPem);
-  ShowMessage(x509KeyInfo);
+
+  memX509SubjectKeyInfo.Lines.Text := x509KeyInfo;
 end;
 
 end.

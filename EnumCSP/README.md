@@ -1,6 +1,6 @@
 # Get CSP Information
 
-The EnumCSP.dpr project represents a code example for the [Get CSP Information](https://www.clevercomponents.com/portal/kb/a58/get-csp-information.aspx) tutorial.   
+The EnumCSP project represents a code example for the [Get CSP Information](https://www.clevercomponents.com/portal/kb/a58/get-csp-information.aspx) tutorial.   
 
 Gets an information about installed Cryptographyc Service Providers.   
 

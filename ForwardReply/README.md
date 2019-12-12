@@ -1,6 +1,6 @@
 # E-mail replying / forwarding
 
-The ForwardReply.dpr project represents a code example for the [E-mail replying / forwarding](https://www.clevercomponents.com/portal/kb/a64/e-mail-replying-forwarding.aspx) tutorial.   
+The ForwardReply project represents a code example for the [E-mail replying / forwarding](https://www.clevercomponents.com/portal/kb/a64/e-mail-replying-forwarding.aspx) tutorial.   
 
 The sample can receive E-mail messages, forward or reply to selected message.   
 

@@ -1,6 +1,6 @@
 # Parse HTML table text
 
-The ParseTableCellValues.dpr project represents a code example for the [Parse HTML table text](https://www.clevercomponents.com/portal/kb/a59/parse-html-table-text.aspx) tutorial.   
+The ParseTableCellValues project represents a code example for the [Parse HTML table text](https://www.clevercomponents.com/portal/kb/a59/parse-html-table-text.aspx) tutorial.   
 
 This sample parses HTML source, extracts tables and displays table cell text.   
 

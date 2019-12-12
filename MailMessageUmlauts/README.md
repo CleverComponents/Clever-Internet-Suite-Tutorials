@@ -1,6 +1,6 @@
 # Send mail with German Umlauts and other UTF-8 characters
 
-The MailMessageUmlauts.dpr project represents a code example for the [Send mail with German Umlauts and other UTF-8 characters](https://www.clevercomponents.com/portal/kb/a88/send-mail-with-german-umlauts-and-other-utf-8-characters.aspx) tutorial.   
+The MailMessageUmlauts project represents a code example for the [Send mail with German Umlauts and other UTF-8 characters](https://www.clevercomponents.com/portal/kb/a88/send-mail-with-german-umlauts-and-other-utf-8-characters.aspx) tutorial.   
 
 This tutorial demonstrates how to set up the TclMailMessage component correctly for transferring German Umlauts and other UTF-8 characters.   
 

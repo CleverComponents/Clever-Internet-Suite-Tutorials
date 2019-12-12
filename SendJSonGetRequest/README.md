@@ -1,6 +1,6 @@
 # How to send a GET request with JSON data
 
-The SendJSonGetRequest.dpr project represents a code example for the [How to send a GET request with JSON data](https://www.clevercomponents.com/portal/kb/a125/how-to-send-a-get-request-with-json-data.aspx) tutorial.   
+The SendJSonGetRequest project represents a code example for the [How to send a GET request with JSON data](https://www.clevercomponents.com/portal/kb/a125/how-to-send-a-get-request-with-json-data.aspx) tutorial.   
 
 This tutorial provides three different ways to submit JSON GET requests, including raw JSON strings and RTTI JSON objects serialization/deserialization.   
 

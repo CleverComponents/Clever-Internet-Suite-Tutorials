@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, clTcpClient, clFtp, Vcl.StdCtrls, clFtpUtils;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, clTcpClient, clFtp, Vcl.StdCtrls, clFtpUtils,
+  clTcpClientTls, clTcpCommandClient;
 
 type
   TForm1 = class(TForm)

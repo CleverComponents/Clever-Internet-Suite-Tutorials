@@ -1,6 +1,6 @@
 # Check Internet connected state
 
-The InternetConnectedState.dpr project represents a code example for the [Check Internet connected state](https://www.clevercomponents.com/portal/kb/a53/check-internet-connected-state.aspx) tutorial.   
+The InternetConnectedState project represents a code example for the [Check Internet connected state](https://www.clevercomponents.com/portal/kb/a53/check-internet-connected-state.aspx) tutorial.   
 
 Retrieves the connected state of the local system.   
 

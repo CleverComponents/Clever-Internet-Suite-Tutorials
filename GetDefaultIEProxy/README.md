@@ -1,6 +1,6 @@
 # Get IE proxy settings
 
-The GetDefaultIEProxy.dpr project represents a code example for the [Get IE proxy settings](https://www.clevercomponents.com/portal/kb/a57/get-ie-proxy-settings.aspx) tutorial.   
+The GetDefaultIEProxy project represents a code example for the [Get IE proxy settings](https://www.clevercomponents.com/portal/kb/a57/get-ie-proxy-settings.aspx) tutorial.   
 
 Get the default Internet Explorer proxy settings.   
 

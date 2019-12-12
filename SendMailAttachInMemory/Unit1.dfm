@@ -33,4 +33,9 @@ object Form1: TForm1
     Left = 64
     Top = 176
   end
+  object clSmtp1: TclSmtp
+    MailAgent = 'Clever Internet Suite'
+    Left = 256
+    Top = 240
+  end
 end

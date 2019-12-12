@@ -9,7 +9,6 @@ unit clIcmp;
 
 interface
 
-{$I clVer.inc}
 
 uses
   Classes, clSocket, clUtils;
@@ -321,12 +320,16 @@ end;
 { TclIcmpEchoPacket }
 
 procedure TclIcmpEchoPacket.Build(var ADestination: TclByteArray; var AIndex: Integer);
+var
+  buf: TclByteArray;
 begin
   inherited Build(ADestination, AIndex);
 
   ByteArrayWriteWord(Identifier, ADestination, AIndex);
   ByteArrayWriteWord(SequenceNumber, ADestination, AIndex);
-  TclTranslator.GetBytes(Data, PclChar(@ADestination[AIndex]), 32, 'us-ascii');
+  buf := TclTranslator.GetBytes(Data, 'us-ascii');
+  Move(buf[0], ADestination[AIndex], 32);
+//  TclTranslator.GetBytes(Data, PclChar(@ADestination[AIndex]), 32, 'us-ascii');
   Inc(AIndex, 32);
 end;
 

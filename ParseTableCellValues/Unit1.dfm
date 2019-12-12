@@ -12,56 +12,57 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Button1: TButton
-    Left = 112
-    Top = 68
-    Width = 75
-    Height = 25
+    Left = 2
+    Top = 192
+    Width = 103
+    Height = 33
     Caption = 'Parse'
-    TabOrder = 0
+    TabOrder = 1
     OnClick = Button1Click
   end
   object Memo1: TMemo
     Left = 2
-    Top = 99
-    Width = 551
-    Height = 134
+    Top = 8
+    Width = 550
+    Height = 169
     Lines.Strings = (
       '<table border=1 bgcolor="#EOEOEO">'
       '<tr align=left>'
       
-        '<th Width=608 HEIGHT=35><FONT SIZE="+1">&nbsp;&nbsp;Schedules fo' +
-        'r&nbsp;JOHN&nbsp;DOE</FONT>'
+        '<th Width=608 HEIGHT=35><FONT SIZE="+1">  Schedules for JOHN Smi' +
+        'th</FONT>'
       
-        '&nbsp;&nbsp;&nbsp;<INPUT TYPE="submit" STYLE="font-family:arial;' +
-        'width=120px" NAME="punch" '
+        '   <INPUT TYPE="submit" STYLE="font-family:arial;width=120px" NA' +
+        'ME="punch" '
       'VALUE="View Punches" onClick="resetSession()">'
       
-        '&nbsp;&nbsp;<INPUT TYPE="button" STYLE="font-family:arial" VALUE' +
-        '=" Cancel " '
+        '  <INPUT TYPE="button" STYLE="font-family:arial" VALUE=" Cancel ' +
+        '" '
       'OnClick='#39'window.location.href="logout.asp"'#39'></th>'
       '</tr>'
       '<tr>'
-      '<td><FONT SIZE="+1">&nbsp;&nbsp;10:00</FONT>'
-      '&nbsp;&nbsp;&nbsp;</td>'
+      '<td><FONT SIZE="+1"> 10:00</FONT>'
+      '  </td>'
       '</tr></table>')
     ScrollBars = ssVertical
-    TabOrder = 1
+    TabOrder = 0
     WordWrap = False
   end
   object Memo2: TMemo
     Left = 2
-    Top = 256
+    Top = 240
     Width = 550
-    Height = 190
+    Height = 206
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 2
   end
   object clHtmlParser1: TclHtmlParser
-    Left = 136
-    Top = 24
+    Left = 440
+    Top = 296
   end
 end

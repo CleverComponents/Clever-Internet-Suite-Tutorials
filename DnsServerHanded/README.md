@@ -1,6 +1,6 @@
 # Build a DNS server that responds with an in-memory list of IPs based on the name submitted
 
-The DnsServerHanded.dpr project represents a code example for the [Build a DNS server that responds with an in-memory list of IPs based on the name submitted](https://www.clevercomponents.com/portal/kb/a89/build-a-dns-server-that-responds-with-an-in-memory-list-of-ips-based-on-the-name-submitted_.aspx) tutorial.   
+The DnsServerHanded project represents a code example for the [Build a DNS server that responds with an in-memory list of IPs based on the name submitted](https://www.clevercomponents.com/portal/kb/a89/build-a-dns-server-that-responds-with-an-in-memory-list-of-ips-based-on-the-name-submitted_.aspx) tutorial.   
 
 This tutorial represents a DNS server that responds with an in-memory list of IPs based on the name submitted.   
 

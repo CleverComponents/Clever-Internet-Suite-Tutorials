@@ -1,6 +1,6 @@
 # Parse XML, extract all elements, attributes and included data.
 
-The ParseXmlHtmlParser.dpr project represents a code example for the [Parse XML, extract all elements, attributes and included data.](https://www.clevercomponents.com/portal/kb/a86/parse-xml-extract-all-elements-attributes-and-included-data_.aspx) tutorial.   
+The ParseXmlHtmlParser project represents a code example for the [Parse XML, extract all elements, attributes and included data.](https://www.clevercomponents.com/portal/kb/a86/parse-xml-extract-all-elements-attributes-and-included-data_.aspx) tutorial.   
 
 The tutorial parses an XML document that is provided within Delphi string list, extracts all tags, tag attributes and included data.   
 

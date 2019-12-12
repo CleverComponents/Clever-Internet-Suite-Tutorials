@@ -1,6 +1,6 @@
 # Custom TCP client / server
 
-The SendJSonGetRequest.dpr project represents a code example for the [Custom TCP client / server](https://www.clevercomponents.com/portal/kb/a69/custom-tcp-client-server.aspx) tutorial.   
+The SendJSonGetRequest project represents a code example for the [Custom TCP client / server](https://www.clevercomponents.com/portal/kb/a69/custom-tcp-client-server.aspx) tutorial.   
 
 TCP client and multi-threaded TCP server that allows to send/receive multiple text lines and also send/receive binary data.   
 

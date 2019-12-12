@@ -1,6 +1,6 @@
 # Signing and Encrypting Mail via S/MIME
 
-The SMimeSignEncrypt.dpr project represents a code example for the [Signing and Encrypting Mail via S/MIME](https://www.clevercomponents.com/portal/kb/a112/signing-and-encrypting-mail-via-s-mime.aspx) tutorial.   
+The SMimeSignEncrypt project represents a code example for the [Signing and Encrypting Mail via S/MIME](https://www.clevercomponents.com/portal/kb/a112/signing-and-encrypting-mail-via-s-mime.aspx) tutorial.   
 
 This tutorial a knowledge Base example of signing and encrypting the e-mail message with digital signature..   
 
