@@ -2,9 +2,9 @@
 
 <img src="PingClient.jpg"/>
 
-The PingClient project represents a code example for the [Ping Client Tutorial](https://www.clevercomponents.com/portal/kb/a75/ping-client.aspx)   
+The PingClient project represents a code example for the [Ping Client Tutorial](https://www.clevercomponents.com/portal/kb/a134/ping-client-in-_net.aspx)   
 
-The sample represents simple ICMP client with Ping functionality.   
+The sample represents simple ICMP client for C# .NET with Ping functionality.  
 
 <img src="PingClientRun.jpg"/>
 
