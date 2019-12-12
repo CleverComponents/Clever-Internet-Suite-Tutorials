@@ -2,7 +2,7 @@
 
 <img align="left" src="PingClient.jpg"/>
 
-The PingClient project represents a code example for the [Send SMTP email with Office365 account](https://www.clevercomponents.com/portal/kb/a75/ping-client.aspx) tutorial.   
+The PingClient project represents a code example for the [Ping Client Tutorial](https://www.clevercomponents.com/portal/kb/a75/ping-client.aspx)   
 
 The sample represents simple ICMP client with Ping functionality.   
 
