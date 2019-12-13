@@ -1,0 +1,17 @@
+{
+  "client_ref": "ABC123456",
+  "customer_title": "Mr",
+  "customer_firstname": "John",
+  "customer_surname": "Smith",
+  "customer_address": "123 The Lane,\n Sunnyvale",
+  "customer_postcode": "ZZ1 1AA",
+  "customer_telephone": "07711911911",
+  "faults_client_description": "Issue with PROBLEM MIDDLE STITCHING IS MISSING (DIMPLE)",
+  "clients_client": "Tony's furniture shop",
+  "furniture_manufacturer": "Manufacturer Name",
+  "furniture_model": "Model Name",
+  "furniture_batch": "12334",
+  "furniture_colour": "Red",
+  "furniture_delivery_date": "2019-07-08",
+  "general_instructions": "Ring customer ASAP"
+}
