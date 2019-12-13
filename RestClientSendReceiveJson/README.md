@@ -1,6 +1,6 @@
 # How to write a REST client with JSON in Delphi
 
-The RestClientSendReceiveJson project represents a code example for the [How to Build and Parse a JSON String with Objects](https://www.clevercomponents.com/portal/kb/a133/how-to-build-and-parse-a-json-string-with-objects.aspx) tutorial.   
+The RestClientSendReceiveJson project represents a code example for the [How to write a REST client with JSON in Delphi](https://www.clevercomponents.com/portal/kb/a135/how-to-write-a-rest-client-with-json-in-delphi.aspx) tutorial.   
 
 This tutorial represents a Delphi REST API Client with JSON. It makes a JSON request, which includes objects and object properties, sends this request to a Web service, and receives a JSON response. The example parses a received JSON response and extracts all included object properties.   
 
