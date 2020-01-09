@@ -1,10 +1,10 @@
-# Parse HTML table text
+# SFTP Client with User and Public Key Authorization
 
-<img align="left" src="HtmlParserText.jpg"/>
+<img align="left" src="SftpClient.jpg"/>
 
-The ParseTableCellValues project represents a code example for the [Parse HTML table text](https://www.clevercomponents.com/portal/kb/a59/parse-html-table-text.aspx) tutorial.   
+The SFTP Client project represents a code example for the [SFTP Client with User and Public Key Authorization](https://www.clevercomponents.com/portal/kb/a136/sftp-client-with-user-and-public-key-authorization.aspx) tutorial.   
 
-This sample parses HTML source, extracts tables and displays table cell text.   
+This example connects to an SFTP host via the Secure Shell protocol (SSH), authorizes with the user/password or the Public Key algorithms, lists, downloads, and uploads files.   
 
 The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository represents a list of examples, code snippets and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/) article. This list will be periodically updated, new projects will be added.   
 Please stay tuned to new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
