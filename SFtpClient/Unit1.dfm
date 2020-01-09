@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -139,6 +140,8 @@ object Form1: TForm1
     Top = 77
     Width = 177
     Height = 21
+    Style = csDropDownList
+    ItemIndex = 0
     TabOrder = 7
     Text = 'User/Password'
     OnChange = cbAuthorizationChange
@@ -226,6 +229,8 @@ object Form1: TForm1
   end
   object clSFtp1: TclSFtp
     SshAgent = 'Clever_Internet_Suite'
+    OnVerifyServer = clSFtp1VerifyServer
+    OnDirectoryListing = clSFtp1DirectoryListing
     Left = 296
     Top = 336
   end

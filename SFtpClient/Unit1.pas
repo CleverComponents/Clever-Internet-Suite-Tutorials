@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, clTcpClient, clSFtp, Vcl.StdCtrls,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, clTcpClient, clSFtp, Vcl.StdCtrls, clSFtpUtils,
   Vcl.ComCtrls;
 
 type
@@ -44,10 +44,16 @@ type
     procedure btnGoUpClick(Sender: TObject);
     procedure btnDownloadClick(Sender: TObject);
     procedure btnUploadClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure clSFtp1DirectoryListing(Sender: TObject; const AFileName: string;
+      AFileAttrs: TclSFtpFileAttrs);
+    procedure clSFtp1VerifyServer(Sender: TObject; const AHost, AKeyType,
+      AFingerPrint, AHostKey: string; var AVerified: Boolean);
   private
     procedure UpdateStatuses;
     procedure DoOpenDir (const ADir: string);
     procedure FillDirList;
+    procedure UpdateControls;
   public
     { Public declarations }
   end;
@@ -112,7 +118,7 @@ begin
   end;
 end;
 
-procedure TForm1.cbAuthorizationChange(Sender: TObject);
+procedure TForm1.UpdateControls;
 var
   isUserPassword: Boolean;
 begin
@@ -121,6 +127,29 @@ begin
   edtPassword.Enabled := isUserPassword;
   edtPrivateKeyFile.Enabled := not isUserPassword;
   edtPassphrase.Enabled := not isUserPassword;
+end;
+
+procedure TForm1.cbAuthorizationChange(Sender: TObject);
+begin
+  UpdateControls();
+end;
+
+procedure TForm1.clSFtp1DirectoryListing(Sender: TObject;
+  const AFileName: string; AFileAttrs: TclSFtpFileAttrs);
+  const
+  dirPrefix: array[Boolean] of string = ('', '/');
+begin
+  lbList.Items.Add(dirPrefix[AFileAttrs.IsDir] + AFileName);
+end;
+
+procedure TForm1.clSFtp1VerifyServer(Sender: TObject; const AHost, AKeyType,
+  AFingerPrint, AHostKey: string; var AVerified: Boolean);
+begin
+  AVerified := (MessageDlg(Format('You are trying to connect to ''%s'' host,'#13#10
+    + 'Key Type: %s'#13#10
+    + 'Finger Print: %s'#13#10#13#10
+    + 'Do you wish to proceed ?', [AHost, AKeyType, AFingerPrint]),
+    mtWarning, [mbYes, mbNo], 0) = mrYes);
 end;
 
 procedure TForm1.DoOpenDir(const ADir: string);
@@ -150,6 +179,11 @@ begin
   lbList.Sorted := True;
 end;
 
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  UpdateControls();
+end;
+
 procedure TForm1.btnDownloadClick(Sender: TObject);
 var
   size: Integer;
@@ -157,7 +191,7 @@ var
 begin
   if (lbList.ItemIndex > -1) and
     (lbList.Items[lbList.ItemIndex] <> '') and
-    (lbList.Items[lbList.ItemIndex][1] = '/') then
+    (lbList.Items[lbList.ItemIndex][1] <> '/') then
     begin
       SaveDialog1.FileName := lbList.Items[lbList.ItemIndex];
       if SaveDialog1.Execute() then
