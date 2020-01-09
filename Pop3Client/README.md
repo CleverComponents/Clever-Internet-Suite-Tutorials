@@ -2,7 +2,7 @@
 
 <img align="left" src="Pop3Client.jpg"/>
 
-The POP3 Client project represents a code example for the [POP3 Client](https://www.clevercomponents.com/portal/kb/a136/sftp-client-with-user-and-public-key-authorization.aspx) tutorial.   
+The POP3 Client project represents a code example for the [POP3 Client](https://www.clevercomponents.com/portal/kb/a137/pop3-client.aspx) tutorial.   
 
 The example represents a simple POP3 client, which can connect to a POP3 server, list available Emails within a mailbox, and download the selected message content. The program extracts MIME message parts, including text, HTML, and headers.   
 
