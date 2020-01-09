@@ -2,7 +2,7 @@
 
 <img align="left" src="SftpClient.jpg"/>
 
-The SFTP Client project represents a code example for the [SFTP Client with User and Public Key Authorization](https://www.clevercomponents.com/portal/kb/a64/e-mail-replying-forwarding.aspx) tutorial.   
+The SFTP Client project represents a code example for the [SFTP Client with User and Public Key Authorization](https://www.clevercomponents.com/portal/kb/a136/sftp-client-with-user-and-public-key-authorization.aspx) tutorial.   
 
 This example connects to an SFTP host via the Secure Shell protocol (SSH), authorizes with the user/password or the Public Key algorithms, lists, downloads, and uploads files.   
 
