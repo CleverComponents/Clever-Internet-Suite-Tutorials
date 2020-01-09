@@ -1,4 +1,4 @@
-# FTP Clietn Simple
+# FTP Client
 
 <img align="left" src="FtpClient.jpg"/>
   
