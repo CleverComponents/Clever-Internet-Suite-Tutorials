@@ -2,7 +2,7 @@
 
 <img align="left" src="FtpDirTree..jpg"/>
 
-The FtpDirTree project represents a code example for the [Get the complete FTP directory tree](https://www.clevercomponents.com/portal/kb/a72/get-the-complete-ftp-directory-tree_.aspx) tutorial.   
+The FtpDirTree project represents a code example for the [Get the complete FTP directory tree](https://www.clevercomponents.com/portal/kb/a139/get-the-complete-ftp-directory-tree_.aspx) tutorial.   
 
 The sample connects to a FTP server and gets the complete FTP directory tree recursively.   
 
