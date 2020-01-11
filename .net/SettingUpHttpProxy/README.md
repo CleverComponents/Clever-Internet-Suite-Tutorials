@@ -2,7 +2,7 @@
 
 <img align="left" src="SettingUpHttpProxy.jpg"/>
 
-The SettingUpHttpProxy project represents a code example for the [Setting Up HTTP Proxy Parameters in TCP-based Client Components](https://www.clevercomponents.com/portal/kb/a21/setting-up-http-proxy-parameters-in-tcp-based-client-components.aspx) tutorial.   
+The SettingUpHttpProxy project represents a code example for the [Setting Up HTTP Proxy Parameters in TCP-based Client Components](https://www.clevercomponents.com/portal/kb/a142/setting-up-http-proxy-parameters-in-tcp-based-client-components.aspx) tutorial.   
 
 All these components provide two special properties for both HTTP and FTP hosts: HttpProxySettings and FtpProxySettings, correspondingly.   
 
