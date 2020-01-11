@@ -2,7 +2,7 @@
 
 <img align="left" src="HtmlParserInnerHtml.jpg"/>
 
-The HtmlParseInnerHtml project represents a code example for the [Parse inner HTML](https://www.clevercomponents.com/portal/kb/a76/parse-inner-html.aspx) tutorial.   
+The HtmlParseInnerHtml project represents a code example for the [Parse inner HTML](https://www.clevercomponents.com/portal/kb/a140/parse-inner-html.aspx) tutorial.   
 
 The sample runs the TclHtmlParser component and extracts inner HTML from specific tags.   
 
