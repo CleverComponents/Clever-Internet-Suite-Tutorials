@@ -6,6 +6,15 @@ This tutorial represents a Delphi REST API Client with JSON. It makes a JSON req
 
 ![Screenshot](RestClientSendReceiveJson.jpg)
 
+The sources for both the clJsonSerializerBase and the clJsonSerializer units are free and can be downloaded from our GitHub repository:
+https://github.com/CleverComponents/Json-Serializer
+
+Also, please check out the following article, which describes how to use the JSON serialization classes in your code:
+https://www.clevercomponents.com/articles/article040/
+
+Clever Internet Suite downloads:
+https://www.clevercomponents.com/downloads/inetsuite/suitedownload.asp
+
 See also:   
 [How to send a GET request with JSON data](https://www.clevercomponents.com/portal/kb/a125/how-to-send-a-get-request-with-json-data.aspx)   
 [How to Post JSON data](https://www.clevercomponents.com/portal/kb/a78/how-to-post-json-data.aspx)   
