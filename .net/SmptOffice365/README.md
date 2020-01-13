@@ -2,7 +2,7 @@
 
 <img align="left" src="Smpt-Office365.jpg"/>
 
-The SmtpOffice365 project represents a code example for the [Send SMTP email with Office365 account](https://www.clevercomponents.com/portal/kb/a87/send-smtp-email-with-office365-account.aspx) tutorial.   
+The SmtpOffice365 project represents a code example for the [Send SMTP email with Office365 account](https://www.clevercomponents.com/portal/kb/a143/send-smtp-email-with-office365-account.aspx) tutorial.   
 
 This sample connects to the smtp.office365.com host via the STARTTLS command, composes a sample mail message and sends it.   
 
