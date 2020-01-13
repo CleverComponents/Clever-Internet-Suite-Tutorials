@@ -1,4 +1,4 @@
-# RetrieveDisplayHtmlMailPop3
+# Retrieve and Display HTML Mail via POP3
 
 <img align="left" src="Retrieve-Form.jpg"/>
 
