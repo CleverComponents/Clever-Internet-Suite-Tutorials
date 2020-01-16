@@ -54,6 +54,7 @@ object Form1: TForm1
       Height = 25
       Caption = 'Celsius -> Fahrenheit'
       TabOrder = 2
+      OnClick = btnC2FClick
     end
     object btnF2C: TButton
       Left = 256
@@ -62,6 +63,13 @@ object Form1: TForm1
       Height = 25
       Caption = 'Fahrenheit -> Celsius  '
       TabOrder = 3
+      OnClick = btnF2CClick
     end
+  end
+  object clHttpRio1: TclHttpRio
+    UserAgent = 'CleverComponents SOAP 1.0'
+    CharSet = 'utf-8'
+    Left = 288
+    Top = 88
   end
 end
