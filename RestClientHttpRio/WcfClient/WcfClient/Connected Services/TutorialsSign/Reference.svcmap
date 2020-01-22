@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cb224c3a-a501-43ce-9557-4ccbafdbbc46" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51899/RestTutorial.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RestTutorial.xsd" MetadataType="Schema" ID="edcff388-3819-47a6-bf8e-ab41e926a6a8" SourceId="1" SourceUrl="http://localhost:51899/RestTutorial.svc?xsd=xsd1" />
+    <MetadataFile FileName="RestTutorial.disco" MetadataType="Disco" ID="46e74fa1-af74-4180-b441-9e02bcfbdeac" SourceId="1" SourceUrl="http://localhost:51899/RestTutorial.svc?disco" />
+    <MetadataFile FileName="RestTutorial1.xsd" MetadataType="Schema" ID="3304ead5-f23e-4fc2-bcd5-8aad14543183" SourceId="1" SourceUrl="http://localhost:51899/RestTutorial.svc?xsd=xsd2" />
+    <MetadataFile FileName="RestTutorial2.xsd" MetadataType="Schema" ID="2554797d-cf97-42ba-b804-ad873e615fdf" SourceId="1" SourceUrl="http://localhost:51899/RestTutorial.svc?xsd=xsd0" />
+    <MetadataFile FileName="RestTutorial.wsdl" MetadataType="Wsdl" ID="d0c8c92e-2da3-460a-b4be-cb88cf424f79" SourceId="1" SourceUrl="http://localhost:51899/RestTutorial.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

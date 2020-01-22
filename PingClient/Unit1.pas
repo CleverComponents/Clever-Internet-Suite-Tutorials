@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, clIcmp, clSocket;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, clIcmp, clSocket, WinSock;
 
 type
   TForm1 = class(TForm)
@@ -27,10 +27,13 @@ implementation
 {$R *.dfm}
 
 procedure TForm1.Button1Click(Sender: TObject);
+const
+  SIO_RCVALL = $98000001;
 var
   client: TclIcmpConnection;
   response: TclIcmpResponse;
-  i: Integer;
+  i, res: Integer;
+  flag: u_long;
 begin
   StartupSocket();
   client := TclIcmpConnection.Create();
@@ -41,6 +44,10 @@ begin
 
     Memo1.Lines.Clear();
     response := nil;
+    client.TTL := 1;
+
+    flag := 1;
+    res := ioctlsocket(client.Socket.Socket, SIO_RCVALL, flag);
 
     for i := 1 to 4 do
     begin
