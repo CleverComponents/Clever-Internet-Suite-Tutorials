@@ -8,22 +8,21 @@ using System.Text;
 
 namespace WcfService
 {
-	// NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IRestTutorial" in both code and config file together.
 	[ServiceContract(ProtectionLevel = System.Net.Security.ProtectionLevel.Sign)]
-	public interface IRestTutorial
+	public interface IRestSoapSing
 	{
 		[OperationContract]
-		[FaultContract(typeof(ConversionFault), Name = "ConversionFault")]
-		Temperature Celsius2Fahrenheit(Temperature temperature);
+		[FaultContract(typeof(ConversionFault1), Name = "ConversionFault1")]
+		Temperature1 Celsius2Fahrenheit(Temperature1 temperature);
 
 		[OperationContract]
-		Temperature Fahrenheit2Celsius(Temperature temperature);
+		Temperature1 Fahrenheit2Celsius(Temperature1 temperature);
 	}
 
 	[DataContract]
-	public class ConversionFault
+	public class ConversionFault1
 	{
-		public ConversionFault(string description)
+		public ConversionFault1(string description)
 		{
 			Description = description;
 		}
@@ -32,12 +31,13 @@ namespace WcfService
 	}
 
 	[DataContract]
-	public class Temperature
+	public class Temperature1
 	{
-		[DataMember]		
+		[DataMember]
 		public double Value { get; set; }
 
 		[DataMember]
 		public string Units { get; set; }
 	}
+
 }
