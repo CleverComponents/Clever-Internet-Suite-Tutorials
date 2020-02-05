@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RestTutorial" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
-  <wsp:Policy wsu:Id="BasicHttpBinding_IRestTutorial_policy">
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="RestSoapSing" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="RestSoapSingBinding_IRestSoapSing_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:AsymmetricBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -46,7 +46,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_IRestTutorial_Celsius2Fahrenheit_Input_policy">
+  <wsp:Policy wsu:Id="RestSoapSingBinding_IRestSoapSing_Celsius2Fahrenheit_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -55,7 +55,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_IRestTutorial_Celsius2Fahrenheit_output_policy">
+  <wsp:Policy wsu:Id="RestSoapSingBinding_IRestSoapSing_Celsius2Fahrenheit_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -64,7 +64,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_IRestTutorial_Celsius2Fahrenheit_ConversionFault_Fault">
+  <wsp:Policy wsu:Id="RestSoapSingBinding_IRestSoapSing_Celsius2Fahrenheit_ConversionFault_Fault">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -73,7 +73,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_IRestTutorial_Fahrenheit2Celsius_Input_policy">
+  <wsp:Policy wsu:Id="RestSoapSingBinding_IRestSoapSing_Fahrenheit2Celsius_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -82,7 +82,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_IRestTutorial_Fahrenheit2Celsius_output_policy">
+  <wsp:Policy wsu:Id="RestSoapSingBinding_IRestSoapSing_Fahrenheit2Celsius_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
@@ -93,70 +93,70 @@
   </wsp:Policy>
   <wsdl:types>
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
-      <xsd:import schemaLocation="http://localhost:51899/RestTutorial.svc?xsd=xsd0" namespace="http://tempuri.org/" />
-      <xsd:import schemaLocation="http://localhost:51899/RestTutorial.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:51899/RestTutorial.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
+      <xsd:import schemaLocation="http://localhost:51899/RestSoapSing.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:51899/RestSoapSing.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:51899/RestSoapSing.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WcfService" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IRestTutorial_Celsius2Fahrenheit_InputMessage">
+  <wsdl:message name="IRestSoapSing_Celsius2Fahrenheit_InputMessage">
     <wsdl:part name="parameters" element="tns:Celsius2Fahrenheit" />
   </wsdl:message>
-  <wsdl:message name="IRestTutorial_Celsius2Fahrenheit_OutputMessage">
+  <wsdl:message name="IRestSoapSing_Celsius2Fahrenheit_OutputMessage">
     <wsdl:part name="parameters" element="tns:Celsius2FahrenheitResponse" />
   </wsdl:message>
-  <wsdl:message name="IRestTutorial_Celsius2Fahrenheit_ConversionFault_FaultMessage">
+  <wsdl:message name="IRestSoapSing_Celsius2Fahrenheit_ConversionFault_FaultMessage">
     <wsdl:part name="detail" element="tns:ConversionFault" />
   </wsdl:message>
-  <wsdl:message name="IRestTutorial_Fahrenheit2Celsius_InputMessage">
+  <wsdl:message name="IRestSoapSing_Fahrenheit2Celsius_InputMessage">
     <wsdl:part name="parameters" element="tns:Fahrenheit2Celsius" />
   </wsdl:message>
-  <wsdl:message name="IRestTutorial_Fahrenheit2Celsius_OutputMessage">
+  <wsdl:message name="IRestSoapSing_Fahrenheit2Celsius_OutputMessage">
     <wsdl:part name="parameters" element="tns:Fahrenheit2CelsiusResponse" />
   </wsdl:message>
-  <wsdl:portType name="IRestTutorial">
+  <wsdl:portType name="IRestSoapSing">
     <wsdl:operation name="Celsius2Fahrenheit">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRestTutorial/Celsius2Fahrenheit" message="tns:IRestTutorial_Celsius2Fahrenheit_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRestTutorial/Celsius2FahrenheitResponse" message="tns:IRestTutorial_Celsius2Fahrenheit_OutputMessage" />
-      <wsdl:fault wsaw:Action="http://tempuri.org/IRestTutorial/Celsius2FahrenheitConversionFault" name="ConversionFault" message="tns:IRestTutorial_Celsius2Fahrenheit_ConversionFault_FaultMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IRestSoapSing/Celsius2Fahrenheit" message="tns:IRestSoapSing_Celsius2Fahrenheit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRestSoapSing/Celsius2FahrenheitResponse" message="tns:IRestSoapSing_Celsius2Fahrenheit_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRestSoapSing/Celsius2FahrenheitConversionFault" name="ConversionFault" message="tns:IRestSoapSing_Celsius2Fahrenheit_ConversionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="Fahrenheit2Celsius">
-      <wsdl:input wsaw:Action="http://tempuri.org/IRestTutorial/Fahrenheit2Celsius" message="tns:IRestTutorial_Fahrenheit2Celsius_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IRestTutorial/Fahrenheit2CelsiusResponse" message="tns:IRestTutorial_Fahrenheit2Celsius_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IRestSoapSing/Fahrenheit2Celsius" message="tns:IRestSoapSing_Fahrenheit2Celsius_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRestSoapSing/Fahrenheit2CelsiusResponse" message="tns:IRestSoapSing_Fahrenheit2Celsius_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_IRestTutorial" type="tns:IRestTutorial">
-    <wsp:PolicyReference URI="#BasicHttpBinding_IRestTutorial_policy" />
+  <wsdl:binding name="RestSoapSingBinding_IRestSoapSing" type="tns:IRestSoapSing">
+    <wsp:PolicyReference URI="#RestSoapSingBinding_IRestSoapSing_policy" />
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Celsius2Fahrenheit">
-      <soap:operation soapAction="http://tempuri.org/IRestTutorial/Celsius2Fahrenheit" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IRestSoapSing/Celsius2Fahrenheit" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#BasicHttpBinding_IRestTutorial_Celsius2Fahrenheit_Input_policy" />
+        <wsp:PolicyReference URI="#RestSoapSingBinding_IRestSoapSing_Celsius2Fahrenheit_Input_policy" />
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#BasicHttpBinding_IRestTutorial_Celsius2Fahrenheit_output_policy" />
+        <wsp:PolicyReference URI="#RestSoapSingBinding_IRestSoapSing_Celsius2Fahrenheit_output_policy" />
         <soap:body use="literal" />
       </wsdl:output>
       <wsdl:fault name="ConversionFault">
-        <wsp:PolicyReference URI="#BasicHttpBinding_IRestTutorial_Celsius2Fahrenheit_ConversionFault_Fault" />
+        <wsp:PolicyReference URI="#RestSoapSingBinding_IRestSoapSing_Celsius2Fahrenheit_ConversionFault_Fault" />
         <soap:fault use="literal" name="ConversionFault" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="Fahrenheit2Celsius">
-      <soap:operation soapAction="http://tempuri.org/IRestTutorial/Fahrenheit2Celsius" style="document" />
+      <soap:operation soapAction="http://tempuri.org/IRestSoapSing/Fahrenheit2Celsius" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#BasicHttpBinding_IRestTutorial_Fahrenheit2Celsius_Input_policy" />
+        <wsp:PolicyReference URI="#RestSoapSingBinding_IRestSoapSing_Fahrenheit2Celsius_Input_policy" />
         <soap:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#BasicHttpBinding_IRestTutorial_Fahrenheit2Celsius_output_policy" />
+        <wsp:PolicyReference URI="#RestSoapSingBinding_IRestSoapSing_Fahrenheit2Celsius_output_policy" />
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="RestTutorial">
-    <wsdl:port name="BasicHttpBinding_IRestTutorial" binding="tns:BasicHttpBinding_IRestTutorial">
-      <soap:address location="http://localhost:51899/RestTutorial.svc" />
+  <wsdl:service name="RestSoapSing">
+    <wsdl:port name="RestSoapSingBinding_IRestSoapSing" binding="tns:RestSoapSingBinding_IRestSoapSing">
+      <soap:address location="http://localhost:51899/RestSoapSing.svc" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

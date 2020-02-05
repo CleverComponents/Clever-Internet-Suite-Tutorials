@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="IRestSoap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestSoapService.cs" />
     <Compile Include="RestSoapSing.svc.cs">
       <DependentUpon>RestSoapSing.svc</DependentUpon>
     </Compile>

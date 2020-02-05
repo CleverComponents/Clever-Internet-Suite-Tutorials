@@ -12,32 +12,10 @@ namespace WcfService
 	public interface IRestSoapSing
 	{
 		[OperationContract]
-		[FaultContract(typeof(ConversionFault1), Name = "ConversionFault1")]
-		Temperature1 Celsius2Fahrenheit(Temperature1 temperature);
+		[FaultContract(typeof(ConversionFault), Name = "ConversionFault")]
+		Temperature Celsius2Fahrenheit(Temperature temperature);
 
 		[OperationContract]
-		Temperature1 Fahrenheit2Celsius(Temperature1 temperature);
+		Temperature Fahrenheit2Celsius(Temperature temperature);
 	}
-
-	[DataContract]
-	public class ConversionFault1
-	{
-		public ConversionFault1(string description)
-		{
-			Description = description;
-		}
-
-		public string Description { get; set; }
-	}
-
-	[DataContract]
-	public class Temperature1
-	{
-		[DataMember]
-		public double Value { get; set; }
-
-		[DataMember]
-		public string Units { get; set; }
-	}
-
 }

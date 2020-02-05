@@ -48,12 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\TutorialsSign\Reference.cs">
+    <Compile Include="Connected Services\RestSoapSign\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\Tutorials\Reference.cs">
+    <Compile Include="Connected Services\RestSoap\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -78,30 +78,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\TutorialsSign\RestTutorial.wsdl" />
-    <None Include="Connected Services\TutorialsSign\RestTutorial.xsd">
+    <None Include="Connected Services\RestSoapSign\RestSoapSing.wsdl" />
+    <None Include="Connected Services\RestSoapSign\RestSoapSing.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\TutorialsSign\RestTutorial1.xsd">
+    <None Include="Connected Services\RestSoapSign\RestSoapSing1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\TutorialsSign\RestTutorial2.xsd">
+    <None Include="Connected Services\RestSoapSign\RestSoapSing2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\TutorialsSign\WcfClient.TutorialsSign.Temperature.datasource">
+    <None Include="Connected Services\RestSoapSign\WcfClient.RestSoapSign.Temperature.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\Tutorials\RestTutorial.wsdl" />
-    <None Include="Connected Services\Tutorials\RestTutorial.xsd">
+    <None Include="Connected Services\RestSoap\RestSoap.wsdl" />
+    <None Include="Connected Services\RestSoap\RestSoap.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Tutorials\RestTutorial1.xsd">
+    <None Include="Connected Services\RestSoap\RestSoap1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Tutorials\RestTutorial2.xsd">
+    <None Include="Connected Services\RestSoap\RestSoap2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\Tutorials\WcfClient.Tutorials.Temperature.datasource">
+    <None Include="Connected Services\RestSoap\WcfClient.RestSoap.Temperature.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -121,35 +121,35 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\TutorialsSign\" />
-    <WCFMetadataStorage Include="Connected Services\Tutorials\" />
+    <WCFMetadataStorage Include="Connected Services\RestSoapSign\" />
+    <WCFMetadataStorage Include="Connected Services\RestSoap\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Tutorials\RestTutorial.disco" />
+    <None Include="Connected Services\RestSoap\RestSoap.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Tutorials\configuration91.svcinfo" />
+    <None Include="Connected Services\RestSoap\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Tutorials\configuration.svcinfo" />
+    <None Include="Connected Services\RestSoap\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\Tutorials\Reference.svcmap">
+    <None Include="Connected Services\RestSoap\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\TutorialsSign\RestTutorial.disco" />
+    <None Include="Connected Services\RestSoapSign\RestSoapSing.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\TutorialsSign\configuration91.svcinfo" />
+    <None Include="Connected Services\RestSoapSign\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\TutorialsSign\configuration.svcinfo" />
+    <None Include="Connected Services\RestSoapSign\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\TutorialsSign\Reference.svcmap">
+    <None Include="Connected Services\RestSoapSign\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

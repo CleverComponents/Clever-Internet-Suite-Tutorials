@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e878b2fe-5fa9-484c-bd6d-4c3881dce0d4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51899/RestSoap.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RestSoap.xsd" MetadataType="Schema" ID="b2c6629b-0d7b-4dac-a465-ad35d963e8f3" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd1" />
+    <MetadataFile FileName="RestSoap.disco" MetadataType="Disco" ID="97a86a2c-f795-41f5-bd91-72bc45f2423a" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?disco" />
+    <MetadataFile FileName="RestSoap1.xsd" MetadataType="Schema" ID="c1fd441d-ea1b-4e54-b54b-8311b819ce0d" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd2" />
+    <MetadataFile FileName="RestSoap2.xsd" MetadataType="Schema" ID="cb25c0fa-6a42-4bc2-9df3-1c155cf9064a" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd0" />
+    <MetadataFile FileName="RestSoap.wsdl" MetadataType="Wsdl" ID="1b0ae59b-abd0-4d58-ab0e-a2384f54bc92" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
