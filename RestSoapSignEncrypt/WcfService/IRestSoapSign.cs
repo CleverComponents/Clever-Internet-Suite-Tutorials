@@ -9,7 +9,7 @@ using System.Text;
 namespace WcfService
 {
 	[ServiceContract(ProtectionLevel = System.Net.Security.ProtectionLevel.Sign)]
-	public interface IRestSoapSing
+	public interface IRestSoapSign
 	{
 		[OperationContract]
 		[FaultContract(typeof(ConversionFault), Name = "ConversionFault")]

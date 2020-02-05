@@ -8,7 +8,7 @@ using System.Text;
 
 namespace WcfService
 {
-	public class RestSoapSing :  RestSoapService, IRestSoapSing
+	public class RestSoapSign :  RestSoapService, IRestSoapSign
 	{
 	}
 }
