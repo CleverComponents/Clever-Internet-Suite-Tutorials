@@ -64,10 +64,12 @@
   <ItemGroup>
     <Content Include="RestSoap.svc" />
     <Content Include="RestSoapSign.svc" />
+    <Content Include="RestSoapSignEncrypt.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRestSoapSign.cs" />
+    <Compile Include="IRestSoapSignEncrypt.cs" />
     <Compile Include="RestSoap.svc.cs">
       <DependentUpon>RestSoap.svc</DependentUpon>
     </Compile>
@@ -76,6 +78,9 @@
     <Compile Include="RestSoapService.cs" />
     <Compile Include="RestSoapSign.svc.cs">
       <DependentUpon>RestSoapSign.svc</DependentUpon>
+    </Compile>
+    <Compile Include="RestSoapSignEncrypt.svc.cs">
+      <DependentUpon>RestSoapSignEncrypt.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
