@@ -8,8 +8,8 @@ using System.Text;
 
 namespace WcfService
 {
-	[ServiceContract]
-	public interface IRestSoap
+	[ServiceContract(ProtectionLevel = System.Net.Security.ProtectionLevel.Sign)]
+	public interface IRestSoapSign
 	{
 		[OperationContract]
 		[FaultContract(typeof(ConversionFault), Name = "ConversionFault")]

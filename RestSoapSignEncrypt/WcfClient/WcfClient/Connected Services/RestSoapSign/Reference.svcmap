@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c1df59e2-2aaa-495c-a8db-f868cb0fd490" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51899/RestSoapSing.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RestSoapSing.disco" MetadataType="Disco" ID="d2b4fda3-b816-431b-a89c-7ee0f5455b7a" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSing.svc?disco" />
+    <MetadataFile FileName="RestSoapSing.xsd" MetadataType="Schema" ID="eb49d67b-234d-4135-bf72-f3b561efa65b" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSing.svc?xsd=xsd1" />
+    <MetadataFile FileName="RestSoapSing1.xsd" MetadataType="Schema" ID="45fd13c1-d163-40ea-9761-2217e6176967" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSing.svc?xsd=xsd2" />
+    <MetadataFile FileName="RestSoapSing.wsdl" MetadataType="Wsdl" ID="9954ec41-dff6-4ab2-97df-8eb34989f000" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSing.svc?wsdl" />
+    <MetadataFile FileName="RestSoapSing2.xsd" MetadataType="Schema" ID="6ea3cb25-dd3c-457a-9f24-552d205079a4" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSing.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
