@@ -8,6 +8,7 @@ using System.Text;
 
 namespace WcfService
 {
+	//[ServiceContract(ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign)]
 	[ServiceContract(ProtectionLevel = System.Net.Security.ProtectionLevel.Sign)]
 	public interface IRestSoapSign
 	{
