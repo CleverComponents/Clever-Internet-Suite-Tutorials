@@ -32,10 +32,9 @@
 			this.edtCelsium = new System.Windows.Forms.TextBox();
 			this.btnC2F = new System.Windows.Forms.Button();
 			this.edtFahr = new System.Windows.Forms.TextBox();
-			this.cbTransport = new System.Windows.Forms.CheckBox();
-			this.cbSign = new System.Windows.Forms.CheckBox();
-			this.cbEncrypt = new System.Windows.Forms.CheckBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.cbOptinon = new System.Windows.Forms.ComboBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -59,11 +58,11 @@
 			// 
 			// btnC2F
 			// 
-			this.btnC2F.Location = new System.Drawing.Point(9, 94);
+			this.btnC2F.Location = new System.Drawing.Point(92, 103);
 			this.btnC2F.Margin = new System.Windows.Forms.Padding(4);
 			this.btnC2F.Name = "btnC2F";
 			this.btnC2F.Size = new System.Drawing.Size(124, 40);
-			this.btnC2F.TabIndex = 2;
+			this.btnC2F.TabIndex = 4;
 			this.btnC2F.Text = "Convert";
 			this.btnC2F.UseVisualStyleBackColor = true;
 			this.btnC2F.Click += new System.EventHandler(this.btnC2F_Click);
@@ -74,37 +73,7 @@
 			this.edtFahr.Margin = new System.Windows.Forms.Padding(4);
 			this.edtFahr.Name = "edtFahr";
 			this.edtFahr.Size = new System.Drawing.Size(124, 22);
-			this.edtFahr.TabIndex = 3;
-			// 
-			// cbTransport
-			// 
-			this.cbTransport.AutoSize = true;
-			this.cbTransport.Location = new System.Drawing.Point(234, 12);
-			this.cbTransport.Name = "cbTransport";
-			this.cbTransport.Size = new System.Drawing.Size(147, 21);
-			this.cbTransport.TabIndex = 5;
-			this.cbTransport.Text = "Transport Security";
-			this.cbTransport.UseVisualStyleBackColor = true;
-			// 
-			// cbSign
-			// 
-			this.cbSign.AutoSize = true;
-			this.cbSign.Location = new System.Drawing.Point(234, 39);
-			this.cbSign.Name = "cbSign";
-			this.cbSign.Size = new System.Drawing.Size(113, 21);
-			this.cbSign.TabIndex = 6;
-			this.cbSign.Text = "Sign Security";
-			this.cbSign.UseVisualStyleBackColor = true;
-			// 
-			// cbEncrypt
-			// 
-			this.cbEncrypt.AutoSize = true;
-			this.cbEncrypt.Location = new System.Drawing.Point(234, 66);
-			this.cbEncrypt.Name = "cbEncrypt";
-			this.cbEncrypt.Size = new System.Drawing.Size(186, 21);
-			this.cbEncrypt.TabIndex = 7;
-			this.cbEncrypt.Text = "EnrcyptAndSign Security";
-			this.cbEncrypt.UseVisualStyleBackColor = true;
+			this.edtFahr.TabIndex = 2;
 			// 
 			// label2
 			// 
@@ -115,15 +84,37 @@
 			this.label2.TabIndex = 8;
 			this.label2.Text = "Fahrenheit";
 			// 
+			// cbOptinon
+			// 
+			this.cbOptinon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbOptinon.FormattingEnabled = true;
+			this.cbOptinon.Items.AddRange(new object[] {
+            "None",
+            "Sign",
+            "SignEncrypt"});
+			this.cbOptinon.Location = new System.Drawing.Point(92, 72);
+			this.cbOptinon.Name = "cbOptinon";
+			this.cbOptinon.Size = new System.Drawing.Size(124, 24);
+			this.cbOptinon.TabIndex = 3;
+			this.cbOptinon.Tag = "";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(6, 79);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(50, 17);
+			this.label3.TabIndex = 10;
+			this.label3.Tag = "";
+			this.label3.Text = "Option";
+			// 
 			// Form1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(424, 147);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.ClientSize = new System.Drawing.Size(234, 178);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.cbOptinon);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.cbEncrypt);
-			this.Controls.Add(this.cbSign);
-			this.Controls.Add(this.cbTransport);
 			this.Controls.Add(this.edtFahr);
 			this.Controls.Add(this.btnC2F);
 			this.Controls.Add(this.edtCelsium);
@@ -142,10 +133,9 @@
         private System.Windows.Forms.TextBox edtCelsium;
         private System.Windows.Forms.Button btnC2F;
         private System.Windows.Forms.TextBox edtFahr;
-		private System.Windows.Forms.CheckBox cbTransport;
-		private System.Windows.Forms.CheckBox cbSign;
-		private System.Windows.Forms.CheckBox cbEncrypt;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ComboBox cbOptinon;
+		private System.Windows.Forms.Label label3;
 	}
 }
 
