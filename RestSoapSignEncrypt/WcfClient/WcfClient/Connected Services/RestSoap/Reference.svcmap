@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e878b2fe-5fa9-484c-bd6d-4c3881dce0d4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="98f779c2-a84b-4daf-b0b6-ac1c462abf53" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:51899/RestSoap.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="RestSoap.xsd" MetadataType="Schema" ID="b2c6629b-0d7b-4dac-a465-ad35d963e8f3" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd1" />
-    <MetadataFile FileName="RestSoap.disco" MetadataType="Disco" ID="97a86a2c-f795-41f5-bd91-72bc45f2423a" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?disco" />
-    <MetadataFile FileName="RestSoap1.xsd" MetadataType="Schema" ID="c1fd441d-ea1b-4e54-b54b-8311b819ce0d" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd2" />
-    <MetadataFile FileName="RestSoap2.xsd" MetadataType="Schema" ID="cb25c0fa-6a42-4bc2-9df3-1c155cf9064a" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd0" />
-    <MetadataFile FileName="RestSoap.wsdl" MetadataType="Wsdl" ID="1b0ae59b-abd0-4d58-ab0e-a2384f54bc92" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?wsdl" />
+    <MetadataFile FileName="RestSoap.xsd" MetadataType="Schema" ID="2480d03b-d870-44e0-8bd8-cf5a8f576ca8" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd1" />
+    <MetadataFile FileName="RestSoap.disco" MetadataType="Disco" ID="712eb70f-e7e8-4d22-9983-4133c8f2faf0" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?disco" />
+    <MetadataFile FileName="RestSoap1.xsd" MetadataType="Schema" ID="cfc584e9-12e1-49e2-b78e-fdb19ff02cfa" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd2" />
+    <MetadataFile FileName="RestSoap2.xsd" MetadataType="Schema" ID="158f2c7b-8a81-40b0-a554-46e05bc5659a" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?xsd=xsd0" />
+    <MetadataFile FileName="RestSoap.wsdl" MetadataType="Wsdl" ID="f6ac8d6f-d8b8-477b-a426-a2584febb52d" SourceId="1" SourceUrl="http://localhost:51899/RestSoap.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

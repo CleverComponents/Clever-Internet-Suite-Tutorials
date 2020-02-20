@@ -19,29 +19,43 @@ namespace WcfClient
 
         private void btnC2F_Click(object sender, EventArgs e)
         {
-//https://stackoverflow.com/questions/22998847/wcf-protectionlevel
-            RestSoap.RestSoapClient client = new RestSoap.RestSoapClient();
-            RestSoap.Temperature cels = new RestSoap.Temperature();
+            if (cbTransport.Checked)
+            {
+                RestSoap.RestSoapClient client = new RestSoap.RestSoapClient();
+                RestSoap.Temperature cels = new RestSoap.Temperature();
 
-            cels.Units = "C";
-            cels.Value = Convert.ToDouble(edtCelsium.Text);
+                cels.Units = "C";
+                cels.Value = Convert.ToDouble(edtCelsium.Text);
 
-            RestSoap.Temperature  fahr = client.Celsius2Fahrenheit(cels);
+                RestSoap.Temperature fahr = client.Celsius2Fahrenheit(cels);
 
-            edtFahr.Text = fahr.Value.ToString();
-        }
+                edtFahr.Text = fahr.Value.ToString();
+            }
+            else if (cbSign.Checked)
+            {
+                RestSoapSign.RestSoapSignClient client = new RestSoapSign.RestSoapSignClient();
+                RestSoapSign.Temperature cels = new RestSoapSign.Temperature();
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RestSoapSign.RestSoapSingClient client = new RestSoapSign.RestSoapSingClient();
-            RestSoapSign.Temperature cels = new RestSoapSign.Temperature();
+                cels.Units = "C";
+                cels.Value = Convert.ToDouble(edtCelsium.Text);
 
-            cels.Units = "C";
-            cels.Value = Convert.ToDouble(edtCelsium.Text);
+                RestSoapSign.Temperature fahr = client.Celsius2Fahrenheit(cels);
 
-            RestSoapSign.Temperature fahr = client.Celsius2Fahrenheit(cels);
+                edtFahr.Text = fahr.Value.ToString();
+            }
+            else if (cbEncrypt.Checked)
+            {
+                RestSoapSignEncrypt.RestSoapSignEncryptClient client = new RestSoapSignEncrypt.RestSoapSignEncryptClient();
+                RestSoapSignEncrypt.Temperature cels = new RestSoapSignEncrypt.Temperature();
 
-            edtFahr.Text = fahr.Value.ToString();
+                cels.Units = "C";
+                cels.Value = Convert.ToDouble(edtCelsium.Text);
+
+                RestSoapSignEncrypt.Temperature fahr = client.Celsius2Fahrenheit(cels);
+
+                edtFahr.Text = fahr.Value.ToString();
+            }
+            //https://stackoverflow.com/questions/22998847/wcf-protectionlevel
         }
     }
 }
