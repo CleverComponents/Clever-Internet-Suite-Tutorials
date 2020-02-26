@@ -87,16 +87,6 @@ object Form1: TForm1
         'SignEncrypt')
     end
   end
-  object clHttpRio1: TclHttpRio
-    SoapRequest = Request
-    SoapResponse = Response
-    UserAgent = 'CleverComponents SOAP 1.0'
-    CharSet = 'utf-8'
-    Sign = True
-    Encrypt = True
-    Left = 16
-    Top = 88
-  end
   object Request: TclSoapMessage
     Header.CharSet = 'utf-8'
     Header.Accept = '*/*'

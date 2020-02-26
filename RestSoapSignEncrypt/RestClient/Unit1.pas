@@ -17,7 +17,6 @@ type
     edtFahrenheit: TEdit;
     btnC2F: TButton;
     btnF2C: TButton;
-    clHttpRio1: TclHttpRio;
     cbSecurity: TComboBox;
     Label3: TLabel;
     Request: TclSoapMessage;
@@ -107,6 +106,7 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
+    service := nil;
   end;
 end;
 
@@ -131,6 +131,7 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
+    service := nil;
   end;
 end;
 
@@ -155,6 +156,7 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
+    service := nil;
   end;
 end;
 
@@ -179,6 +181,7 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
+    service := nil;
   end;
 end;
 
@@ -203,6 +206,7 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
+    service := nil;
   end;
 end;
 
@@ -227,36 +231,59 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
+    service := nil;
   end;
 end;
 
 function TForm1.GetService: IRestSoap;
+var
+  rio: TclHttpRio;
 begin
-  clHttpRio1.URL := 'http://localhost:51899/RestSoap.svc';
-  clHttpRio1.Service := 'RestSoap';
-  clHttpRio1.Port := 'RestSoapBinding_IRestSoap';
-  clHttpRio1.Encrypt := False;
-  clHttpRio1.Sign := False;
+  rio := TclHttpRio.Create(nil);
 
-  Result := clHttpRio1 as IRestSoap;
+  rio.URL := 'http://localhost:51899/RestSoap.svc';
+  rio.Service := 'RestSoap';
+  rio.Port := 'RestSoapBinding_IRestSoap';
+  rio.Sign := False;
+  rio.Encrypt := False;
+  rio.SoapRequest := Request;
+  rio.SoapResponse := Response;
+
+  Result := rio as IRestSoap;
 end;
 
 function TForm1.GetServiceSign: IRestSoapSign;
+var
+  rio: TclHttpRio;
 begin
-  clHttpRio1.URL := 'http://localhost:51899/RestSoapSign.svc';
-  clHttpRio1.Service := 'RestSoapSign';
-  clHttpRio1.Port := 'RestSoapSingBinding_IRestSoapSign';
+  rio := TclHttpRio.Create(nil);
 
-  Result := clHttpRio1 as IRestSoapSign;
+  rio.URL := 'http://localhost:51899/RestSoapSign.svc';
+  rio.Service := 'RestSoapSign';
+  rio.Port := 'RestSoapSingBinding_IRestSoapSign';
+  rio.Sign := True;
+  rio.Encrypt := True;
+  rio.SoapRequest := Request;
+  rio.SoapResponse := Response;
+
+  Result := rio as IRestSoapSign;
 end;
 
 function TForm1.GetServiceSignEncrypt: IRestSoapSignEncrypt;
+var
+  rio: TclHttpRio;
 begin
-  clHttpRio1.URL := 'http://localhost:51899/RestSoapSignEncrypt.svc';
-  clHttpRio1.Service := 'RestSoapSignEncrypt';
-  clHttpRio1.Port := 'RestSoapSignEncryptBinding_IRestSoapSignEncrypt';
+  rio := TclHttpRio.Create(nil);
 
-  Result := clHttpRio1 as IRestSoapSignEncrypt
+  rio.URL := 'http://localhost:51899/RestSoapSignEncrypt.svc';
+  rio.Service := 'RestSoapSignEncrypt';
+  rio.Port := 'RestSoapSignEncryptBinding_IRestSoapSignEncrypt';
+  rio.Sign := True;
+  rio.Encrypt := True;
+  rio.SoapRequest := Request;
+  rio.SoapResponse := Response;
+
+  Result := rio as IRestSoapSignEncrypt
 end;
 
 procedure TForm1.RequestGetEncryptionCertificate(Sender: TObject;
