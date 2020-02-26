@@ -19,7 +19,7 @@ namespace WcfClient
 
         private void btnC2F_Click(object sender, EventArgs e)
         {
-            switch (cbOptinon.SelectedIndex)
+            switch (cbSecurity.SelectedIndex)
             {
                 case 0:
                     RestSoap.RestSoapClient client = new RestSoap.RestSoapClient();

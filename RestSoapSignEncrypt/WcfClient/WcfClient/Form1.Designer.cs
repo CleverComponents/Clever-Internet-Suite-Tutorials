@@ -33,7 +33,7 @@
 			this.btnC2F = new System.Windows.Forms.Button();
 			this.edtFahr = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.cbOptinon = new System.Windows.Forms.ComboBox();
+			this.cbSecurity = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
@@ -84,36 +84,36 @@
 			this.label2.TabIndex = 8;
 			this.label2.Text = "Fahrenheit";
 			// 
-			// cbOptinon
+			// cbSecurity
 			// 
-			this.cbOptinon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cbOptinon.FormattingEnabled = true;
-			this.cbOptinon.Items.AddRange(new object[] {
+			this.cbSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbSecurity.FormattingEnabled = true;
+			this.cbSecurity.Items.AddRange(new object[] {
             "None",
             "Sign",
             "SignEncrypt"});
-			this.cbOptinon.Location = new System.Drawing.Point(92, 72);
-			this.cbOptinon.Name = "cbOptinon";
-			this.cbOptinon.Size = new System.Drawing.Size(124, 24);
-			this.cbOptinon.TabIndex = 3;
-			this.cbOptinon.Tag = "";
+			this.cbSecurity.Location = new System.Drawing.Point(92, 72);
+			this.cbSecurity.Name = "cbSecurity";
+			this.cbSecurity.Size = new System.Drawing.Size(124, 24);
+			this.cbSecurity.TabIndex = 3;
+			this.cbSecurity.Tag = "";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(6, 79);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(50, 17);
+			this.label3.Size = new System.Drawing.Size(59, 17);
 			this.label3.TabIndex = 10;
 			this.label3.Tag = "";
-			this.label3.Text = "Option";
+			this.label3.Text = "Security";
 			// 
 			// Form1
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.ClientSize = new System.Drawing.Size(234, 178);
 			this.Controls.Add(this.label3);
-			this.Controls.Add(this.cbOptinon);
+			this.Controls.Add(this.cbSecurity);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.edtFahr);
 			this.Controls.Add(this.btnC2F);
@@ -134,7 +134,7 @@
         private System.Windows.Forms.Button btnC2F;
         private System.Windows.Forms.TextBox edtFahr;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.ComboBox cbOptinon;
+		private System.Windows.Forms.ComboBox cbSecurity;
 		private System.Windows.Forms.Label label3;
 	}
 }
