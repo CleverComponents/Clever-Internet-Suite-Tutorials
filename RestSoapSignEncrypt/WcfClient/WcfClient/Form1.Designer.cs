@@ -32,15 +32,15 @@
 			this.edtCelsium = new System.Windows.Forms.TextBox();
 			this.btnC2F = new System.Windows.Forms.Button();
 			this.edtFahr = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
-			this.cbOption = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.cbSecurity = new System.Windows.Forms.ComboBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(9, 17);
+			this.label1.Location = new System.Drawing.Point(6, 17);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(57, 17);
@@ -49,72 +49,72 @@
 			// 
 			// edtCelsium
 			// 
-			this.edtCelsium.Location = new System.Drawing.Point(75, 13);
+			this.edtCelsium.Location = new System.Drawing.Point(92, 13);
 			this.edtCelsium.Margin = new System.Windows.Forms.Padding(4);
 			this.edtCelsium.Name = "edtCelsium";
-			this.edtCelsium.Size = new System.Drawing.Size(171, 22);
+			this.edtCelsium.Size = new System.Drawing.Size(124, 22);
 			this.edtCelsium.TabIndex = 1;
 			this.edtCelsium.Text = "0";
 			// 
 			// btnC2F
 			// 
-			this.btnC2F.Location = new System.Drawing.Point(279, 13);
+			this.btnC2F.Location = new System.Drawing.Point(92, 103);
 			this.btnC2F.Margin = new System.Windows.Forms.Padding(4);
 			this.btnC2F.Name = "btnC2F";
-			this.btnC2F.Size = new System.Drawing.Size(183, 52);
-			this.btnC2F.TabIndex = 2;
-			this.btnC2F.Text = "C -> F";
+			this.btnC2F.Size = new System.Drawing.Size(124, 40);
+			this.btnC2F.TabIndex = 4;
+			this.btnC2F.Text = "Convert";
 			this.btnC2F.UseVisualStyleBackColor = true;
 			this.btnC2F.Click += new System.EventHandler(this.btnC2F_Click);
 			// 
 			// edtFahr
 			// 
-			this.edtFahr.Location = new System.Drawing.Point(75, 43);
+			this.edtFahr.Location = new System.Drawing.Point(92, 43);
 			this.edtFahr.Margin = new System.Windows.Forms.Padding(4);
 			this.edtFahr.Name = "edtFahr";
-			this.edtFahr.Size = new System.Drawing.Size(171, 22);
-			this.edtFahr.TabIndex = 3;
-			// 
-			// button1
-			// 
-			this.button1.Location = new System.Drawing.Point(279, 74);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(183, 22);
-			this.button1.TabIndex = 4;
-			this.button1.Text = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
-			// 
-			// cbOption
-			// 
-			this.cbOption.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cbOption.FormattingEnabled = true;
-			this.cbOption.Items.AddRange(new object[] {
-            "Transport",
-            "EncryptAndSign"});
-			this.cbOption.Location = new System.Drawing.Point(75, 72);
-			this.cbOption.Name = "cbOption";
-			this.cbOption.Size = new System.Drawing.Size(171, 24);
-			this.cbOption.TabIndex = 5;
-			this.cbOption.Tag = "";
+			this.edtFahr.Size = new System.Drawing.Size(124, 22);
+			this.edtFahr.TabIndex = 2;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(12, 78);
+			this.label2.Location = new System.Drawing.Point(6, 47);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(50, 17);
-			this.label2.TabIndex = 6;
-			this.label2.Text = "Option";
+			this.label2.Size = new System.Drawing.Size(76, 17);
+			this.label2.TabIndex = 8;
+			this.label2.Text = "Fahrenheit";
+			// 
+			// cbSecurity
+			// 
+			this.cbSecurity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbSecurity.FormattingEnabled = true;
+			this.cbSecurity.Items.AddRange(new object[] {
+            "None",
+            "Sign",
+            "SignEncrypt"});
+			this.cbSecurity.Location = new System.Drawing.Point(92, 72);
+			this.cbSecurity.Name = "cbSecurity";
+			this.cbSecurity.Size = new System.Drawing.Size(124, 24);
+			this.cbSecurity.TabIndex = 3;
+			this.cbSecurity.Tag = "";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(6, 79);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(59, 17);
+			this.label3.TabIndex = 10;
+			this.label3.Tag = "";
+			this.label3.Text = "Security";
 			// 
 			// Form1
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(475, 120);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.ClientSize = new System.Drawing.Size(234, 178);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.cbSecurity);
 			this.Controls.Add(this.label2);
-			this.Controls.Add(this.cbOption);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.edtFahr);
 			this.Controls.Add(this.btnC2F);
 			this.Controls.Add(this.edtCelsium);
@@ -133,9 +133,9 @@
         private System.Windows.Forms.TextBox edtCelsium;
         private System.Windows.Forms.Button btnC2F;
         private System.Windows.Forms.TextBox edtFahr;
-        private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.ComboBox cbOption;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.ComboBox cbSecurity;
+		private System.Windows.Forms.Label label3;
 	}
 }
 

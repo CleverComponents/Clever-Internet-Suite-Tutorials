@@ -1,17 +1,17 @@
 // ************************************************************************ //
 // The types declared in this file were generated from data read from the
 // WSDL File described below:
-// WSDL     : https://clevercomponents.com/tutorials/wcfservice/RestTutorial.svc?wsdl
-//  >Import : https://clevercomponents.com/tutorials/wcfservice/RestTutorial.svc?wsdl>0
-//  >Import : https://clevercomponents.com/tutorials/wcfservice/RestTutorial.svc?xsd=xsd0
-//  >Import : https://clevercomponents.com/tutorials/wcfservice/RestTutorial.svc?xsd=xsd2
-//  >Import : https://clevercomponents.com/tutorials/wcfservice/RestTutorial.svc?xsd=xsd1
+// WSDL     : http://localhost:51899/RestSoapSignEncrypt.svc?wsdl
+//  >Import : http://localhost:51899/RestSoapSignEncrypt.svc?wsdl>0
+//  >Import : http://localhost:51899/RestSoapSignEncrypt.svc?xsd=xsd0
+//  >Import : http://localhost:51899/RestSoapSignEncrypt.svc?xsd=xsd2
+//  >Import : http://localhost:51899/RestSoapSignEncrypt.svc?xsd=xsd1
 // Encoding : utf-8
 // Version  : 1.0
-// (14.01.2020 13:10:26 - - $Rev: 96726 $)
+// (26.02.2020 19:25:30 - - $Rev: 96726 $)
 // ************************************************************************ //
 
-unit RestTutorial;
+unit RestSoapSignEncrypt;
 
 interface
 
@@ -111,33 +111,33 @@ type
 
   // ************************************************************************ //
   // Namespace : http://tempuri.org/
-  // soapAction: http://tempuri.org/IRestTutorial/%operationName%
+  // soapAction: http://tempuri.org/IRestSoapSignEncrypt/%operationName%
   // transport : http://schemas.xmlsoap.org/soap/http
   // style     : document
   // use       : literal
-  // binding   : BasicHttpBinding_IRestTutorial
-  // service   : RestTutorial
-  // port      : BasicHttpBinding_IRestTutorial
-  // URL       : http://clevercomponents.com/tutorials/wcfservice/RestTutorial.svc
+  // binding   : RestSoapSignEncryptBinding_IRestSoapSignEncrypt
+  // service   : RestSoapSignEncrypt
+  // port      : RestSoapSignEncryptBinding_IRestSoapSignEncrypt
+  // URL       : http://localhost:51899/RestSoapSignEncrypt.svc
   // ************************************************************************ //
-  IRestTutorial = interface(IInvokable)
-  ['{7D769CD6-A788-52A9-C80D-62C6E31C9CB9}']
+  IRestSoapSignEncrypt = interface(IInvokable)
+  ['{7BBC16F0-7FAD-4938-30C5-16305249044E}']
     function  Celsius2Fahrenheit(const temperature: Temperature2): Temperature2; stdcall;
     function  Fahrenheit2Celsius(const temperature: Temperature2): Temperature2; stdcall;
   end;
 
-function GetIRestTutorial(UseWSDL: Boolean=System.False; Addr: string=''; HTTPRIO: THTTPRIO = nil): IRestTutorial;
+function GetIRestSoapSignEncrypt(UseWSDL: Boolean=System.False; Addr: string=''; HTTPRIO: THTTPRIO = nil): IRestSoapSignEncrypt;
 
 
 implementation
   uses System.SysUtils;
 
-function GetIRestTutorial(UseWSDL: Boolean; Addr: string; HTTPRIO: THTTPRIO): IRestTutorial;
+function GetIRestSoapSignEncrypt(UseWSDL: Boolean; Addr: string; HTTPRIO: THTTPRIO): IRestSoapSignEncrypt;
 const
-  defWSDL = 'https://clevercomponents.com/tutorials/wcfservice/RestTutorial.svc?wsdl';
-  defURL  = 'http://clevercomponents.com/tutorials/wcfservice/RestTutorial.svc';
-  defSvc  = 'RestTutorial';
-  defPrt  = 'BasicHttpBinding_IRestTutorial';
+  defWSDL = 'http://localhost:51899/RestSoapSignEncrypt.svc?wsdl';
+  defURL  = 'http://localhost:51899/RestSoapSignEncrypt.svc';
+  defSvc  = 'RestSoapSignEncrypt';
+  defPrt  = 'RestSoapSignEncryptBinding_IRestSoapSignEncrypt';
 var
   RIO: THTTPRIO;
 begin
@@ -154,7 +154,7 @@ begin
   else
     RIO := HTTPRIO;
   try
-    Result := (RIO as IRestTutorial);
+    Result := (RIO as IRestSoapSignEncrypt);
     if UseWSDL then
     begin
       RIO.WSDLLocation := Addr;
@@ -192,23 +192,23 @@ begin
 end;
 
 initialization
-  { IRestTutorial }
-  InvRegistry.RegisterInterface(TypeInfo(IRestTutorial), 'http://tempuri.org/', 'utf-8');
-  InvRegistry.RegisterDefaultSOAPAction(TypeInfo(IRestTutorial), 'http://tempuri.org/IRestTutorial/%operationName%');
-  InvRegistry.RegisterInvokeOptions(TypeInfo(IRestTutorial), ioDocument);
-  { IRestTutorial.Celsius2Fahrenheit }
-  InvRegistry.RegisterMethodInfo(TypeInfo(IRestTutorial), 'Celsius2Fahrenheit', '',
+  { IRestSoapSignEncrypt }
+  InvRegistry.RegisterInterface(TypeInfo(IRestSoapSignEncrypt), 'http://tempuri.org/', 'utf-8');
+  InvRegistry.RegisterDefaultSOAPAction(TypeInfo(IRestSoapSignEncrypt), 'http://tempuri.org/IRestSoapSignEncrypt/%operationName%');
+  InvRegistry.RegisterInvokeOptions(TypeInfo(IRestSoapSignEncrypt), ioDocument);
+  { IRestSoapSignEncrypt.Celsius2Fahrenheit }
+  InvRegistry.RegisterMethodInfo(TypeInfo(IRestSoapSignEncrypt), 'Celsius2Fahrenheit', '',
                                  '[ReturnName="Celsius2FahrenheitResult"]', IS_OPTN or IS_NLBL);
-  InvRegistry.RegisterParamInfo(TypeInfo(IRestTutorial), 'Celsius2Fahrenheit', 'temperature', '',
+  InvRegistry.RegisterParamInfo(TypeInfo(IRestSoapSignEncrypt), 'Celsius2Fahrenheit', 'temperature', '',
                                 '[Namespace="http://schemas.datacontract.org/2004/07/WcfService"]', IS_NLBL);
-  InvRegistry.RegisterParamInfo(TypeInfo(IRestTutorial), 'Celsius2Fahrenheit', 'Celsius2FahrenheitResult', '',
+  InvRegistry.RegisterParamInfo(TypeInfo(IRestSoapSignEncrypt), 'Celsius2Fahrenheit', 'Celsius2FahrenheitResult', '',
                                 '[Namespace="http://schemas.datacontract.org/2004/07/WcfService"]', IS_NLBL);
-  { IRestTutorial.Fahrenheit2Celsius }
-  InvRegistry.RegisterMethodInfo(TypeInfo(IRestTutorial), 'Fahrenheit2Celsius', '',
+  { IRestSoapSignEncrypt.Fahrenheit2Celsius }
+  InvRegistry.RegisterMethodInfo(TypeInfo(IRestSoapSignEncrypt), 'Fahrenheit2Celsius', '',
                                  '[ReturnName="Fahrenheit2CelsiusResult"]', IS_OPTN or IS_NLBL);
-  InvRegistry.RegisterParamInfo(TypeInfo(IRestTutorial), 'Fahrenheit2Celsius', 'temperature', '',
+  InvRegistry.RegisterParamInfo(TypeInfo(IRestSoapSignEncrypt), 'Fahrenheit2Celsius', 'temperature', '',
                                 '[Namespace="http://schemas.datacontract.org/2004/07/WcfService"]', IS_NLBL);
-  InvRegistry.RegisterParamInfo(TypeInfo(IRestTutorial), 'Fahrenheit2Celsius', 'Fahrenheit2CelsiusResult', '',
+  InvRegistry.RegisterParamInfo(TypeInfo(IRestSoapSignEncrypt), 'Fahrenheit2Celsius', 'Fahrenheit2CelsiusResult', '',
                                 '[Namespace="http://schemas.datacontract.org/2004/07/WcfService"]', IS_NLBL);
   RemClassRegistry.RegisterXSClass(Temperature2, 'http://schemas.datacontract.org/2004/07/WcfService', 'Temperature2', 'Temperature');
   RemClassRegistry.RegisterXSClass(ConversionFault3, 'http://schemas.datacontract.org/2004/07/WcfService', 'ConversionFault3', 'ConversionFault');

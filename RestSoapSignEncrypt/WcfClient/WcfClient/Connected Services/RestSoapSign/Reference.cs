@@ -104,47 +104,47 @@ namespace WcfClient.RestSoapSign {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RestSoapSign.IRestSoapSing")]
-    public interface IRestSoapSing {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RestSoapSign.IRestSoapSign")]
+    public interface IRestSoapSign {
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSing/Celsius2Fahrenheit", ReplyAction="http://tempuri.org/IRestSoapSing/Celsius2FahrenheitResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(WcfClient.RestSoapSign.ConversionFault), Action="http://tempuri.org/IRestSoapSing/Celsius2FahrenheitConversionFault", ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Name="ConversionFault")]
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSign/Celsius2Fahrenheit", ReplyAction="http://tempuri.org/IRestSoapSign/Celsius2FahrenheitResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WcfClient.RestSoapSign.ConversionFault), Action="http://tempuri.org/IRestSoapSign/Celsius2FahrenheitConversionFault", ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Name="ConversionFault")]
         WcfClient.RestSoapSign.Temperature Celsius2Fahrenheit(WcfClient.RestSoapSign.Temperature temperature);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSing/Celsius2Fahrenheit", ReplyAction="http://tempuri.org/IRestSoapSing/Celsius2FahrenheitResponse")]
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSign/Celsius2Fahrenheit", ReplyAction="http://tempuri.org/IRestSoapSign/Celsius2FahrenheitResponse")]
         System.Threading.Tasks.Task<WcfClient.RestSoapSign.Temperature> Celsius2FahrenheitAsync(WcfClient.RestSoapSign.Temperature temperature);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSing/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoapSing/Fahrenheit2CelsiusResponse")]
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSign/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoapSign/Fahrenheit2CelsiusResponse")]
         WcfClient.RestSoapSign.Temperature Fahrenheit2Celsius(WcfClient.RestSoapSign.Temperature temperature);
         
-        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSing/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoapSing/Fahrenheit2CelsiusResponse")]
+        [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSign/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoapSign/Fahrenheit2CelsiusResponse")]
         System.Threading.Tasks.Task<WcfClient.RestSoapSign.Temperature> Fahrenheit2CelsiusAsync(WcfClient.RestSoapSign.Temperature temperature);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRestSoapSingChannel : WcfClient.RestSoapSign.IRestSoapSing, System.ServiceModel.IClientChannel {
+    public interface IRestSoapSignChannel : WcfClient.RestSoapSign.IRestSoapSign, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RestSoapSingClient : System.ServiceModel.ClientBase<WcfClient.RestSoapSign.IRestSoapSing>, WcfClient.RestSoapSign.IRestSoapSing {
+    public partial class RestSoapSignClient : System.ServiceModel.ClientBase<WcfClient.RestSoapSign.IRestSoapSign>, WcfClient.RestSoapSign.IRestSoapSign {
         
-        public RestSoapSingClient() {
+        public RestSoapSignClient() {
         }
         
-        public RestSoapSingClient(string endpointConfigurationName) : 
+        public RestSoapSignClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public RestSoapSingClient(string endpointConfigurationName, string remoteAddress) : 
+        public RestSoapSignClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public RestSoapSingClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RestSoapSignClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public RestSoapSingClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RestSoapSignClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         

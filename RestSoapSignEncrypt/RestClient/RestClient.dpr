@@ -3,7 +3,9 @@ program RestClient;
 uses
   Vcl.Forms,
   Unit1 in 'Unit1.pas' {Form1},
-  RestTutorial in 'RestTutorial.pas';
+  RestSoap in 'RestSoap.pas',
+  RestSoapSign in 'RestSoapSign.pas',
+  RestSoapSignEncrypt in 'RestSoapSignEncrypt.pas';
 
 {$R *.res}
 

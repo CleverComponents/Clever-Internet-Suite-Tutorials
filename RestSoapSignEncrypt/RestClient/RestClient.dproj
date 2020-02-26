@@ -102,7 +102,9 @@
             <Form>Form1</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="RestTutorial.pas"/>
+        <DCCReference Include="RestSoap.pas"/>
+        <DCCReference Include="RestSoapSign.pas"/>
+        <DCCReference Include="RestSoapSignEncrypt.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

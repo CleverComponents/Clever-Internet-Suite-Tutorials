@@ -48,6 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\RestSoapSignEncrypt\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\RestSoapSign\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,14 +83,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\RestSoapSign\RestSoapSing.wsdl" />
-    <None Include="Connected Services\RestSoapSign\RestSoapSing.xsd">
+    <None Include="Connected Services\RestSoapSignEncrypt\RestSoapSignEncrypt.wsdl" />
+    <None Include="Connected Services\RestSoapSignEncrypt\RestSoapSignEncrypt.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\RestSoapSign\RestSoapSing1.xsd">
+    <None Include="Connected Services\RestSoapSignEncrypt\RestSoapSignEncrypt1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\RestSoapSign\RestSoapSing2.xsd">
+    <None Include="Connected Services\RestSoapSignEncrypt\RestSoapSignEncrypt2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RestSoapSignEncrypt\WcfClient.RestSoapSignEncrypt.Temperature.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RestSoapSign\RestSoapSign.wsdl" />
+    <None Include="Connected Services\RestSoapSign\RestSoapSign.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RestSoapSign\RestSoapSign1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RestSoapSign\RestSoapSign2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\RestSoapSign\WcfClient.RestSoapSign.Temperature.datasource">
@@ -121,6 +139,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RestSoapSignEncrypt\" />
     <WCFMetadataStorage Include="Connected Services\RestSoapSign\" />
     <WCFMetadataStorage Include="Connected Services\RestSoap\" />
   </ItemGroup>
@@ -140,7 +159,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\RestSoapSign\RestSoapSing.disco" />
+    <None Include="Connected Services\RestSoapSign\RestSoapSign.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\RestSoapSign\configuration91.svcinfo" />
@@ -150,6 +169,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\RestSoapSign\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RestSoapSignEncrypt\RestSoapSignEncrypt.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RestSoapSignEncrypt\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RestSoapSignEncrypt\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\RestSoapSignEncrypt\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -19,29 +19,42 @@ namespace WcfClient
 
         private void btnC2F_Click(object sender, EventArgs e)
         {
-//https://stackoverflow.com/questions/22998847/wcf-protectionlevel
-            RestSoap.RestSoapClient client = new RestSoap.RestSoapClient();
-            RestSoap.Temperature cels = new RestSoap.Temperature();
+            switch (cbSecurity.SelectedIndex)
+            {
+                case 0:
+                    RestSoap.RestSoapClient client = new RestSoap.RestSoapClient();
+                    RestSoap.Temperature cels = new RestSoap.Temperature();
 
-            cels.Units = "C";
-            cels.Value = Convert.ToDouble(edtCelsium.Text);
+                    cels.Units = "C";
+                    cels.Value = Convert.ToDouble(edtCelsium.Text);
 
-            RestSoap.Temperature  fahr = client.Celsius2Fahrenheit(cels);
+                    RestSoap.Temperature fahr = client.Celsius2Fahrenheit(cels);
 
-            edtFahr.Text = fahr.Value.ToString();
-        }
+                    edtFahr.Text = fahr.Value.ToString();
+                    break;
+                case 1:
+                    RestSoapSign.RestSoapSignClient clientSign = new RestSoapSign.RestSoapSignClient();
+                    RestSoapSign.Temperature celsSign = new RestSoapSign.Temperature();
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            RestSoapSign.RestSoapSingClient client = new RestSoapSign.RestSoapSingClient();
-            RestSoapSign.Temperature cels = new RestSoapSign.Temperature();
+                    celsSign.Units = "C";
+                    celsSign.Value = Convert.ToDouble(edtCelsium.Text);
 
-            cels.Units = "C";
-            cels.Value = Convert.ToDouble(edtCelsium.Text);
+                    RestSoapSign.Temperature fahrSign = clientSign.Celsius2Fahrenheit(celsSign);
 
-            RestSoapSign.Temperature fahr = client.Celsius2Fahrenheit(cels);
+                    edtFahr.Text = fahrSign.Value.ToString();
+                    break;
+                case 2:
+                    RestSoapSignEncrypt.RestSoapSignEncryptClient clientEncrypt = new RestSoapSignEncrypt.RestSoapSignEncryptClient();
+                    RestSoapSignEncrypt.Temperature celsEncrypt = new RestSoapSignEncrypt.Temperature();
 
-            edtFahr.Text = fahr.Value.ToString();
+                    celsEncrypt.Units = "C";
+                    celsEncrypt.Value = Convert.ToDouble(edtCelsium.Text);
+
+                    RestSoapSignEncrypt.Temperature fahrEncrypt = clientEncrypt.Celsius2Fahrenheit(celsEncrypt);
+
+                    edtFahr.Text = fahrEncrypt.Value.ToString();
+                    break;
+            }
         }
     }
 }
