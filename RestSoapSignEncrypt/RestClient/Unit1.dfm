@@ -78,7 +78,9 @@ object Form1: TForm1
       Width = 81
       Height = 21
       Style = csDropDownList
+      ItemIndex = 0
       TabOrder = 4
+      Text = 'None'
       Items.Strings = (
         'None'
         'Sign'
