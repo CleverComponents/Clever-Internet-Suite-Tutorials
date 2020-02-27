@@ -22,6 +22,9 @@ type
     Request: TclSoapMessage;
     Response: TclSoapMessage;
     clCertificateStore1: TclCertificateStore;
+    clHttpRio: TclHttpRio;
+    clHttpRioSign: TclHttpRio;
+    clHttpRioEncrypt: TclHttpRio;
     procedure btnC2FClick(Sender: TObject);
     procedure btnF2CClick(Sender: TObject);
     procedure RequestGetSigningCertificate(Sender: TObject;
@@ -40,10 +43,6 @@ type
       AExtraCerts: TclCertificateList; var AStoreName: string;
       var AStoreLocation: TclCertificateStoreLocation; var Handled: Boolean);
   private
-    function GetService: IRestSoap;
-    function GetServiceSign: IRestSoapSign;
-    function GetServiceSignEncrypt: IRestSoapSignEncrypt;
-
     procedure ConvertC2F;
     procedure ConvertF2C;
 
@@ -90,7 +89,7 @@ var
   service: IRestSoap;
   celsius, fahrenheit: RestSoap.Temperature2;
 begin
-  service := GetService();
+  service := clHttpRio as IRestSoap;
 
   celsius := nil;
   fahrenheit := nil;
@@ -106,7 +105,6 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
-    service := nil;
   end;
 end;
 
@@ -115,7 +113,7 @@ var
   service: IRestSoapSign;
   celsius, fahrenheit: RestSoapSign.Temperature2;
 begin
-  service := GetServiceSign();
+  service := clHttpRioSign as IRestSoapSign;
 
   celsius := nil;
   fahrenheit := nil;
@@ -131,7 +129,6 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
-    service := nil;
   end;
 end;
 
@@ -140,7 +137,7 @@ var
   service: IRestSoapSignEncrypt;
   celsius, fahrenheit: RestSoapSignEncrypt.Temperature2;
 begin
-  service := GetServiceSignEncrypt();
+  service := clHttpRioEncrypt as IRestSoapSignEncrypt;
 
   celsius := nil;
   fahrenheit := nil;
@@ -156,7 +153,6 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
-    service := nil;
   end;
 end;
 
@@ -165,7 +161,7 @@ var
   service: IRestSoap;
   celsius, fahrenheit: RestSoap.Temperature2;
 begin
-  service := GetService();
+  service := clHttpRio as IRestSoap;
 
   celsius := nil;
   fahrenheit := nil;
@@ -181,7 +177,6 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
-    service := nil;
   end;
 end;
 
@@ -190,7 +185,7 @@ var
   service: IRestSoapSign;
   celsius, fahrenheit: RestSoapSign.Temperature2;
 begin
-  service := GetServiceSign();
+  service := clHttpRioSign as IRestSoapSign;
 
   celsius := nil;
   fahrenheit := nil;
@@ -206,7 +201,6 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
-    service := nil;
   end;
 end;
 
@@ -215,7 +209,7 @@ var
   service: IRestSoapSignEncrypt;
   celsius, fahrenheit: RestSoapSignEncrypt.Temperature2;
 begin
-  service := GetServiceSignEncrypt();
+  service := clHttpRioEncrypt as IRestSoapSignEncrypt;
 
   celsius := nil;
   fahrenheit := nil;
@@ -231,59 +225,7 @@ begin
   finally
     fahrenheit.Free();
     celsius.Free();
-    service := nil;
   end;
-end;
-
-function TForm1.GetService: IRestSoap;
-var
-  rio: TclHttpRio;
-begin
-  rio := TclHttpRio.Create(nil);
-
-  rio.URL := 'http://localhost:51899/RestSoap.svc';
-  rio.Service := 'RestSoap';
-  rio.Port := 'RestSoapBinding_IRestSoap';
-  rio.Sign := False;
-  rio.Encrypt := False;
-  rio.SoapRequest := Request;
-  rio.SoapResponse := Response;
-
-  Result := rio as IRestSoap;
-end;
-
-function TForm1.GetServiceSign: IRestSoapSign;
-var
-  rio: TclHttpRio;
-begin
-  rio := TclHttpRio.Create(nil);
-
-  rio.URL := 'http://localhost:51899/RestSoapSign.svc';
-  rio.Service := 'RestSoapSign';
-  rio.Port := 'RestSoapSingBinding_IRestSoapSign';
-  rio.Sign := True;
-  rio.Encrypt := True;
-  rio.SoapRequest := Request;
-  rio.SoapResponse := Response;
-
-  Result := rio as IRestSoapSign;
-end;
-
-function TForm1.GetServiceSignEncrypt: IRestSoapSignEncrypt;
-var
-  rio: TclHttpRio;
-begin
-  rio := TclHttpRio.Create(nil);
-
-  rio.URL := 'http://localhost:51899/RestSoapSignEncrypt.svc';
-  rio.Service := 'RestSoapSignEncrypt';
-  rio.Port := 'RestSoapSignEncryptBinding_IRestSoapSignEncrypt';
-  rio.Sign := True;
-  rio.Encrypt := True;
-  rio.SoapRequest := Request;
-  rio.SoapResponse := Response;
-
-  Result := rio as IRestSoapSignEncrypt
 end;
 
 procedure TForm1.RequestGetEncryptionCertificate(Sender: TObject;
