@@ -78,22 +78,14 @@ object Form1: TForm1
       Width = 81
       Height = 21
       Style = csDropDownList
+      ItemIndex = 0
       TabOrder = 4
+      Text = 'None'
       Items.Strings = (
         'None'
         'Sign'
         'SignEncrypt')
     end
-  end
-  object clHttpRio1: TclHttpRio
-    SoapRequest = Request
-    SoapResponse = Response
-    UserAgent = 'CleverComponents SOAP 1.0'
-    CharSet = 'utf-8'
-    Sign = True
-    Encrypt = True
-    Left = 16
-    Top = 88
   end
   object Request: TclSoapMessage
     Header.CharSet = 'utf-8'
