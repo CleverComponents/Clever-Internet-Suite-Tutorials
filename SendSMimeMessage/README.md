@@ -1,6 +1,6 @@
 # Send S/MIME Message
 
-<img align="left" src="SMime.jpg"/>
+<img align="left" src="SMime-Norm.jpg"/>
 
 The Send S/MIME Message project represents a code example for the [Send S/MIME Message](https://www.clevercomponents.com/portal/kb/a150/send-s-mime-message.aspx) tutorial.   
 
