@@ -11,12 +11,10 @@ uses
 
 type
   TForm1 = class(TForm)
-    Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     edtSubject: TEdit;
     edtToList: TEdit;
-    edtFrom: TEdit;
     memMessage: TMemo;
     Label7: TLabel;
     Label6: TLabel;
@@ -30,7 +28,7 @@ type
     clSmtp1: TclSmtp;
     clSMimeMessage1: TclSMimeMessage;
     CertificateSender: TclCertificateStore;
-    CertificateResipient: TclCertificateStore;
+    CertificateRecipient: TclCertificateStore;
     procedure btnSendClick(Sender: TObject);
     procedure clSMimeMessage1GetEncryptionCertificate(Sender: TObject;
       var ACertificate: TclCertificate; AExtraCerts: TclCertificateList;
@@ -95,19 +93,19 @@ procedure TForm1.clSMimeMessage1GetEncryptionCertificate(Sender: TObject;
 var
  i: Integer;
 begin
-  if(CertificateResipient.Items.Count = 0) then
+  if(CertificateRecipient.Items.Count = 0) then
   begin
     CertificateSender.ImportFromCER('resipient.cer');
   end;
 
   if(clSMimeMessage1.ToList.Count > 0) then
   begin
-    ACertificate := CertificateResipient.CertificateByEmail(clSMimeMessage1.ToList[0].Email);
+    ACertificate := CertificateRecipient.CertificateByEmail(clSMimeMessage1.ToList[0].Email);
   end;
 
   for i := 1 to clSMimeMessage1.ToList.Count - 1 do
     begin
-      AExtraCerts.Add(CertificateResipient.CertificateByEmail(clSMimeMessage1.ToList[i].Email));
+      AExtraCerts.Add(CertificateRecipient.CertificateByEmail(clSMimeMessage1.ToList[i].Email));
     end;
 
     Handled := True;

@@ -13,23 +13,16 @@ object Form1: TForm1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object Label1: TLabel
-    Left = 8
-    Top = 8
-    Width = 24
-    Height = 13
-    Caption = 'From'
-  end
   object Label2: TLabel
     Left = 8
-    Top = 35
+    Top = 8
     Width = 31
     Height = 13
     Caption = 'To List'
   end
   object Label3: TLabel
     Left = 8
-    Top = 62
+    Top = 35
     Width = 36
     Height = 13
     Caption = 'Subject'
@@ -64,7 +57,7 @@ object Form1: TForm1
   end
   object edtSubject: TEdit
     Left = 53
-    Top = 59
+    Top = 32
     Width = 196
     Height = 21
     TabOrder = 0
@@ -72,19 +65,10 @@ object Form1: TForm1
   end
   object edtToList: TEdit
     Left = 53
-    Top = 32
-    Width = 196
-    Height = 21
-    TabOrder = 1
-    Text = 'shirokov@clevercomponents.com'
-  end
-  object edtFrom: TEdit
-    Left = 53
     Top = 5
     Width = 196
     Height = 21
-    TabOrder = 2
-    Text = 'shirokovClever@yandex.ru'
+    TabOrder = 1
   end
   object memMessage: TMemo
     Left = 8
@@ -93,14 +77,14 @@ object Form1: TForm1
     Height = 192
     Lines.Strings = (
       'Dear Mr.Howden send me pleace you catalog.')
-    TabOrder = 3
+    TabOrder = 2
   end
   object edtServer: TEdit
     Left = 352
     Top = 5
     Width = 166
     Height = 21
-    TabOrder = 4
+    TabOrder = 3
     Text = 'smtp.yandex.ru'
   end
   object edtPort: TEdit
@@ -108,7 +92,7 @@ object Form1: TForm1
     Top = 32
     Width = 166
     Height = 21
-    TabOrder = 5
+    TabOrder = 4
     Text = '465'
   end
   object edtUserName: TEdit
@@ -116,8 +100,7 @@ object Form1: TForm1
     Top = 59
     Width = 166
     Height = 21
-    TabOrder = 6
-    Text = 'shirokovClever@yandex.ru'
+    TabOrder = 5
   end
   object edtPassword: TEdit
     Left = 352
@@ -125,7 +108,7 @@ object Form1: TForm1
     Width = 166
     Height = 21
     PasswordChar = '*'
-    TabOrder = 7
+    TabOrder = 6
     Text = 'warpten123'
   end
   object btnSend: TButton
@@ -134,7 +117,7 @@ object Form1: TForm1
     Width = 89
     Height = 33
     Caption = 'Send'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = btnSendClick
   end
   object clSmtp1: TclSmtp
@@ -165,7 +148,7 @@ object Form1: TForm1
     Left = 424
     Top = 168
   end
-  object CertificateResipient: TclCertificateStore
+  object CertificateRecipient: TclCertificateStore
     StoreName = 'MY'
     CSP = 'Microsoft Base Cryptographic Provider v1.0'
     ValidFrom = 43889.000000000000000000
