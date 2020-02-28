@@ -52,6 +52,14 @@ implementation
 
 {$R *.dfm}
 
+//1. You must have certificates installed for both the message sender and for the message recipients.
+//The sender's certificate must have a private key.
+//It should be installed in the "Personal" Windows storage (MY), "Current User" location.
+//This certificate is used for signing the message.
+//The recipients' certificates should be installed in the "Other People" storage (addressbook), "Current User" location.
+//These certificates must not necessarily have a private key. They are used for encrypting the message.
+//The sender's certificate must provide the same Email address as the message sender address.
+//The same for the message recipients. The Email address is used to find a corresponding ceriticate in the storage.
 procedure TForm1.btnSendClick(Sender: TObject);
 begin
   clSmtp1.Server := edtServer.Text;
@@ -74,6 +82,12 @@ begin
 
   ShowMessage('Done');
 end;
+
+//2. If neccessary certificates are not installed in Windows,
+//use the following two events to load certificates from files:
+//a private-key sender's certificate and public-key certificates for message recipients:
+//OnGetSigningCertificate and OnGetEncryptionCertificate.
+//You can use the TclCertificateStore component to import certificates from a file.
 
 procedure TForm1.clSMimeMessage1GetEncryptionCertificate(Sender: TObject;
   var ACertificate: TclCertificate; AExtraCerts: TclCertificateList;
