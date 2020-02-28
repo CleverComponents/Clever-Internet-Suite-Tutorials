@@ -2,7 +2,7 @@
 
 <img align="left" src="SMime.jpg"/>
 
-The Send S/MIME Message project represents a code example for the [Send S/MIME Message](https://www.clevercomponents.com/portal/kb/a136/sftp-client-with-user-and-public-key-authorization.aspx) tutorial.   
+The Send S/MIME Message project represents a code example for the [Send S/MIME Message](https://www.clevercomponents.com/portal/kb/a150/send-s-mime-message.aspx) tutorial.   
 
 This tutorial signs and encrypts an Email message in the S/MIME format using X509 certificates, and sends the protected message via the SMTP protocol.
 
