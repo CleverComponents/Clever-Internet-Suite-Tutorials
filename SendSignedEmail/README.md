@@ -2,7 +2,7 @@
 
 <img align="left" src="SendSignedEmail.jpg"/>
 
-The Send Signed Email project represents a code example for the [Send Signed Email](https://www.clevercomponents.com/portal/kb/a136/sftp-client-with-user-and-public-key-authorization.aspx) tutorial.   
+The Send Signed Email project represents a code example for the [Send Signed Email](https://www.clevercomponents.com/portal/kb/a151/send-signed-email.aspx) tutorial.   
 
 This example shows how to sign an Email message using the S/MIME protocol, the NIST sha-512 algorithm, and X509 certificate.   
 
