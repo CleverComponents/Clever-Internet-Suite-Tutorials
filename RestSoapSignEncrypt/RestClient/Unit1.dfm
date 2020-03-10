@@ -207,7 +207,7 @@ object Form1: TForm1
       end>
     OnGetSigningCertificate = RequestGetSigningCertificate
     OnGetEncryptionCertificate = RequestGetEncryptionCertificate
-    Left = 80
+    Left = 160
     Top = 88
   end
   object Response: TclSoapMessage
@@ -294,15 +294,52 @@ object Form1: TForm1
       end>
     OnGetSigningCertificateEx = ResponseGetSigningCertificateEx
     OnGetEncryptionCertificate = ResponseGetEncryptionCertificate
-    Left = 144
-    Top = 88
+    Left = 224
+    Top = 64
   end
   object clCertificateStore1: TclCertificateStore
     StoreName = 'MY'
     CSP = 'Microsoft Base Cryptographic Provider v1.0'
     ValidFrom = 43887.000000000000000000
     ValidTo = 44252.000000000000000000
-    Left = 216
+    Left = 288
+    Top = 64
+  end
+  object clHttpRio: TclHttpRio
+    Service = 'RestSoap'
+    Port = 'RestSoapBinding_IRestSoap'
+    URL = 'http://localhost:51899/RestSoap.svc'
+    SoapRequest = Request
+    SoapResponse = Response
+    UserAgent = 'CleverComponents SOAP 1.0'
+    CharSet = 'utf-8'
+    Left = 8
+    Top = 88
+  end
+  object clHttpRioSign: TclHttpRio
+    Service = 'RestSoapSign'
+    Port = 'RestSoapSingBinding_IRestSoapSign'
+    URL = 'http://localhost:51899/RestSoapSign.svc'
+    SoapRequest = Request
+    SoapResponse = Response
+    UserAgent = 'CleverComponents SOAP 1.0'
+    CharSet = 'utf-8'
+    Sign = True
+    Encrypt = True
+    Left = 64
+    Top = 88
+  end
+  object clHttpRioEncrypt: TclHttpRio
+    Service = 'RestSoapSignEncrypt'
+    Port = 'RestSoapSignEncryptBinding_IRestSoapSignEncrypt'
+    URL = 'http://localhost:51899/RestSoapSignEncrypt.svc'
+    SoapRequest = Request
+    SoapResponse = Response
+    UserAgent = 'CleverComponents SOAP 1.0'
+    CharSet = 'utf-8'
+    Sign = True
+    Encrypt = True
+    Left = 112
     Top = 88
   end
 end
