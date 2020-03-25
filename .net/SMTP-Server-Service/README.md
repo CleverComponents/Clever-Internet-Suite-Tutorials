@@ -2,7 +2,7 @@
 
 <img align="left" src="Image\SmtpService-Social.jpg"/>
 
-The SMTP Server Service project represents a code example for the [Creating an SMTP Server Service and installing it on Windows](https://www.clevercomponents.com/portal/kb/a80/convert-rsa-public-key-format-to-x509-subject-key-info-format.aspx) tutorial.   
+The SMTP Server Service project represents a code example for the [Creating an SMTP Server Service and installing it on Windows](https://www.clevercomponents.com/portal/kb/a158/smtp-server-service.aspx) tutorial.   
 
 The example shows how to creating an SMTP Server Service and installing it on Windows.   
 
