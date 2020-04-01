@@ -1,9 +1,11 @@
 object MessageForm: TMessageForm
   Left = 192
   Top = 114
+  Anchors = [akLeft, akTop, akRight, akBottom]
+  BorderStyle = bsDialog
   Caption = 'MessageForm'
-  ClientHeight = 377
-  ClientWidth = 541
+  ClientHeight = 363
+  ClientWidth = 448
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,77 +14,78 @@ object MessageForm: TMessageForm
   Font.Style = []
   OldCreateOrder = False
   DesignSize = (
-    541
-    377)
+    448
+    363)
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 16
-    Top = 16
+    Left = 8
+    Top = 8
     Width = 23
     Height = 13
     Caption = 'From'
   end
   object Label2: TLabel
-    Left = 16
-    Top = 40
+    Left = 8
+    Top = 32
     Width = 13
     Height = 13
     Caption = 'To'
   end
   object Label3: TLabel
-    Left = 16
-    Top = 64
+    Left = 8
+    Top = 56
     Width = 36
     Height = 13
     Caption = 'Subject'
   end
   object edtFrom: TEdit
-    Left = 64
-    Top = 16
+    Left = 56
+    Top = 8
     Width = 385
     Height = 21
     TabOrder = 0
     Text = 'john@company.mail'
   end
   object edtTo: TEdit
-    Left = 64
-    Top = 40
+    Left = 56
+    Top = 32
     Width = 385
     Height = 21
     TabOrder = 1
   end
   object edtSubject: TEdit
-    Left = 64
-    Top = 64
+    Left = 56
+    Top = 56
     Width = 385
     Height = 21
     TabOrder = 2
   end
   object memText: TMemo
-    Left = 16
-    Top = 144
-    Width = 505
-    Height = 217
+    Left = 6
+    Top = 131
+    Width = 434
+    Height = 224
     Anchors = [akLeft, akTop, akRight, akBottom]
+    BevelEdges = []
     ScrollBars = ssBoth
     TabOrder = 3
   end
   object Button1: TButton
-    Left = 64
-    Top = 104
-    Width = 75
-    Height = 25
+    Left = 8
+    Top = 83
+    Width = 91
+    Height = 42
     Caption = 'Send'
     Default = True
     ModalResult = 1
     TabOrder = 4
   end
   object Button2: TButton
-    Left = 176
-    Top = 104
-    Width = 75
-    Height = 25
+    Left = 350
+    Top = 83
+    Width = 91
+    Height = 42
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2

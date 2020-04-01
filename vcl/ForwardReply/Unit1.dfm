@@ -1,9 +1,10 @@
 object Form1: TForm1
   Left = 192
   Top = 114
+  BorderStyle = bsSingle
   Caption = 'Form1'
-  ClientHeight = 309
-  ClientWidth = 405
+  ClientHeight = 302
+  ClientWidth = 449
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,54 +18,75 @@ object Form1: TForm1
   TextHeight = 13
   object Label1: TLabel
     Left = 16
-    Top = 8
-    Width = 31
+    Top = 11
+    Width = 59
     Height = 13
-    Caption = 'Server'
+    Caption = 'Server Pop3'
   end
   object Label2: TLabel
     Left = 16
-    Top = 32
+    Top = 65
     Width = 22
     Height = 13
     Caption = 'User'
   end
   object Label3: TLabel
     Left = 16
-    Top = 56
+    Top = 94
     Width = 46
     Height = 13
     Caption = 'Password'
   end
+  object Label4: TLabel
+    Left = 16
+    Top = 38
+    Width = 19
+    Height = 13
+    Caption = 'Port'
+  end
+  object Label5: TLabel
+    Left = 232
+    Top = 11
+    Width = 58
+    Height = 13
+    Caption = 'Server Smtp'
+  end
+  object Label6: TLabel
+    Left = 232
+    Top = 38
+    Width = 19
+    Height = 13
+    Caption = 'Port'
+  end
   object edtServer: TEdit
-    Left = 72
+    Left = 88
     Top = 8
-    Width = 313
+    Width = 129
     Height = 21
     TabOrder = 0
     Text = 'localhost'
   end
   object edtUser: TEdit
-    Left = 72
-    Top = 32
-    Width = 185
+    Left = 88
+    Top = 62
+    Width = 129
     Height = 21
     TabOrder = 1
     Text = 'john'
   end
   object edtPassword: TEdit
-    Left = 72
-    Top = 56
-    Width = 185
+    Left = 88
+    Top = 89
+    Width = 129
     Height = 21
     PasswordChar = '*'
     TabOrder = 2
     Text = '12345'
   end
   object btnReceive: TButton
-    Left = 56
-    Top = 88
-    Width = 75
+    Left = 247
+    Top = 89
+    Width = 58
     Height = 25
     Caption = 'Receive'
     TabOrder = 3
@@ -73,28 +95,50 @@ object Form1: TForm1
   object ListBox1: TListBox
     Left = 16
     Top = 120
-    Width = 361
+    Width = 417
     Height = 169
     ItemHeight = 13
     TabOrder = 4
   end
   object btnReply: TButton
-    Left = 152
-    Top = 88
-    Width = 75
+    Left = 311
+    Top = 89
+    Width = 58
     Height = 25
     Caption = 'Reply'
     TabOrder = 5
     OnClick = btnReplyClick
   end
   object btnForward: TButton
-    Left = 248
-    Top = 88
-    Width = 75
+    Left = 375
+    Top = 89
+    Width = 58
     Height = 25
     Caption = 'Forward'
     TabOrder = 6
     OnClick = btnForwardClick
+  end
+  object edtPort: TEdit
+    Left = 88
+    Top = 35
+    Width = 89
+    Height = 21
+    TabOrder = 7
+  end
+  object edtServerSmtp: TEdit
+    Left = 304
+    Top = 8
+    Width = 129
+    Height = 21
+    TabOrder = 8
+    Text = 'localhost'
+  end
+  object edtPortSmtp: TEdit
+    Left = 304
+    Top = 35
+    Width = 89
+    Height = 21
+    TabOrder = 9
   end
   object clPop31: TclPop3
     TLSFlags = []

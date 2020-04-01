@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, clMailMessage, clSmtp, clTcpClient, clMC, clPop3, Unit2,
-  clHtmlParser;
+  clHtmlParser, clTcpClientTls, clTcpCommandClient;
 
 type
   TForm1 = class(TForm)
@@ -24,6 +24,12 @@ type
     clMailMessage1: TclMailMessage;
     clHtmlParser1: TclHtmlParser;
     clHtmlTextParser2: TclHtmlParser;
+    Label4: TLabel;
+    edtPort: TEdit;
+    Label5: TLabel;
+    edtServerSmtp: TEdit;
+    Label6: TLabel;
+    edtPortSmtp: TEdit;
     procedure btnReceiveClick(Sender: TObject);
     procedure btnReplyClick(Sender: TObject);
     procedure btnForwardClick(Sender: TObject);
@@ -54,6 +60,8 @@ var
   i: Integer;
 begin
   clPop31.Server := edtServer.Text;
+  clPop31.Port := StrToInt(edtPort.Text);
+  clPop31.UseTLS := ctAutomatic;
   clPop31.UserName := edtUser.Text;
   clPop31.Password := edtPassword.Text;
   clPop31.Open();
@@ -79,6 +87,8 @@ begin
   end;
 
   clPop31.Server := edtServer.Text;
+  clPop31.Port := StrToInt(edtPort.Text);
+  clPop31.UseTLS := ctAutomatic;
   clPop31.UserName := edtUser.Text;
   clPop31.Password := edtPassword.Text;
   clPop31.Open();
@@ -120,14 +130,19 @@ begin
   end;
 
   clPop31.Server := edtServer.Text;
+  clPop31.Port := StrToInt(edtPort.Text);
+  clPop31.UseTLS := ctAutomatic;
   clPop31.UserName := edtUser.Text;
   clPop31.Password := edtPassword.Text;
   clPop31.Open();
   
+  try
+    clPop31.Retrieve(ListBox1.ItemIndex + 1, clMailMessage1);
 
-  clPop31.Retrieve(ListBox1.ItemIndex + 1, clMailMessage1);
+  finally
+    clPop31.Close();
+  end;
 
-  clPop31.Close();
 
   if SendEmailMessage('', 'Fw: ' + clMailMessage1.Subject) then
   begin
@@ -158,12 +173,6 @@ begin
     
     if Result then
     begin
-      clSmtp1.Server := edtServer.Text;
-      clSmtp1.UserName := edtUser.Text;
-      clSmtp1.Password := edtPassword.Text;
-
-      clSmtp1.Open();
-
       if (clMailMessage1.Html <> nil) then
       begin
         text := '';
@@ -182,10 +191,22 @@ begin
       clMailMessage1.ToList.EmailAddresses := dlg.edtTo.Text;
       clMailMessage1.Subject := dlg.edtSubject.Text;
 
-      clSmtp1.Send(clMailMessage1);
+      clSmtp1.Server := edtServerSmtp.Text;
+      clSmtp1.Port := StrToInt(edtPortSmtp.Text);
+      clSmtp1.UseTLS := ctAutomatic;
+      clSmtp1.UserName := edtUser.Text;
+      clSmtp1.Password := edtPassword.Text;
+
+      clSmtp1.Open();
+
+      try
+        clSmtp1.Send(clMailMessage1);
+      finally
+        clSmtp1.Close();
+      end;
+
     end;
   finally
-    clSmtp1.Close();
     dlg.Free();
   end;
 end;
@@ -216,9 +237,8 @@ const
   BLOCKQUOTEStart = '<BLOCKQUOTE + style="PADDING-RIGHT: 0px; PADDING-LEFT: 5px; MARGIN-LEFT: 5px; BORDER-LEFT: #000000 2px solid; MARGIN-RIGHT: 0px">';
   BLOCKQUOTEEnd = '</BLOCKQUOTE>';
 var
-  tag: TclHtmlTag;
+  tag, tagEnd: TclHtmlTag;
   s, reply: string;
-  id: Integer;
 begin
   reply := '<DIV>Reply follows here</DIV>';
   s := ABody.Strings.Text;
@@ -226,11 +246,16 @@ begin
   clHtmlParser1.Parse(s);
 
   tag := clHtmlParser1.Tags.TagByName('BODY');
-  Insert(reply + BLOCKQUOTEStart, s, tag.InnerTextPos);
+  if(tag = nil) then
+  begin
+    s := reply + BLOCKQUOTEStart + s + BLOCKQUOTEEnd;
+  end else
+  begin
+    Insert(reply + BLOCKQUOTEStart, s, tag.InnerTextPos);
 
-  id := clHtmlParser1.Tags.IndexOf(clHtmlParser1.Tags.TagByName('BODY', tag.NextTag));
-  tag := clHtmlParser1.Tags[id - 1];
-  Insert(BLOCKQUOTEEnd, s, tag.InnerTextPos + Length(reply + BLOCKQUOTEStart));
+    tagEnd := clHtmlParser1.Tags.TagByName('BODY', tag.NextTag);
+    Insert(BLOCKQUOTEEnd, s, tagEnd.InnerTextPos + Length(reply + BLOCKQUOTEStart));
+  end;
 
   AHtml.Text := s;
 end;
