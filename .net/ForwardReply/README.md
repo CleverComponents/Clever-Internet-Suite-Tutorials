@@ -2,7 +2,7 @@
 
 <img src="ForwordReply-Social.jpg"/>
 
-The ForwardReply project represents a code example for the [ForwardReply](https://www.clevercomponents.com/portal/kb/a134/ping-client-in-_net.aspx)   
+The ForwardReply project represents a code example for the [ForwardReply](https://www.clevercomponents.com/portal/kb/a159/e-mail-replying-forwarding-in-_net.aspx)   
 
 This example shows how to download an Email message from a Pop3 mailbox, forward or reply this Email using the Smtp component from the Clever Internet .NET Suite library.  
 
