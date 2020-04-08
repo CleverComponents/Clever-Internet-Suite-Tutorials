@@ -1,6 +1,6 @@
 # HTTP Get using TTask.
 
-<img align="left" src="GetURL-Social.jpg"/>
+<img align="left" src="Image\GetURL-Social.jpg"/>
 
 This tutorial shows how to use the parallel threads provided by the TTask class in the Http.Get example. [HTTP Get using TTask](https://www.clevercomponents.com/portal/kb/a157/delphi-rest-soap-client-with-wss-signatures-and-encryption.aspx) 
 

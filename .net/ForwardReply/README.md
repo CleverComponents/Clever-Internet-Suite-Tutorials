@@ -1,6 +1,6 @@
 # E-mail replying / forwarding in .NET
 
-<img src="ForwordReply-Social.jpg"/>
+<img src="Image\ForwordReply-Social.jpg"/>
 
 The ForwardReply project represents a code example for the [ForwardReply](https://www.clevercomponents.com/portal/kb/a159/e-mail-replying-forwarding-in-_net.aspx)   
 
