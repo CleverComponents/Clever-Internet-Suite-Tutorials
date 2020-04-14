@@ -2,7 +2,7 @@
 
 <img align="left" src="Image\MakingAndExtracting-Social.jpg"/>
 
-The Making and Extracting the content of a .p7m file project represents a code example for the [Making and Extracting the content of a .p7m file.](https://www.clevercomponents.com/portal/kb/a64/e-mail-replying-forwarding.aspx) tutorial.   
+The Making and Extracting the content of a .p7m file project represents a code example for the [Making and Extracting the content of a .p7m file.](https://www.clevercomponents.com/portal/kb/a161/making-and-extracting-the-content-of-a-_p7m-file_.aspx) tutorial.   
 
 The tutorial shows how to create and extract the contents of a .p7m file, load a signing certificate from a .pfx file or Windows registry storage, verify the digital signature, and extract certificates from a .p7m file. The program signs the selected file, adds information about the user's certificate, digital signature, and saves this enveloped-data to a .p7m file. Also, the program can load an enveloped-data from a .p7m file, verify included digital signature, and extract both the signing data and included certificates.
 
