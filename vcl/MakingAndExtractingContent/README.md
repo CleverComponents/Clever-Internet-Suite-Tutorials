@@ -1,6 +1,6 @@
 # Making and Extracting the content of a .p7m file.
 
-<img align="left" src="MakingAndExtracting-Social.jpg"/>
+<img align="left" src="Image\MakingAndExtracting-Social.jpg"/>
 
 The Making and Extracting the content of a .p7m file project represents a code example for the [Making and Extracting the content of a .p7m file.](https://www.clevercomponents.com/portal/kb/a64/e-mail-replying-forwarding.aspx) tutorial.   
 
