@@ -173,19 +173,20 @@ var
 begin
   clEncryptor1.ExtractCertificates(edtSRC.Text);
 
-  cert := clEncryptor1.ExtractedCertificates.Items.GetTopInChain();
-
   lbExtractedCertificates.Items.Clear();
   for i := 0 to clEncryptor1.ExtractedCertificates.Items.Count - 1 do
   begin
-    if (clEncryptor1.ExtractedCertificates.Items[i].FriendlyName <> '') then
+    cert := clEncryptor1.ExtractedCertificates.Items[i];
+    if (cert.FriendlyName <> '') then
     begin
-      lbExtractedCertificates.Items.Add(clEncryptor1.ExtractedCertificates.Items[i].FriendlyName);
+      lbExtractedCertificates.Items.Add(cert.FriendlyName);
     end else
     begin
-      lbExtractedCertificates.Items.Add(clEncryptor1.ExtractedCertificates.Items[i].IssuedTo);
+      lbExtractedCertificates.Items.Add(cert.IssuedTo);
     end;
   end;
+
+  cert := clEncryptor1.ExtractedCertificates.Items.GetTopInChain();
 
   if(cert <> nil) then
   begin
