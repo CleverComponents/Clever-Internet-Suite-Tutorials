@@ -39,7 +39,7 @@ type
     edtDST: TEdit;
     btnDST: TButton;
     Bevel1: TBevel;
-    lbResult: TListBox;
+    lbExtractedCertificates: TListBox;
     OpenDialog3: TOpenDialog;
     Label2: TLabel;
     SaveDialog2: TSaveDialog;
@@ -158,21 +158,61 @@ begin
 
     cert := clCertificateStore1.Items[cbCertificate.ItemIndex];
     clEncryptor1.Sign(src, dst, False, True, cert, nil);
-    ShowMessage('Done');
   finally
     dst.Free();
     src.Free();
   end;
+  ShowMessage('Done');
 end;
 
 procedure TForm1.btnVerifyFileClick(Sender: TObject);
+var
+  cert: TclCertificate;
+  src, dst: TStream;
+  i: Integer;
 begin
   clEncryptor1.ExtractCertificates(edtSRC.Text);
-  if clEncryptor1.ExtractedCertificates.Items.Count > 0 then
+
+  cert := clEncryptor1.ExtractedCertificates.Items.GetTopInChain();
+
+  lbExtractedCertificates.Items.Clear();
+  for i := 0 to clEncryptor1.ExtractedCertificates.Items.Count - 1 do
+  begin
+    if (clEncryptor1.ExtractedCertificates.Items[i].FriendlyName <> '') then
+    begin
+      lbExtractedCertificates.Items.Add(clEncryptor1.ExtractedCertificates.Items[i].FriendlyName);
+    end else
+    begin
+      lbExtractedCertificates.Items.Add(clEncryptor1.ExtractedCertificates.Items[i].IssuedTo);
+    end;
+  end;
+
+  if(cert <> nil) then
+  begin
+    ShowMessage('Signing certificate: ' + cert.IssuedTo);
+  end;
+
+  src := nil;
+  dst := nil;
+  try
+    src := TFileStream.Create(edtSRC.Text, fmOpenRead);
+    dst := TFileStream.Create(edtDST.Text, fmCreate);
+
+    clEncryptor1.IsExtractCertificates := False;
+    clEncryptor1.VerifyEnveloped(src, dst, cert);
+  finally
+    dst.Free();
+    src.Free();
+  end;
+
+
+{  if clEncryptor1.ExtractedCertificates.Items.Count > 0 then
   begin
     lbResult.Items.Add(clEncryptor1.ExtractedCertificates.Items[0].IssuedTo);
   end;
   clEncryptor1.VerifyEnveloped(edtSRC.Text, edtDST.Text);
-end;
+}
+ end;
+
 
 end.
