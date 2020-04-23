@@ -87,6 +87,7 @@ end;
 procedure TForm1.btnLoadCertificateClick(Sender: TObject);
 var
  i: Integer;
+ cert: TclCertificate;
 begin
   clCertificateStore1.Close();
   cbCertificate.Clear();
@@ -98,12 +99,13 @@ begin
 
   for i := 0 to clCertificateStore1.Items.Count - 1 do
   begin
-    if (clCertificateStore1.Items[i].FriendlyName <> '') then
+    cert := clCertificateStore1.Items[i];
+    if (cert.FriendlyName <> '') then
     begin
-      cbCertificate.Items.Add(clCertificateStore1.Items[i].FriendlyName);
+      cbCertificate.Items.Add(cert.FriendlyName);
     end else
     begin
-      cbCertificate.Items.Add(clCertificateStore1.Items[i].IssuedTo);
+      cbCertificate.Items.Add(cert.IssuedTo);
     end;
   end;
 
@@ -206,13 +208,6 @@ begin
     src.Free();
   end;
 
-
-{  if clEncryptor1.ExtractedCertificates.Items.Count > 0 then
-  begin
-    lbResult.Items.Add(clEncryptor1.ExtractedCertificates.Items[0].IssuedTo);
-  end;
-  clEncryptor1.VerifyEnveloped(edtSRC.Text, edtDST.Text);
-}
  end;
 
 
