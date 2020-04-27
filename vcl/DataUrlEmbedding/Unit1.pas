@@ -18,8 +18,8 @@ type
     procedure btnDecodeClick(Sender: TObject);
     procedure btnEncodeClick(Sender: TObject);
   private
-    function DecodeDataUrlImages(const AImagesFolder, AData: string): string;
-    function EncodeDataUrlImages(const AImagesFolder, AFileName: string): string;
+    function DecodeDataUrlImage(const AImagesFolder, AData: string): string;
+    function EncodeDataUrlImage(const AImagesFolder, AFileName: string): string;
     { Private declarations }
   public
     { Public declarations }
@@ -33,7 +33,7 @@ implementation
 {$R *.dfm}
 
 
-function TForm1.EncodeDataUrlImages(const AImagesFolder, AFileName: string): string;
+function TForm1.EncodeDataUrlImage(const AImagesFolder, AFileName: string): string;
 var
   s, fileName: string;
   src: TStream;
@@ -68,7 +68,7 @@ begin
   Result := 'data:image/' + s + ';base64,' + Result;
 end;
 
-function TForm1.DecodeDataUrlImages(const AImagesFolder, AData: string): string;
+function TForm1.DecodeDataUrlImage(const AImagesFolder, AData: string): string;
 var
   ind: Integer;
   dataType, fileName: string;
@@ -130,7 +130,7 @@ begin
   for i := 0 to clHtmlParser1.Images.Count - 1 do
   begin
     dataSrc := clHtmlParser1.Images[i].Src;
-    newSrc := DecodeDataUrlImages(edtImagesFolder.Text, dataSrc);
+    newSrc := DecodeDataUrlImage(edtImagesFolder.Text, dataSrc);
 
     if (dataSrc <> newSrc) then
     begin
@@ -152,7 +152,7 @@ begin
   for i := 0 to clHtmlParser1.Images.Count - 1 do
   begin
     dataSrc := clHtmlParser1.Images[i].Src;
-    newSrc := EncodeDataUrlImages(edtImagesFolder.Text, dataSrc);
+    newSrc := EncodeDataUrlImage(edtImagesFolder.Text, dataSrc);
 
     if (dataSrc <> newSrc) then
     begin
