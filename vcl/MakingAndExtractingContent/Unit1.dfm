@@ -221,7 +221,7 @@ object Form1: TForm1
     TabOrder = 15
     OnClick = btnDSTClick
   end
-  object lbResult: TListBox
+  object lbExtractedCertificates: TListBox
     Left = 5
     Top = 303
     Width = 531
