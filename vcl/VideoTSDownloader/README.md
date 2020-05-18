@@ -1,6 +1,6 @@
 # Download TS files from video stream
 
-<img align="left" src="Image\VideoTSDownloader.jpg"/>
+<img align="left" src="Images\VideoTSDownloader.jpg"/>
 
 "The Download TS files from video stream" project represents a code example for the [Download TS files from video stream](https://www.clevercomponents.com/portal/kb/a64/e-mail-replying-forwarding.aspx) tutorial.   
 
