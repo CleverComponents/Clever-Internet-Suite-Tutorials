@@ -61,6 +61,7 @@ var
   item: TclDownLoadItem;
   list: TStrings;
   urlParser: TclUrlParser;
+  s: String;
 begin
   if (clMultiDownLoader1.IsBusy) then
   begin
@@ -85,11 +86,12 @@ begin
     counter := 1;
     for i := 0 to list.Count - 1 do
     begin
-      if(Pos('.ts', list[i]) > 0) then
+      s := list[i];
+      if (s <> '') and (s[1] <> '#') and (Pos('.ts', s) > 0) then
       begin
         item := clMultiDownLoader1.DownLoadList.Add();
 
-        urlParser.Parse(edtM3U8Url.Text, list[i]);
+        urlParser.Parse(edtM3U8Url.Text, s);
         item.URL := urlParser.AbsoluteUri;
         item.LocalFile := Format('%d.ts', [counter]);
         Inc(counter);
