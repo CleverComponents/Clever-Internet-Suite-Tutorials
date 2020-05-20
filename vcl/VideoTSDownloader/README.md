@@ -1,7 +1,8 @@
 # Download TS files from video stream
 
 <img align="left" src="Images\VideoTSDownloader.jpg"/>
-
+   
+    
 "The Download TS files from video stream" project represents a code example for the [Download TS files from video stream](https://www.clevercomponents.com/portal/kb/a163/download-ts-files-from-video-stream.aspx) tutorial.   
 
 The example shows how to download TS files from a video stream using the MultiDownloader component.
