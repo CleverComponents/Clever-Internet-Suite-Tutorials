@@ -171,7 +171,7 @@ begin
     fahrenheit.Value := StrToFloat(edtFahrenheit.Text);
     fahrenheit.Units := 'F';
 
-    celsius := service.Celsius2Fahrenheit(fahrenheit);
+    celsius := service.Fahrenheit2Celsius(fahrenheit);
 
     edtCelsius.Text := FloatToStr(celsius.Value);
   finally
@@ -195,7 +195,7 @@ begin
     fahrenheit.Value := StrToFloat(edtFahrenheit.Text);
     fahrenheit.Units := 'F';
 
-    celsius := service.Celsius2Fahrenheit(fahrenheit);
+    celsius := service.Fahrenheit2Celsius(fahrenheit);
 
     edtCelsius.Text := FloatToStr(celsius.Value);
   finally
