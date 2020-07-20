@@ -1,6 +1,6 @@
 # How to write a Framed Messaging Server and Client in C#
 
-<a href="https://youtu.be/vIIdVvfh4RQ" target="_blank"><align="left"src="Image\FramedMessage.jpg" /></a>
+<img align="left" src="Image\FramedMessage.jpg"/>
 
 The Framed Messaging project represents a code example for the [How to write a Framed Messaging Server and Client in C#](https://www.clevercomponents.com/portal/kb/a168/how-to-write-a-framed-messaging-server-and-client-in-c.aspx) tutorial.   
 
