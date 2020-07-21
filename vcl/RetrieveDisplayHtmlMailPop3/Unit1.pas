@@ -107,7 +107,15 @@ procedure TForm1.clMailMessage1SaveAttachment(Sender: TObject;
 begin
   if (AFileName = '') then
   begin
-    AFileName := GetUniqueFileName('.dat');
+    if (system.Pos('image/', LowerCase(ABody.ContentType)) = 1) then
+    begin
+      AFileName := 'image.' + system.Copy(ABody.ContentType, Length('image/') + 1, 10);
+    end else
+    begin
+      AFileName := 'file.dat';
+    end;
+
+    AFileName := GetUniqueFileName(AFileName);
   end;
 
   AData := TFileStream.Create(edtFolder.Text + AFileName, fmCreate);
