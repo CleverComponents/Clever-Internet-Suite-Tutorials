@@ -1,6 +1,6 @@
 # HttpServer - handling form-field requests
 
-The HttpServerFormFieldRequests project represents a code example for the [HttpServer - handling form-field requests](https://www.clevercomponents.com/portal/kb/a133/how-to-build-and-parse-a-json-string-with-objects.aspx) tutorial.   
+The HttpServerFormFieldRequests project represents a code example for the [HttpServer - handling form-field requests](https://www.clevercomponents.com/portal/kb/a170/httpserver-handling-form-field-requests.aspx) tutorial.   
 
 This tutorial runs the HTTP server, accepts requests from connected users, and sends responses. If the request contains form-field data, the form fields are parsed and extracted.   
 
