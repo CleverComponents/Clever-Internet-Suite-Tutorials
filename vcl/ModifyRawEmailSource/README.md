@@ -1,6 +1,6 @@
 # How to modify a subject line of the email within the raw .eml source
 
-The ModifyRawEmailSource project represents a code example for the [How to modify a subject line of the email within the raw source](https://www.clevercomponents.com/portal/kb/a133/how-to-build-and-parse-a-json-string-with-objects.aspx) tutorial.   
+The ModifyRawEmailSource project represents a code example for the [How to modify a subject line of the email within the raw source](https://www.clevercomponents.com/portal/kb/a169/how-to-modify-a-subject-line-of-the-email-within-the-raw-_eml-source.aspx) tutorial.   
 
 This tutorial loads an email message from an .eml file, parses the MIME message header, extracts and replaces the subject line, and finally, sends the message using the SMTP component.   
 The other MIME header fields can be modified using the introduced approach.   
