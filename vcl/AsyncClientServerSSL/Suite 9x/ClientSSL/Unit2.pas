@@ -18,10 +18,18 @@ type
     btnSend: TButton;
     memResponse: TMemo;
     clAsyncClient1: TclAsyncClient;
+    edtFileName: TEdit;
+    btnSendFile: TButton;
     procedure btnConnectClick(Sender: TObject);
     procedure btnDisconnectClick(Sender: TObject);
     procedure btnSendClick(Sender: TObject);
     procedure clAsyncClient1Read(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure btnSendFileClick(Sender: TObject);
+  private
+    FResponseLen: Integer;
+    FResponse: TStringStream;
   end;
 
 var
@@ -57,7 +65,6 @@ procedure TForm2.clAsyncClient1Read(Sender: TObject);
 var
   stream: TMemoryStream;
   len: Integer;
-  buf: TclByteArray;
 begin
   stream := TMemoryStream.Create();
   try
@@ -65,26 +72,44 @@ begin
       saWrite: clAsyncClient1.WriteData(nil);
       saNone:
       begin
-        if (stream.Size > SizeOf(Int64)) then
+        if (stream.Size > 0) then
         begin
-          //read the size of incoming data
           stream.Position := 0;
-          stream.Read(len, SizeOf(len));
 
-          Assert((stream.Size - stream.Position) = len, 'To be simple, this situation is not handled in this sample');
+          if (FResponseLen = 0) then
+          begin
+            //read the size of incoming data
+            stream.Read(FResponseLen, SizeOf(FResponseLen));
+          end;
 
-          SetLength(buf, len);
+          len := stream.Size - stream.Position;
+          if (len > 0) then
+          begin
+            //collect incoming data
+            FResponse.CopyFrom(stream, len);
+          end;
 
-          //copy data
-          stream.Read(buf[0], len);
-
-          memResponse.Lines.Add('Received from server: ' + TclTranslator.GetString(buf));
+          if (FResponseLen = FResponse.Size) then
+          begin
+            //response received completely
+            memResponse.Lines.Add('Received from server: ' + FResponse.DataString);
+          end;
         end;
       end;
     end;
   finally
     stream.Free();
   end;
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  FResponse := TStringStream.Create('');
+end;
+
+procedure TForm2.FormDestroy(Sender: TObject);
+begin
+  FResponse.Free();
 end;
 
 procedure TForm2.btnDisconnectClick(Sender: TObject);
@@ -99,6 +124,9 @@ var
   len: Integer;
   buf: TclByteArray;
 begin
+  FResponseLen := 0;
+  FResponse.Size := 0;
+
   stream := TMemoryStream.Create();
   try
     //write the size of data
@@ -112,6 +140,33 @@ begin
     stream.Position := 0;
     clAsyncClient1.WriteData(stream);
   finally
+    stream.Free();
+  end;
+end;
+
+procedure TForm2.btnSendFileClick(Sender: TObject);
+var
+  stream, sizeStream: TStream;
+  len: Integer;
+begin
+  FResponseLen := 0;
+  FResponse.Size := 0;
+
+  stream := TFileStream.Create(edtFileName.Text, fmOpenRead);
+  sizeStream := TMemoryStream.Create();
+  try
+    //obtain the size of file
+    len := stream.Size;
+    sizeStream.Write(len, SizeOf(len));
+
+    //write the size of file
+    sizeStream.Position := 0;
+    clAsyncClient1.WriteData(sizeStream);
+
+    //write file
+    clAsyncClient1.WriteData(stream);
+  finally
+    sizeStream.Free();
     stream.Free();
   end;
 end;

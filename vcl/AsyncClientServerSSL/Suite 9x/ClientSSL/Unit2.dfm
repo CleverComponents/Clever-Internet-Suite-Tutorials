@@ -13,6 +13,8 @@ object Form2: TForm2
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -82,19 +84,36 @@ object Form2: TForm2
   end
   object memResponse: TMemo
     Left = 0
-    Top = 128
+    Top = 168
     Width = 356
-    Height = 146
+    Height = 106
     Align = alBottom
     ReadOnly = True
     ScrollBars = ssVertical
+    TabOrder = 8
+  end
+  object edtFileName: TEdit
+    Left = 16
+    Top = 128
+    Width = 225
+    Height = 21
     TabOrder = 6
+    Text = 'file2send.txt'
+  end
+  object btnSendFile: TButton
+    Left = 264
+    Top = 126
+    Width = 75
+    Height = 25
+    Caption = 'Send File'
+    TabOrder = 7
+    OnClick = btnSendFileClick
   end
   object clAsyncClient1: TclAsyncClient
     Port = 0
     TLSFlags = []
     OnRead = clAsyncClient1Read
     Left = 64
-    Top = 144
+    Top = 184
   end
 end

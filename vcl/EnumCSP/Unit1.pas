@@ -45,7 +45,7 @@ const
   flags: array[Boolean] of DWORD = (CRYPT_MACHINE_DEFAULT, CRYPT_USER_DEFAULT);
 var
   len: DWORD;
-  p: PChar;
+  p: PAnsiChar;
 begin
   Result := '';
   if CryptGetDefaultProvider(AProvType, 0, flags[IsUser], nil, @len) then
@@ -65,7 +65,7 @@ end;
 procedure TForm1.GetProviderTypes(AList: TStrings);
 var
   i, provType, len: DWORD;
-  p: PChar;
+  p: PAnsiChar;
 begin
   AList.Add('');
   AList.Add('=== Provider Types (name/type) ===');
@@ -97,7 +97,7 @@ end;
 procedure TForm1.GetProviders(AList: TStrings);
 var
   i, provType, len: DWORD;
-  p: PChar;
+  p: PAnsiChar;
 begin
   AList.Add('');
   AList.Add('=== Providers (name/type) ===');
@@ -168,7 +168,7 @@ begin
   secData.dwVersion := SCHANNEL_CRED_VERSION;
   secData.dwFlags :=  SCH_CRED_AUTO_CRED_VALIDATION+ SCH_CRED_NO_DEFAULT_CREDS;
 
-  status := ASspi.FunctionTable.AcquireCredentialsHandle(nil, PChar(APackageName), SECPKG_CRED_OUTBOUND,
+  status := ASspi.FunctionTable.AcquireCredentialsHandle(nil, PAnsiChar(AnsiString(APackageName)), SECPKG_CRED_OUTBOUND,
     nil, @secData, nil, nil, @hCred, @tsExpiry);
   if (status = SEC_E_OK) then
   begin
