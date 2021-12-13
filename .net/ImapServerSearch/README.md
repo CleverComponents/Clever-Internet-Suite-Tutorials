@@ -10,7 +10,7 @@ You can use any mail client with IMAP support to connect to this server.
 ![Screenshot](imap-server-search-2.jpg)
 
 See also:   
-[IMAP4 Server with TLS/SSL support](Clever-Internet-Suite-Examples/tree/master/CS/ImapServerSSL)   
+[IMAP4 Server with TLS/SSL support](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/CS/ImapServerSSL)   
 
 
 The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository represents a list of examples, code snippets and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/) article. This list will be periodically updated, new projects will be added.   
