@@ -1,0 +1,15 @@
+program MailSendTMSRichEditor;
+
+uses
+  Vcl.Forms,
+  MainForm in 'MainForm.pas' {frmMain},
+  ComposeMessageForm in 'ComposeMessageForm.pas' {frmComposeMessage};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmMain, frmMain);
+  Application.Run;
+end.
