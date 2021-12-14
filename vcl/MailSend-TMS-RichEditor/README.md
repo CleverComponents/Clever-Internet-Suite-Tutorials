@@ -1,4 +1,4 @@
-# MailSend TMS FNC RichEditor
+# MailSend with TMS FNC RichEditor
 
 The program represents a Delphi tutorial that utilizes the TMS FNC UI RichEditor and Clever SMTP components to compose and send HTML E-mails.   
 
