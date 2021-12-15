@@ -8,6 +8,8 @@ The program allows you to authenticate using the username/password information. 
 
 The SMTP client component completely supports the SSL/TLS mode, including the client certificate authorization and the server validation process. The following example shows how to connect to a mail server via TLS: [SMTP Client SSL](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/SmtpClientSSL)   
 
+See also the [MailSend with TMS FNC RichEditor](https://www.clevercomponents.com/portal/news/122/mailsend-with-tms-fnc-richeditor.aspx) article.
+
 ![Screenshot](mailsend-tms-richedit.jpg)
 
 How to compile:   
