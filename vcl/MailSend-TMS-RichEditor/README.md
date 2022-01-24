@@ -1,4 +1,4 @@
-# MailSend TMS FNC RichEditor
+# MailSend with TMS FNC RichEditor
 
 The program represents a Delphi tutorial that utilizes the TMS FNC UI RichEditor and Clever SMTP components to compose and send HTML E-mails.   
 
@@ -7,6 +7,8 @@ This Delphi program represents a mostly simple demos and by no means, a complete
 The program allows you to authenticate using the username/password information. Also the SMTP component supports the OAUTH2.0, Digest, NTLM, and other SASL authentication methods. Please check out the following example to learn how to use the OAUTH2.0 protocol together with this components: [GMail SMTP Client](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/GMailSMTP)   
 
 The SMTP client component completely supports the SSL/TLS mode, including the client certificate authorization and the server validation process. The following example shows how to connect to a mail server via TLS: [SMTP Client SSL](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/SmtpClientSSL)   
+
+See also the [MailSend with TMS FNC RichEditor](https://www.clevercomponents.com/portal/news/122/mailsend-with-tms-fnc-richeditor.aspx) article.
 
 ![Screenshot](mailsend-tms-richedit.jpg)
 
