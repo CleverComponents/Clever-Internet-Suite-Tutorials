@@ -8,6 +8,8 @@ This functionality might be useful when you debug a Network app and want to anal
 
 You can even modify the Silent Socket Receiver program to send TCP response back to the connected client.   
 
+[Read the article](https://www.clevercomponents.com/portal/kb/a180/silent-socket-receiver-in-delphi.aspx)   
+
 See also the [TCP client / server connection](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/CustomSocket) project and the [Read a fixed number of bytes from the socket using TcpClientConnection](https://www.clevercomponents.com/portal/kb/a96/read-a-fixed-number-of-bytes-from-the-socket-using-tcpclientconnection.aspx) article.
 
 ![Screenshot](silent-socket.jpg)
