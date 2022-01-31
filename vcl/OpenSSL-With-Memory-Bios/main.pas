@@ -379,6 +379,7 @@ begin
             while (res > 0) do
             begin
               {$IFDEF SENDPACKETS}con.WriteBytes(buf, 0, res);{$ENDIF}
+              //transfer the buf over the Network connection
               Assert(res = BIO_write(s_in_bio, @buf[0], res));
               res := BIO_read(c_out_bio, @buf[0], Length(buf));
             end;
@@ -396,6 +397,7 @@ begin
           while (res > 0) do
           begin
             {$IFDEF SENDPACKETS}con.WriteBytes(buf, 0, res);{$ENDIF}
+            //transfer the buf over the Network connection
             Assert(res = BIO_write(s_in_bio, @buf[0], res));
             res := BIO_read(c_out_bio, @buf[0], Length(buf));
           end;
@@ -417,6 +419,7 @@ begin
             while (res > 0) do
             begin
               {$IFDEF SENDPACKETS}con.WriteBytes(buf, 0, res);{$ENDIF}
+              //transfer the buf over the Network connection
               Assert(res = BIO_write(c_in_bio, @buf[0], res));
               res := BIO_read(s_out_bio, @buf[0], Length(buf));
             end;
@@ -434,6 +437,7 @@ begin
           while (res > 0) do
           begin
             {$IFDEF SENDPACKETS}con.WriteBytes(buf, 0, res);{$ENDIF}
+            //transfer the buf over the Network connection
             Assert(res = BIO_write(c_in_bio, @buf[0], res));
             res := BIO_read(s_out_bio, @buf[0], Length(buf));
           end;
@@ -480,6 +484,7 @@ begin
         res := BIO_read(src_out_bio, @buf[0], Length(buf));
         while (res > 0) do
         begin
+          //transfer the buf over the Network connection
           Assert(res = BIO_write(dst_in_bio, @buf[0], res));
           res := BIO_read(src_out_bio, @buf[0], Length(buf));
         end;
@@ -519,6 +524,7 @@ begin
             res := BIO_read(dst_out_bio, @buf[0], Length(buf));
             while (res > 0) do
             begin
+              //transfer the buf over the Network connection
               Assert(res = BIO_write(src_in_bio, @buf[0], res));
               res := BIO_read(dst_out_bio, @buf[0], Length(buf));
             end;
@@ -592,6 +598,7 @@ begin
   res := BIO_read(src_out_bio, @buf[0], Length(buf));
   while (res > 0) do
   begin
+    //transfer the buf over the Network connection
     Assert(res = BIO_write(dst_in_bio, @buf[0], res));
     res := BIO_read(src_out_bio, @buf[0], Length(buf));
   end;
