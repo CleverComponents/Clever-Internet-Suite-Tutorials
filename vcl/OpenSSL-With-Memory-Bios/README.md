@@ -1,7 +1,7 @@
 # How to use OpenSSL with Memory Bios to run TLS handshake
 
-This simple Delphi project represents my experience in implementing the in-memory TLS handshake using OpenSSL 3.0. There are lots of examples with previous versions of the library on the Internet. So I decided to share this project to help other developers to get started with OpenSSL memory BIOs in Delphi. I'm still working on this test project. So if you find any errors or have questions, do not hesitate to contact me.
-Also, please feel free to Star the repo to help other devs to find this project!
+This simple Delphi project represents my experience in implementing the in-memory TLS handshake using OpenSSL 3.0. There are lots of examples with previous versions of the library on the Internet. So I decided to share this project to help other developers to get started with OpenSSL memory BIOs in Delphi. I'm still working on this test project. So if you find any errors or have questions, do not hesitate to contact me.   
+Also, please feel free to ⭐️ the repo to help other devs to find this project!
 
 ![Screenshot](ossl-membio.jpg)
 
