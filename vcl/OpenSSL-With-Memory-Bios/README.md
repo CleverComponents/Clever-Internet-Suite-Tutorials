@@ -22,4 +22,8 @@ Just clone the [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https:/
 
 Please feel free to [Contact Me](https://www.clevercomponents.com/support/) and ask any program related questions.   
 
+Regards,   
+Sergey Shirokov   
+Clever Components team   
+
 Keep updated on [Facebook](http://www.facebook.com/clevercomponents)   [YouTube](https://www.youtube.com/channel/UC9Si4WNQVSeXQMjdEJ8j1fg)   [Twitter](https://twitter.com/CleverComponent)   [Telegram](https://t.me/clevercomponents)   [Newsletter](https://www.clevercomponents.com/home/maillist.asp)   
