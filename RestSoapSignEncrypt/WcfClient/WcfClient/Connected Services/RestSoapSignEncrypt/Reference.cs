@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfClient.RestSoap {
+namespace WcfClient.RestSoapSignEncrypt {
     using System.Runtime.Serialization;
     using System;
     
@@ -104,64 +104,64 @@ namespace WcfClient.RestSoap {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RestSoap.IRestSoap")]
-    public interface IRestSoap {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RestSoapSignEncrypt.IRestSoapSignEncrypt")]
+    public interface IRestSoapSignEncrypt {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRestSoap/Celsius2Fahrenheit", ReplyAction="http://tempuri.org/IRestSoap/Celsius2FahrenheitResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(WcfClient.RestSoap.ConversionFault), Action="http://tempuri.org/IRestSoap/Celsius2FahrenheitConversionFault", Name="ConversionFault")]
-        WcfClient.RestSoap.Temperature Celsius2Fahrenheit(WcfClient.RestSoap.Temperature temperature);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRestSoapSignEncrypt/Celsius2Fahrenheit", ReplyAction="http://tempuri.org/IRestSoapSignEncrypt/Celsius2FahrenheitResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WcfClient.RestSoapSignEncrypt.ConversionFault), Action="http://tempuri.org/IRestSoapSignEncrypt/Celsius2FahrenheitConversionFault", Name="ConversionFault")]
+        WcfClient.RestSoapSignEncrypt.Temperature Celsius2Fahrenheit(WcfClient.RestSoapSignEncrypt.Temperature temperature);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRestSoap/Celsius2Fahrenheit", ReplyAction="http://tempuri.org/IRestSoap/Celsius2FahrenheitResponse")]
-        System.Threading.Tasks.Task<WcfClient.RestSoap.Temperature> Celsius2FahrenheitAsync(WcfClient.RestSoap.Temperature temperature);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRestSoapSignEncrypt/Celsius2Fahrenheit", ReplyAction="http://tempuri.org/IRestSoapSignEncrypt/Celsius2FahrenheitResponse")]
+        System.Threading.Tasks.Task<WcfClient.RestSoapSignEncrypt.Temperature> Celsius2FahrenheitAsync(WcfClient.RestSoapSignEncrypt.Temperature temperature);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRestSoap/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoap/Fahrenheit2CelsiusResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(WcfClient.RestSoap.ConversionFault), Action="http://tempuri.org/IRestSoap/Fahrenheit2CelsiusConversionFault", Name="ConversionFault")]
-        WcfClient.RestSoap.Temperature Fahrenheit2Celsius(WcfClient.RestSoap.Temperature temperature);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRestSoapSignEncrypt/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoapSignEncrypt/Fahrenheit2CelsiusResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WcfClient.RestSoapSignEncrypt.ConversionFault), Action="http://tempuri.org/IRestSoapSignEncrypt/Fahrenheit2CelsiusConversionFault", Name="ConversionFault")]
+        WcfClient.RestSoapSignEncrypt.Temperature Fahrenheit2Celsius(WcfClient.RestSoapSignEncrypt.Temperature temperature);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRestSoap/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoap/Fahrenheit2CelsiusResponse")]
-        System.Threading.Tasks.Task<WcfClient.RestSoap.Temperature> Fahrenheit2CelsiusAsync(WcfClient.RestSoap.Temperature temperature);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRestSoapSignEncrypt/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoapSignEncrypt/Fahrenheit2CelsiusResponse")]
+        System.Threading.Tasks.Task<WcfClient.RestSoapSignEncrypt.Temperature> Fahrenheit2CelsiusAsync(WcfClient.RestSoapSignEncrypt.Temperature temperature);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IRestSoapChannel : WcfClient.RestSoap.IRestSoap, System.ServiceModel.IClientChannel {
+    public interface IRestSoapSignEncryptChannel : WcfClient.RestSoapSignEncrypt.IRestSoapSignEncrypt, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class RestSoapClient : System.ServiceModel.ClientBase<WcfClient.RestSoap.IRestSoap>, WcfClient.RestSoap.IRestSoap {
+    public partial class RestSoapSignEncryptClient : System.ServiceModel.ClientBase<WcfClient.RestSoapSignEncrypt.IRestSoapSignEncrypt>, WcfClient.RestSoapSignEncrypt.IRestSoapSignEncrypt {
         
-        public RestSoapClient() {
+        public RestSoapSignEncryptClient() {
         }
         
-        public RestSoapClient(string endpointConfigurationName) : 
+        public RestSoapSignEncryptClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public RestSoapClient(string endpointConfigurationName, string remoteAddress) : 
+        public RestSoapSignEncryptClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public RestSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RestSoapSignEncryptClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public RestSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public RestSoapSignEncryptClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public WcfClient.RestSoap.Temperature Celsius2Fahrenheit(WcfClient.RestSoap.Temperature temperature) {
+        public WcfClient.RestSoapSignEncrypt.Temperature Celsius2Fahrenheit(WcfClient.RestSoapSignEncrypt.Temperature temperature) {
             return base.Channel.Celsius2Fahrenheit(temperature);
         }
         
-        public System.Threading.Tasks.Task<WcfClient.RestSoap.Temperature> Celsius2FahrenheitAsync(WcfClient.RestSoap.Temperature temperature) {
+        public System.Threading.Tasks.Task<WcfClient.RestSoapSignEncrypt.Temperature> Celsius2FahrenheitAsync(WcfClient.RestSoapSignEncrypt.Temperature temperature) {
             return base.Channel.Celsius2FahrenheitAsync(temperature);
         }
         
-        public WcfClient.RestSoap.Temperature Fahrenheit2Celsius(WcfClient.RestSoap.Temperature temperature) {
+        public WcfClient.RestSoapSignEncrypt.Temperature Fahrenheit2Celsius(WcfClient.RestSoapSignEncrypt.Temperature temperature) {
             return base.Channel.Fahrenheit2Celsius(temperature);
         }
         
-        public System.Threading.Tasks.Task<WcfClient.RestSoap.Temperature> Fahrenheit2CelsiusAsync(WcfClient.RestSoap.Temperature temperature) {
+        public System.Threading.Tasks.Task<WcfClient.RestSoapSignEncrypt.Temperature> Fahrenheit2CelsiusAsync(WcfClient.RestSoapSignEncrypt.Temperature temperature) {
             return base.Channel.Fahrenheit2CelsiusAsync(temperature);
         }
     }

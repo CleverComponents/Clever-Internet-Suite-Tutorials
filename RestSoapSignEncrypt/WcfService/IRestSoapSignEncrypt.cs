@@ -16,6 +16,7 @@ namespace WcfService
 		Temperature Celsius2Fahrenheit(Temperature temperature);
 
 		[OperationContract]
+		[FaultContract(typeof(ConversionFault), Name = "ConversionFault")]
 		Temperature Fahrenheit2Celsius(Temperature temperature);
 	}
 }

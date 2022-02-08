@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="R6f6zf68K9Pv77t8XA/xhh7xZ2Y=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="LBjgtUGuFPbjvjnb+6GJKVs+7umzFwUDguSQwHu7+mI=">
   <bindingConfigurations>
-    <bindingConfiguration bindingType="customBinding" name="RestSoapSingBinding_IRestSoapSign">
+    <bindingConfiguration bindingType="customBinding" name="RestSoapSingBinding_IRestSoapSign1">
       <properties>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RestSoapSingBinding_IRestSoapSign</serializedValue>
+          <serializedValue>RestSoapSingBinding_IRestSoapSign1</serializedValue>
         </property>
         <property path="/closeTimeout" isComplexType="false" isExplicitlyDefined="true" clrType="System.TimeSpan, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -716,7 +716,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="RestSoapSingBinding_IRestSoapSign" contract="RestSoapSign.IRestSoapSign" bindingType="customBinding" address="http://localhost:51899/RestSoapSign.svc" bindingConfiguration="RestSoapSingBinding_IRestSoapSign">
+    <endpoint name="RestSoapSingBinding_IRestSoapSign1" contract="RestSoapSign.IRestSoapSign" bindingType="customBinding" address="http://localhost:51899/RestSoapSign.svc" bindingConfiguration="RestSoapSingBinding_IRestSoapSign1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:51899/RestSoapSign.svc</serializedValue>
@@ -728,7 +728,7 @@
           <serializedValue>customBinding</serializedValue>
         </property>
         <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RestSoapSingBinding_IRestSoapSign</serializedValue>
+          <serializedValue>RestSoapSingBinding_IRestSoapSign1</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>RestSoapSign.IRestSoapSign</serializedValue>
@@ -791,7 +791,7 @@
           <serializedValue>False</serializedValue>
         </property>
         <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>RestSoapSingBinding_IRestSoapSign</serializedValue>
+          <serializedValue>RestSoapSingBinding_IRestSoapSign1</serializedValue>
         </property>
         <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

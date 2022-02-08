@@ -115,6 +115,7 @@ namespace WcfClient.RestSoapSign {
         System.Threading.Tasks.Task<WcfClient.RestSoapSign.Temperature> Celsius2FahrenheitAsync(WcfClient.RestSoapSign.Temperature temperature);
         
         [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSign/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoapSign/Fahrenheit2CelsiusResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(WcfClient.RestSoapSign.ConversionFault), Action="http://tempuri.org/IRestSoapSign/Fahrenheit2CelsiusConversionFault", ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Name="ConversionFault")]
         WcfClient.RestSoapSign.Temperature Fahrenheit2Celsius(WcfClient.RestSoapSign.Temperature temperature);
         
         [System.ServiceModel.OperationContractAttribute(ProtectionLevel=System.Net.Security.ProtectionLevel.Sign, Action="http://tempuri.org/IRestSoapSign/Fahrenheit2Celsius", ReplyAction="http://tempuri.org/IRestSoapSign/Fahrenheit2CelsiusResponse")]

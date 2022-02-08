@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ee42b49a-e03f-4688-8e07-c3b4f5bf7035" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51899/RestSoapSignEncrypt.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RestSoapSignEncrypt.wsdl" MetadataType="Wsdl" ID="0fd3d419-3703-4df8-8ded-8a465c93f4c0" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSignEncrypt.svc?wsdl" />
+    <MetadataFile FileName="RestSoapSignEncrypt.xsd" MetadataType="Schema" ID="2a140a49-2d5c-4002-a575-a120b39a8ce3" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSignEncrypt.svc?xsd=xsd1" />
+    <MetadataFile FileName="RestSoapSignEncrypt1.xsd" MetadataType="Schema" ID="f7d53eaa-1765-454f-bab8-e5da0b0740fd" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSignEncrypt.svc?xsd=xsd2" />
+    <MetadataFile FileName="RestSoapSignEncrypt.disco" MetadataType="Disco" ID="34a81b00-1195-445d-a7ff-736e51e1bf09" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSignEncrypt.svc?disco" />
+    <MetadataFile FileName="RestSoapSignEncrypt2.xsd" MetadataType="Schema" ID="225c64af-0f14-48e6-ba18-acbfe4dc1022" SourceId="1" SourceUrl="http://localhost:51899/RestSoapSignEncrypt.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

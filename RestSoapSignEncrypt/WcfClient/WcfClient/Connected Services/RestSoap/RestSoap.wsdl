@@ -22,6 +22,9 @@
   <wsdl:message name="IRestSoap_Fahrenheit2Celsius_OutputMessage">
     <wsdl:part name="parameters" element="tns:Fahrenheit2CelsiusResponse" />
   </wsdl:message>
+  <wsdl:message name="IRestSoap_Fahrenheit2Celsius_ConversionFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:ConversionFault" />
+  </wsdl:message>
   <wsdl:portType name="IRestSoap">
     <wsdl:operation name="Celsius2Fahrenheit">
       <wsdl:input wsaw:Action="http://tempuri.org/IRestSoap/Celsius2Fahrenheit" message="tns:IRestSoap_Celsius2Fahrenheit_InputMessage" />
@@ -31,6 +34,7 @@
     <wsdl:operation name="Fahrenheit2Celsius">
       <wsdl:input wsaw:Action="http://tempuri.org/IRestSoap/Fahrenheit2Celsius" message="tns:IRestSoap_Fahrenheit2Celsius_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRestSoap/Fahrenheit2CelsiusResponse" message="tns:IRestSoap_Fahrenheit2Celsius_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IRestSoap/Fahrenheit2CelsiusConversionFault" name="ConversionFault" message="tns:IRestSoap_Fahrenheit2Celsius_ConversionFault_FaultMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="RestSoapBinding_IRestSoap" type="tns:IRestSoap">
@@ -55,6 +59,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="ConversionFault">
+        <soap:fault use="literal" name="ConversionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="RestSoap">

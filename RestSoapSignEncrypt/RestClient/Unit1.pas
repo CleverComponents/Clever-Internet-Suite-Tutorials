@@ -251,7 +251,7 @@ begin
   begin
     clCertificateStore1.Open('MY');
   end;
-  ACertificate := clCertificateStore1.FindByThumbprint('4ea0ea7560685b381f729f7a855451ced26a297d', True);
+  ACertificate := clCertificateStore1.FindByThumbprint('c1e8b809db8aa964c7dde2e242b98ee0e4afa14d', True);
   Handled := True;
 end;
 
