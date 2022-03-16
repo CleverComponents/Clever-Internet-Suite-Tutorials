@@ -17,21 +17,21 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object btnLoad: TButton
-    Left = 32
-    Top = 24
+    Left = 327
+    Top = 22
     Width = 113
-    Height = 25
+    Height = 28
     Caption = 'Load Message'
-    TabOrder = 0
+    TabOrder = 3
     OnClick = btnLoadClick
   end
   object btnSave: TButton
-    Left = 176
-    Top = 24
+    Left = 465
+    Top = 22
     Width = 113
-    Height = 25
+    Height = 28
     Caption = 'Save Message'
-    TabOrder = 1
+    TabOrder = 4
     OnClick = btnSaveClick
   end
   object memSource: TMemo
@@ -44,7 +44,34 @@ object Form1: TForm1
     Constraints.MinWidth = 600
     ReadOnly = True
     ScrollBars = ssBoth
+    TabOrder = 5
+  end
+  object btnCreate: TButton
+    Left = 183
+    Top = 22
+    Width = 113
+    Height = 28
+    Caption = 'Create Message'
     TabOrder = 2
+    OnClick = btnCreateClick
+  end
+  object rbUseMailMessage: TRadioButton
+    Left = 24
+    Top = 17
+    Width = 113
+    Height = 16
+    Caption = 'Use Mail Message'
+    TabOrder = 0
+  end
+  object rbUseSMime: TRadioButton
+    Left = 24
+    Top = 38
+    Width = 113
+    Height = 16
+    Caption = 'Use S/MIME'
+    Checked = True
+    TabOrder = 1
+    TabStop = True
   end
   object clMailMessage1: TclMailMessage
     ToList = <>
@@ -70,5 +97,21 @@ object Form1: TForm1
     Filter = 'MIME|*.eml|All|*.*'
     Left = 360
     Top = 176
+  end
+  object clSMimeMessage1: TclSMimeMessage
+    ToList = <>
+    CCList = <>
+    BCCList = <>
+    Date = 44636.500530208330000000
+    CharSet = 'iso-8859-1'
+    ContentType = 'text/plain'
+    OnSaveAttachment = clMailMessage1SaveAttachment
+    OnLoadAttachment = clMailMessage1LoadAttachment
+    OnAttachmentSaved = clMailMessage1AttachmentSaved
+    Config.SignAlgorithmName = 'sha-512'
+    Config.SignAlgorithm = '2.16.840.1.101.3.4.2.3'
+    Config.EncryptAlgorithm = '2.16.840.1.101.3.4.1.2'
+    Left = 160
+    Top = 240
   end
 end
