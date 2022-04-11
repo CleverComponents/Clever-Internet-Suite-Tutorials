@@ -826,8 +826,6 @@ object Form1: TForm1
     ReadOnly = True
     ScrollBars = ssBoth
     TabOrder = 2
-    ExplicitWidth = 393
-    ExplicitHeight = 300
   end
   object edtChannelName: TEdit
     Left = 120
