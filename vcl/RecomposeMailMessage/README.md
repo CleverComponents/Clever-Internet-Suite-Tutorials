@@ -2,6 +2,8 @@
 
 The program represents a Delphi tutorial that utilizes the Clever Mail Message and S/MIME Message components to parse / compose E-mail messages in MIME format, with file or image attachments.   
 
+![Screenshot](recompose-mail-message.jpg)
+
 When using the MailMessage component together with the POP3 or IMAP4 clients, the message parts are extracted and saved to the MailMessage members.
 If you save the message source with the TclMailMessage.SaveMessage method or access the message source via the TclMailMessage.MessageSource property, the message is recomposed.
 Since the attachmets are not stored in memory, the component raises the OnLoadAttachment event in order to get a stream with the attachment content.
@@ -19,8 +21,6 @@ See also:
 * [Saving mail attachments](https://www.clevercomponents.com/portal/kb/a33/saving-mail-attachments.aspx)
 * [Sending Mail with Attachments from Memory Stream](https://www.clevercomponents.com/portal/kb/a121/sending-mail-with-attachments-from-memory-stream.aspx)
 * [Adding text and attachments to the E-mail message](https://www.clevercomponents.com/portal/kb/a124/adding-text-and-attachments-to-the-e-mail-message.aspx)
-
-![Screenshot](recompose-mail-message.jpg)
 
 How to compile:   
 1. Please clone the [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository.
