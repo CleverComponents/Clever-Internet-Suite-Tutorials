@@ -4,14 +4,14 @@ The program represents a Delphi tutorial that utilizes the Clever Mail Message a
 
 ![Screenshot](recompose-mail-message.jpg)
 
-When using the MailMessage component together with the POP3 or IMAP4 clients, the message parts are extracted and saved to the MailMessage members.
+When using the [TclMailMessage](https://www.clevercomponents.com/products/inetsuite/messageparser.asp) component together with the POP3 or IMAP4 clients, the message parts are extracted and saved to the MailMessage members.
 If you save the message source with the TclMailMessage.SaveMessage method or access the message source via the TclMailMessage.MessageSource property, the message is recomposed.
 Since the attachmets are not stored in memory, the component raises the OnLoadAttachment event in order to get a stream with the attachment content.
 As a result, you will not get the original message content. If you want to get the origital source of the received message, please use the TclPop3.Response (TclImap4.Response) property instead.
 Otherwise, you will have to implement both the TclMailMessage.OnSaveAttachment and TclMailMessage.OnLoadAttachment event handers.
 This is necessary to save emails with attachments, and the given program shows you how to do this.    
 
-The other component, TclSMimeMessage, represents the TclMailMessage descendant and provides an additional functionality to encrypt/decrypt and sign/verify the message using the S/MIME standard.   
+The other component, [TclSMimeMessage](https://www.clevercomponents.com/products/inetsuite/smimeparser.asp), represents the TclMailMessage descendant and provides an additional functionality to encrypt/decrypt and sign/verify the message using the S/MIME standard.   
 
 The given program utilizes both these components and additionally allows saving digitally verified message source. Comments within the source code will help you to understand how the code works.   
 
