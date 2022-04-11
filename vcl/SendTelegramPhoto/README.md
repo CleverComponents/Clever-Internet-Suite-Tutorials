@@ -2,7 +2,7 @@
 
 The program represents a Delphi tutorial that utilizes the Clever HTTP and HttpRequest components to submit an image to a Telegram channel using [Telegram Bot API](https://core.telegram.org/bots/api)   
 
-This Delphi program represents a mostly simple demos and by no means, a complete application. It's intended to demonstrate how to use the [HTTP Client](https://www.clevercomponents.com/products/inetsuite/httpclient.asp) together with the [HTTP Request](https://www.clevercomponents.com/products/inetsuite/requestbuilder.asp) components in your Delphi application.   
+This Delphi program represents a mostly simple demos and by no means, a complete application. It's intended to demonstrate how to use the [HTTP Client](https://www.clevercomponents.com/products/inetsuite/httpclient.asp) together with the [HTTP Request](https://www.clevercomponents.com/products/inetsuite/requestbuilder.asp) component in your Delphi application.   
 
 The program allows you to load an image using the TImage VCL component, save the image source in to a stream, and substitute the derived stream to the REST API request using the OnLoadData event of the HTTP Request component.   
 
