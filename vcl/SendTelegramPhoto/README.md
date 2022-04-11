@@ -8,7 +8,7 @@ The program allows you to load an image using the TImage VCL component, save the
 
 The Clever HTTP components completely support SSL/TLS, custom HTTP headers, Form Field, JSON, and SOAP requests. The following example shows how to send JSON data to a REST service: [How to write a REST client with JSON in Delphi](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/RestClientSendReceiveJson)   
 
-See also the [Delphi REST SOAP Client with WSS Signatures and Encryption](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/RestSoapSignEncrypt)
+See also: [Delphi REST SOAP Client with WSS Signatures and Encryption](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/RestSoapSignEncrypt)
 
 ![Screenshot](send-tel-photo.jpg)
 
