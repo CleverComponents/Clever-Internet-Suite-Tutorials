@@ -1,6 +1,6 @@
 # How to Override Default POP3 Server Command Handlers
 
-The program provides a Delphi tutorial that utilizes the Clever POP3 Server together with the POP3 File Handler components to deliver Emails to clients from your own application.   
+The program provides a Delphi tutorial that utilizes the Clever POP3 Server component together with the POP3 File Handler component to deliver Emails to clients from your own application.   
 
 ![Screenshot](pop3-server-cmd-ovr.jpg)
 
