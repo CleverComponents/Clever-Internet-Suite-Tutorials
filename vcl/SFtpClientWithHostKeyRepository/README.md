@@ -4,7 +4,7 @@ This Delphi app implements a simple host key repository that keeps all known and
 
 ![Screenshot](sftp-hostkey-repo.jpg)
 
-The [SFTP Component](https://www.clevercomponents.com/products/inetsuite/sftpclient.asp) provides all necessary remote host information through the OnVerifyServer event: host name, key type, finger-print, and host-key bytes. You can save this information, e.g. as a string in a TStringList instance in your program. This allows you to easily save the string list content to the disk, and load the list next time you run the app.   
+The [SFTP Component](https://www.clevercomponents.com/products/inetsuite/sftpclient.asp) provides all necessary remote host information through the OnVerifyServer event: host name, key type, finger-print, and host-key bytes. You can save this information, e.g. as a string to the TStringList object in your program. This allows you to easily save the string list content to the disk, and load the list next time you run the app.   
 
 The program connects to an SFTP host via the Secure Shell protocol (SSH), authorizes with the user/password or the Public Key algorithms, lists, downloads, and uploads files.   
 
