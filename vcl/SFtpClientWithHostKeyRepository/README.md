@@ -1,6 +1,6 @@
 # SFTP Client with Host-key Repository
 
-This Delphi app implements a simple host key repository that keeps all known and verified by users the SFTP host-keys and automatically accepts connections to these hosts.   
+This Delphi app implements a simple host key repository that keeps all known and verified by users SFTP host-keys and automatically accepts connections to these hosts.   
 
 ![Screenshot](sftp-hostkey-repo.jpg)
 
