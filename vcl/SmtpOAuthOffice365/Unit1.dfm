@@ -58,7 +58,7 @@ object Form1: TForm1
     Width = 201
     Height = 21
     TabOrder = 1
-    Text = 'clevercomponents@hotmail.com'
+    Text = 'sender@hotmail.com'
   end
   object edtTo: TEdit
     Left = 72
@@ -66,7 +66,7 @@ object Form1: TForm1
     Width = 201
     Height = 21
     TabOrder = 2
-    Text = 'ss171072@mail.ru'
+    Text = 'recipient@domain.com'
   end
   object edtSubject: TEdit
     Left = 72
