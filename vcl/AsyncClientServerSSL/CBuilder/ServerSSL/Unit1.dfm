@@ -64,8 +64,6 @@ object Form1: TForm1
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 3
-    ExplicitTop = 76
-    ExplicitWidth = 554
   end
   object edtData: TEdit
     Left = 32

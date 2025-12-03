@@ -84,7 +84,7 @@ begin
 
           Assert((stream.Size - stream.Position) = len, 'To be simple, this situation is not handled in this sample');
 
-          b.Length = len;
+          SetLength(b, len);
 
           //copy data
           stream.Read(b[0], len);

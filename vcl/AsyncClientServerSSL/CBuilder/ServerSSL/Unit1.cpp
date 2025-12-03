@@ -82,7 +82,7 @@ void __fastcall TForm1::btnSendClick(TObject *Sender)
   {
 	//write the size of data
 	TclByteArray b = TclTranslator::GetBytes(edtData->Text, "UTF-8");
-	int len = b.Length();
+	int len = b.Length;
 	stream->Write(&len, sizeof(len));
 
 	//write data
