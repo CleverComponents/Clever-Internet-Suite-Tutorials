@@ -4,7 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, clTcpClient, clSspiTls, clAsyncClient, clSocket, clWUtils;
+  Dialogs, StdCtrls, clTcpClient, clSspiTls, clAsyncClient, clSocket, clWUtils,
+  clUtils, clTranslator;
 
 type
   TForm2 = class(TForm)
@@ -21,7 +22,9 @@ type
     procedure btnConnectClick(Sender: TObject);
     procedure btnDisconnectClick(Sender: TObject);
     procedure btnSendClick(Sender: TObject);
-    procedure clAsyncClient1Connect(Sender: TObject; ANextAction: TclNetworkStreamAction);
+    procedure clAsyncClient1AsyncError(Sender: TObject; AsyncAction:
+        TclAsyncAction; AErrorCode: Integer; const AMessage: string);
+    procedure clAsyncClient1Connect(Sender: TObject);
     procedure clAsyncClient1Read(Sender: TObject);
   end;
 
@@ -43,6 +46,9 @@ begin
   //is necessary when using self-signed certificate by server
   clAsyncClient1.CertificateFlags := [cfIgnoreCommonNameInvalid, cfIgnoreUnknownAuthority];
 
+  //is used when running on Windows 10 version 1809 or later
+  clAsyncClient1.UseSystemTLSFlags := False;
+
   //specifies TLS 1.0 protocols (also available SSL 2.0 and SSL 3.0)
   clAsyncClient1.TlsFlags := [tfUseTLS];
 
@@ -50,23 +56,19 @@ begin
   clAsyncClient1.UseTls := True;
 
   clAsyncClient1.Open();
-
-  Caption := 'SSL Client - Connected';
 end;
 
-procedure TForm2.clAsyncClient1Connect(Sender: TObject; ANextAction: TclNetworkStreamAction);
+procedure TForm2.clAsyncClient1Connect(Sender: TObject);
 begin
-  if (ANextAction = saWrite) then
-  begin
-    clAsyncClient1.WriteData(nil);
-  end;
+  Caption := 'SSL Client - Connected';
 end;
 
 procedure TForm2.clAsyncClient1Read(Sender: TObject);
 var
   stream: TMemoryStream;
-  len: Int64;
-  s: TclString;
+  len: Integer;
+  b: TclByteArray;
+  s: string;
 begin
   stream := TMemoryStream.Create();
   try
@@ -74,19 +76,20 @@ begin
       saWrite: clAsyncClient1.WriteData(nil);
       saNone:
       begin
-        if (stream.Size > SizeOf(Int64)) then
+        if (stream.Size > SizeOf(len)) then
         begin
-          //read size of incoming data
+          //read the size of incoming data
           stream.Position := 0;
           stream.Read(len, SizeOf(len));
 
           Assert((stream.Size - stream.Position) = len, 'To be simple, this situation is not handled in this sample');
 
-          SetLength(s, len);
+          b.Length = len;
 
           //copy data
-          stream.Read(PclChar(s)^, len);
+          stream.Read(b[0], len);
 
+          s := TclTranslator.GetString(b, 'UTF-8');
           memResponse.Lines.Add('Received from server: ' + s);
         end;
       end;
@@ -98,34 +101,39 @@ end;
 
 procedure TForm2.btnDisconnectClick(Sender: TObject);
 begin
-  if (clAsyncClient1.Close() = saWrite) then
-  begin
-    clAsyncClient1.WriteData(nil);
-  end;
+  clAsyncClient1.Close();
   Caption := 'SSL Client';
 end;
 
 procedure TForm2.btnSendClick(Sender: TObject);
 var
   stream: TStream;
-  len: Int64;
-  s: TclString;
+  len: Integer;
+  b: TclByteArray;
 begin
+  if (Length(edtData.Text) = 0) then raise Exception.Create('Nothing to send');
+
   stream := TMemoryStream.Create();
   try
     //write the size of data
-    s := edtData.Text;
-    len := Length(s);
+    b := TclTranslator.GetBytes(edtData.Text, 'UTF-8');
+    len := Length(b);
     stream.Write(len, SizeOf(len));
 
     //write data
-    stream.Write(PclChar(s)^, len);
+    stream.Write(b[0], len);
 
     stream.Position := 0;
     clAsyncClient1.WriteData(stream);
   finally
     stream.Free();
   end;
+end;
+
+procedure TForm2.clAsyncClient1AsyncError(Sender: TObject; AsyncAction:
+    TclAsyncAction; AErrorCode: Integer; const AMessage: string);
+begin
+  ShowMessage(AMessage);
 end;
 
 end.

@@ -45,6 +45,9 @@ void __fastcall TForm1::btnStartClick(TObject *Sender)
   //forces the component to start SSL negotiation immediately once connecting
   FServer->UseTLS = stImplicit;
 
+  //is used when running on Windows 10 version 1809 or later
+  FServer->UseSystemTLSFlags = false;
+
   //specifies TLS 1.0 protocols (also available SSL 2.0 and SSL 3.0)
   FServer->TLSFlags = TclTlsFlags() << tfUseTLS;
 
@@ -58,10 +61,12 @@ void __fastcall TForm1::btnStartClick(TObject *Sender)
 void __fastcall TForm1::btnStopClick(TObject *Sender)
 {
   FIsStop = true;
-  __try {
-    FServer->Stop();
+  __try
+  {
+	FServer->Stop();
   }
-  __finally {
+  __finally
+  {
     FIsStop = false;
   }
 }
@@ -69,23 +74,28 @@ void __fastcall TForm1::btnStopClick(TObject *Sender)
 
 void __fastcall TForm1::btnSendClick(TObject *Sender)
 {
+  if (edtData->Text.Length() == 0) throw new Exception("Nothing to send");
+
   FServer->BeginWork();
   TStream *stream = new TMemoryStream();
-  __try {
-    //write the size of data
-    AnsiString s = edtData->Text;
-    __int64 len = s.Length();
-    stream->Write(&len, sizeof(len));
+  __try
+  {
+	//write the size of data
+	TclByteArray b = TclTranslator::GetBytes(edtData->Text, "UTF-8");
+	int len = b.Length();
+	stream->Write(&len, sizeof(len));
 
-    //write data
-    stream->Write(reinterpret_cast<PAnsiChar *>(s.c_str()), len);
+	//write data
+	stream->Write(&b[0], len);
 
-    for (int i = 0; i < FServer->ConnectionCount; i++) {
-      stream->Position = 0;
-      FServer->Connections[i]->WriteData(stream);
-    }
+	for (int i = 0; i < FServer->ConnectionCount; i++)
+	{
+	  stream->Position = 0;
+	  FServer->Connections[i]->WriteData(stream);
+	}
   }
-  __finally {
+  __finally
+  {
     delete stream;
     FServer->EndWork();
   }
@@ -93,39 +103,49 @@ void __fastcall TForm1::btnSendClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::DoGetCertificate(TObject *Sender, TclCertificate *&ACertificate,
-  TclCertificateList *AExtraCerts, bool &Handled) {
-
+  TclCertificateList *AExtraCerts, bool &Handled)
+{
   //creates self-signed server certificate
-  if (clCertificateStore1->Items->Count == 0) {
-    clCertificateStore1->Items->Add(clCertificateStore1->CreateSelfSigned("CN=CleverTester,O=CleverComponents,E=CleverTester@company.mail", 0));
+  if (clCertificateStore1->Items->Count == 0)
+  {
+	clCertificateStore1->ValidFrom = Date();
+	clCertificateStore1->ValidTo = Date() + 365;
+	clCertificateStore1->Items->Add(clCertificateStore1->CreateSelfSigned("CN=CleverTester,O=CleverComponents,E=CleverTester@company.mail", 0));
   }
   ACertificate = clCertificateStore1->Items->Items[0];
   Handled = true;
 }
 
-void __fastcall TForm1::DoAcceptConnection(TObject* Sender, TclUserConnection* AConnection, bool &Handled) {
+void __fastcall TForm1::DoAcceptConnection(TObject* Sender, TclUserConnection* AConnection, bool &Handled)
+{
   PutLogMessage("Connected client: " + AConnection->PeerIP);
 }
 
-void __fastcall TForm1::DoCloseConnection(TObject* Sender, TclUserConnection* AConnection) {
-  if (!FIsStop) {
-    PutLogMessage("Close Connection. Host: " + AConnection->PeerIP);
+void __fastcall TForm1::DoCloseConnection(TObject* Sender, TclUserConnection* AConnection)
+{
+  if (!FIsStop)
+  {
+	PutLogMessage("Close Connection. Host: " + AConnection->PeerIP);
   }
 }
 
-void __fastcall TForm1::DoReadConnection(TObject* Sender, TclUserConnection* AConnection, TStream* AData) {
+void __fastcall TForm1::DoReadConnection(TObject* Sender, TclUserConnection* AConnection, TStream* AData)
+{
   PutLogMessage(Format("Received from %s client: %d bytes", ARRAYOFCONST((AConnection->PeerIP, AData->Size))));
 }
 
-void __fastcall TForm1::DoStart(TObject *Sender) {
+void __fastcall TForm1::DoStart(TObject *Sender)
+{
   PutLogMessage("=== Start ===");
 }
 
-void __fastcall TForm1::DoStop(TObject *Sender) {
+void __fastcall TForm1::DoStop(TObject *Sender)
+{
   PutLogMessage("=== Stop");
 }
 
-void __fastcall TForm1::PutLogMessage(const AnsiString ALogMessage) {
+void __fastcall TForm1::PutLogMessage(const AnsiString ALogMessage)
+{
   if (!ComponentState.Contains(csDestroying))
   {
     FSynchronizer->Enter();

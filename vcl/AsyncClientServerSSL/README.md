@@ -19,7 +19,7 @@ The server accepts data from the client and can also push data to connected clie
 
 
 * Delphi — contains source code for Delphi (versions 13–10, all XE, 2010–2007).
-* CBuilder — contains source code for C++Builder (versions 13–10, XE8–XE3).
+* CBuilder — contains source code for C++Builder XE. Before compiling with newer versions of C++Builder, open the \*.cbproj files and replace clinetsuite\_xe.lib with clinetsuite\_XXX.lib, where XXX is 13 for C++Builder 13, xe8 for C++Builder XE8, etc.
 * CB2010 — contains source code for C++Builder 2010.
 
 

@@ -11,9 +11,7 @@ object Form2: TForm2
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poDesktopCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 16
@@ -95,6 +93,7 @@ object Form2: TForm2
     TLSFlags = []
     OnConnect = clAsyncClient1Connect
     OnRead = clAsyncClient1Read
+    OnAsyncError = clAsyncClient1AsyncError
     Left = 64
     Top = 144
   end

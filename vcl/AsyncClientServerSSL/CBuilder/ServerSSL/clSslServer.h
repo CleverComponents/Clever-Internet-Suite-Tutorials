@@ -5,15 +5,13 @@
 //---------------------------------------------------------------------------
 
 #include <clTcpServer.hpp>
+#include <clTcpServerTls.hpp>
 
-class TclSslUserConnection : public TclUserConnection {
-};
-
-class TclSslServer : public TclTcpServer {
+class TclSslServer : public TclTcpServerTls
+{
 protected:
   virtual void __fastcall DoReadConnection(TclUserConnection* AConnection, Classes::TStream* AData);
-  virtual TclUserConnection* __fastcall CreateDefaultConnection(void);
 public:
-	__fastcall TclSslServer(TComponent* Owner) : TclTcpServer(Owner) {};
+	__fastcall TclSslServer(TComponent* Owner) : TclTcpServerTls(Owner) {};
 };
 #endif

@@ -26,6 +26,9 @@ void __fastcall TForm2::btnConnectClick(TObject *Sender)
   //is necessary when using self-signed certificate by server
   clAsyncClient1->CertificateFlags = TclCertificateVerifyFlags() << cfIgnoreCommonNameInvalid << cfIgnoreUnknownAuthority;
 
+  //is used when running on Windows 10 version 1809 or later
+  clAsyncClient1->UseSystemTLSFlags = false;
+
   //specifies TLS 1.0 protocols (also available SSL 2.0 and SSL 3.0)
   clAsyncClient1->TLSFlags = TclTlsFlags() << tfUseTLS;
 
@@ -33,83 +36,94 @@ void __fastcall TForm2::btnConnectClick(TObject *Sender)
   clAsyncClient1->UseTLS = true;
 
   clAsyncClient1->Open();
-
-  Caption = "SSL Client - Connected";
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm2::btnDisconnectClick(TObject *Sender)
 {
-  if (clAsyncClient1->Close() == saWrite) {
-    clAsyncClient1->WriteData(NULL);
-  }
+  clAsyncClient1->Close();
   Caption = "SSL Client";
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm2::btnSendClick(TObject *Sender)
 {
+  if (edtData->Text.Length() == 0) throw new Exception("Nothing to send");
+
   TStream *stream = new TMemoryStream();
-  __try {
-    //write the size of data
-    AnsiString s = edtData->Text;
-    __int64 len = s.Length();
-    stream->Write(&len, sizeof(len));
+  __try
+  {
+	//write the size of data
+	TclByteArray b = TclTranslator::GetBytes(edtData->Text, "UTF-8");
+	int len = b.Length;
+	stream->Write(&len, sizeof(len));
 
-    //write data
-    stream->Write(reinterpret_cast<PAnsiChar *>(s.c_str()), len);
+	//write data
+	stream->Write(&b[0], len);
 
-    stream->Position = 0;
-    clAsyncClient1->WriteData(stream);
+	stream->Position = 0;
+	clAsyncClient1->WriteData(stream);
   }
-  __finally {
+  __finally
+  {
     delete stream;
   }
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm2::clAsyncClient1Connect(TObject *Sender, TclNetworkStreamAction ANextAction)
-
+void __fastcall TForm2::clAsyncClient1Connect(TObject *Sender)
 {
-  if (ANextAction == saWrite) {
-    clAsyncClient1->WriteData(NULL);
-  }
+  Caption = "SSL Client - Connected";
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm2::clAsyncClient1Read(TObject *Sender)
 {
   TStream *stream = new TMemoryStream();
-  __try {
-        switch (clAsyncClient1->ReadData(stream)) {
-            case Clsocket::saWrite: {
-              clAsyncClient1->WriteData(NULL);
-              break;
-            }
-            case Clsocket::saNone: {
-                if (stream->Size > sizeof(__int64)) {
-                    //read size of incoming data
-                    stream->Position = 0;
-
-                    __int64 len;
-                    stream->Read(&len, sizeof(len));
-
-                    assert((stream->Size - stream->Position) == len); //To be simple, this situation is not handled in this sample
-
-                    AnsiString s;
-                    s.SetLength(len);
-
-                    //copy data
-                    stream->Read(reinterpret_cast<PAnsiChar *>(s.c_str()), len);
-
-                    memResponse->Lines->Add("Received from server: " + s);
-                }
-                break;
-            }
+  __try
+  {
+    switch (clAsyncClient1->ReadData(stream))
+    {
+        case Clsocket::saWrite:
+        {
+          clAsyncClient1->WriteData(NULL);
+          break;
         }
+        case Clsocket::saNone:
+        {
+            if (stream->Size > sizeof(int))
+            {
+                //read size of incoming data
+                stream->Position = 0;
+
+                int len;
+                stream->Read(&len, sizeof(len));
+
+                assert((stream->Size - stream->Position) == len); //To be simple, this situation is not handled in this sample
+
+                TclByteArray b;
+                b.Length = len;
+
+                //copy data
+	        stream->Read(&b[0], len);
+
+                UnicodeString s = TclTranslator::GetString(b, "UTF-8");
+                memResponse->Lines->Add("Received from server: " + s);
+            }
+            break;
+        }
+    }
   }
-  __finally {
+  __finally
+  {
     delete stream;
   }
 }
 //---------------------------------------------------------------------------
+void __fastcall TForm2::clAsyncClient1AsyncError(TObject *Sender, TclAsyncAction AsyncAction,
+		  int AErrorCode, const UnicodeString AMessage)
+{
+  ShowMessage(AMessage);
+}
+//---------------------------------------------------------------------------
+

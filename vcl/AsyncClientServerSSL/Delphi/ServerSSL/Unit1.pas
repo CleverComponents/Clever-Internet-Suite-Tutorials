@@ -4,8 +4,8 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, SyncObjs,
-  Dialogs, StdCtrls, clCertificateStore, clCertificate, clSslServer, clTcpServer, clSspiTls,
-  clWUtils;
+  Dialogs, StdCtrls, clCertificateStore, clCertificate, clSslServer, clTcpServer, clTcpServerTls,
+  clSspiTls, clWUtils, clUtils, clTranslator;
 
 type
   TForm1 = class(TForm)
@@ -49,19 +49,21 @@ procedure TForm1.btnSendClick(Sender: TObject);
 var
   i: Integer;
   stream: TStream;
-  len: Int64;
-  s: TclString;
+  len: Integer;
+  b: TclByteArray;
 begin
+  if (Length(edtData.Text) = 0) then raise Exception.Create('Nothing to send');
+
   FServer.BeginWork();
   stream := TMemoryStream.Create();
   try
     //write the size of data
-    s := edtData.Text;
-    len := Length(s);
+    b := TclTranslator.GetBytes(edtData.Text, 'UTF-8');
+    len := Length(b);
     stream.Write(len, SizeOf(len));
 
     //write data
-    stream.Write(PclChar(s)^, len);
+    stream.Write(b[0], len);
 
     for i := 0 to FServer.ConnectionCount - 1 do
     begin
@@ -80,6 +82,9 @@ begin
 
   //forces the component to start SSL negotiation immediately once connecting
   FServer.UseTLS := stImplicit;
+
+  //is used when running on Windows 10 version 1809 or later
+  FServer.UseSystemTLSFlags := False;
 
   //specifies TLS 1.0 protocols (also available SSL 2.0 and SSL 3.0)
   FServer.TLSFlags := [tfUseTLS];
@@ -119,6 +124,8 @@ begin
   //creates self-signed server certificate
   if (clCertificateStore1.Items.Count = 0) then
   begin
+    clCertificateStore1.ValidFrom := Date();
+    clCertificateStore1.ValidTo := Date() + 365;
     clCertificateStore1.Items.Add(clCertificateStore1.CreateSelfSigned('CN=CleverTester,O=CleverComponents,E=CleverTester@company.mail', 0));
   end;
   ACertificate := clCertificateStore1.Items[0];

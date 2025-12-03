@@ -3,25 +3,17 @@ unit clSslServer;
 interface
 
 uses
-  Classes, clTcpServer, clUtils;
+  Classes, clTcpServerTls, clTcpServer, clUtils;
 
 type
-  TclSslUserConnection = class(TclUserConnection);
-
-  TclSslServer = class(TclTcpServer)
+  TclSslServer = class(TclTcpServerTls)
   protected
-    function CreateDefaultConnection: TclUserConnection; override;
     procedure DoReadConnection(AConnection: TclUserConnection; AData: TStream); override;
   end;
 
 implementation
 
 { TclSslServer }
-
-function TclSslServer.CreateDefaultConnection: TclUserConnection;
-begin
-  Result := TclSslUserConnection.Create();
-end;
 
 procedure TclSslServer.DoReadConnection(AConnection: TclUserConnection; AData: TStream);
 begin

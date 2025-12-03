@@ -25,8 +25,10 @@ __published:	// IDE-managed Components
   void __fastcall btnConnectClick(TObject *Sender);
   void __fastcall btnDisconnectClick(TObject *Sender);
   void __fastcall btnSendClick(TObject *Sender);
-  void __fastcall clAsyncClient1Connect(TObject *Sender, TclNetworkStreamAction ANextAction);
+  void __fastcall clAsyncClient1Connect(TObject *Sender);
   void __fastcall clAsyncClient1Read(TObject *Sender);
+	void __fastcall clAsyncClient1AsyncError(TObject *Sender, TclAsyncAction AsyncAction,
+          int AErrorCode, const UnicodeString AMessage);
 
 private:	// User declarations
 public:		// User declarations
