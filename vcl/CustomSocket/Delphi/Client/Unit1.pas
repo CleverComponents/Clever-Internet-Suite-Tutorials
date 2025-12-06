@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, WinSock, clSocket, clTlsSocket, StdCtrls;
+  Dialogs, WinSock, clSocket, StdCtrls;
 
 type
   TForm1 = class(TForm)
@@ -40,13 +40,16 @@ begin
     client.Open('127.0.0.1', 2110);
     ShowMessage('Client connected');
 
-    data := TStringStream.Create('Data to be sent');
+    data := TStringStream.Create('Data from client');
     client.WriteData(data);
+
+    ShowMessage('Sent: ' + data.DataString);
+
     data.Size := 0;
     client.IsReadUntilClose := True;
     client.ReadData(data);
 
-    ShowMessage(data.DataString);
+    ShowMessage('Received: ' + data.DataString);
 
     client.Close(True);
     ShowMessage('Client disconnected');

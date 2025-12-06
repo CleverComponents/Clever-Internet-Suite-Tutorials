@@ -31,19 +31,25 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
     server->NetworkStream = new TclNetworkStream();
     server->TimeOut = 60000;
     server->BatchSize = 8192;
-    server->Open(2110);
-    server->AcceptConnection();
+    server->Listen(2110);
+
+    Memo1->Lines->Add("Listening...");
+
+    server->Accept();
     Memo1->Lines->Add("Connected");
 
-    data = new TStringStream("");
+    data = new TStringStream();
     server->ReadData(data);
-    Memo1->Lines->Add(data->DataString);
+
+    Memo1->Lines->Add("Received: " + data->DataString);
+
     data->Position = 0;
     server->WriteData(data);
 
-    Memo1->Lines->Add("Read done");
+    Memo1->Lines->Add("Echoed back to client");
 
     server->Close(false);
+    Memo1->Lines->Add("Closed");
   }
   __finally {
     delete data;

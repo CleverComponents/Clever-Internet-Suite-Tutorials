@@ -35,13 +35,16 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
     client->Open("127.0.0.1", 2110);
     Memo1->Lines->Add("Client connected");
 
-    data = new TStringStream("Data to be sent");
+    data = new TStringStream(UnicodeString("Data from client"));
     client->WriteData(data);
+
+    Memo1->Lines->Add("Sent: " + data->DataString);
+
     data->Size = 0;
     client->IsReadUntilClose = true;
     client->ReadData(data);
 
-    Memo1->Lines->Add(data->DataString);
+    Memo1->Lines->Add("Received: " + data->DataString);
 
     client->Close(true);
     Memo1->Lines->Add("Client disconnected");

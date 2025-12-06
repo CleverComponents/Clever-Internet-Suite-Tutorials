@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, WinSock, clSocket, clTlsSocket;
+  Dialogs, StdCtrls, WinSock, clSocket;
 
 type
   TForm1 = class(TForm)
@@ -28,7 +28,7 @@ procedure TForm1.Button1Click(Sender: TObject);
 var
   wsaData: TWSAData;
   server: TclTcpServerConnection;
-  data: TStream;
+  data: TStringStream;
 begin
   WSAStartup($202, wsaData);
   server := nil;
@@ -39,19 +39,25 @@ begin
     server.NetworkStream := TclNetworkStream.Create();
     server.TimeOut := 60000;
     server.BatchSize := 8192;
-    server.Open(2110);
+    server.Listen(2110);
+
+    Memo1.Lines.Add('Listening...');
+
     server.Accept();
-    Memo1.Lines.Add('connected');
+    Memo1.Lines.Add('Connected');
 
     data := TStringStream.Create('');
     server.ReadData(data);
+
+    Memo1.Lines.Add('Received: ' + data.DataString);
+
     data.Position := 0;
     server.WriteData(data);
 
-    Memo1.Lines.Add('read done');
+    Memo1.Lines.Add('Echoed back to client');
 
     server.Close(False);
-    Memo1.Lines.Add('closed');
+    Memo1.Lines.Add('Closed');
   finally
     data.Free();
     server.Free();
