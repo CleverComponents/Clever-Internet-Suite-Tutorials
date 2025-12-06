@@ -12,13 +12,11 @@ type
   TclMyCommandInfo = class(TclTcpCommandInfo)
   private
     FHandler: TclMyCommandHandler;
-  protected
-    procedure Execute(AConnection: TclCommandConnection; AParams: TclTcpCommandParams); override;
   public
     constructor Create(const AName: string; AHandler: TclMyCommandHandler);
+    procedure Execute(AConnection: TclCommandConnection; AParams: TclTcpCommandParams); override;
   end;
 
-  TMyHandleLinesEvent = procedure (Sender: TObject; AConnection: TclCommandConnection; ALines: TStrings) of object;
   TMyHandleDataEvent = procedure (Sender: TObject; AConnection: TclCommandConnection; AData: TStream) of object;
 
   TclProcessStreamDataHandler = class(TclProcessSingleCommandHandler)
@@ -26,9 +24,11 @@ type
     FSize: Int64;
     FTotalSize: Int64;
   protected
-    function ExtractData(AData: TStream; var AUnprocessedBytes: Int64; AMaxDataSize: Int64): TclProcessDataContext; override;
+    function ExtractData(AData: TStream;
+      var AUnprocessedBytes: Int64; AMaxDataSize: Int64): TclProcessDataContext; override;
   public
-    constructor Create(ACommand: TclTcpCommandInfo; AHandler: TclProcessDataEvent; ASize: Int64);
+    constructor Create(AServer: TclTcpCommandServer; AHandler: TclProcessDataEvent;
+      ACommand: TclTcpCommandInfo; ASize: Int64);
   end;
 
   TclProcessStreamDataContext = class(TclProcessSingleCommandContext)
@@ -52,13 +52,10 @@ type
 
   TMyServer = class(TclTcpCommandServer)
   private
-    FOnHandleLines: TMyHandleLinesEvent;
     FOnHandleData: TMyHandleDataEvent;
     
     procedure HandleLOGIN(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
     procedure HandleCLOSE(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
-    procedure HandleLINES(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
-    procedure HandleLINESEnd(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
     procedure HandleDATA(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
     procedure HandleDATAEnd(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
     procedure HandleNullCommand(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
@@ -71,10 +68,8 @@ type
       AParameters: TclTcpCommandParams; E: Exception); override;
     function GetNullCommand(AParameters: TclTcpCommandParams): TclTcpCommandInfo; override;
 
-    procedure DoHandleLines(AConnection: TclCommandConnection; ALines: TStrings); virtual;
     procedure DoHandleData(AConnection: TclCommandConnection; AData: TStream); virtual;
   public
-    property OnHandleLines: TMyHandleLinesEvent read FOnHandleLines write FOnHandleLines;
     property OnHandleData: TMyHandleDataEvent read FOnHandleData write FOnHandleData;
   end;
 
@@ -108,32 +103,6 @@ begin
   raise EclTcpCommandServerError.Create(ACommand, '101', -1, False);
 end;
 
-procedure TMyServer.HandleLINES(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
-begin
-  AcceptMultipleLines(AConnection, TclMyCommandInfo.Create(ACommand, HandleLINESEnd));
-  SendResponse(AConnection, ACommand, '100');
-end;
-
-procedure TMyServer.HandleLINESEnd(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
-var
-  lines: TStrings;
-begin
-  AcceptCommands(AConnection);
-  DoHandleLines(AConnection, AParams.RawData);
-  SendResponse(AConnection, 'LINES', '100');
-
-  lines := TStringList.Create();
-  try
-    lines.Add('There are original client lines:');
-    lines.AddStrings(AParams.RawData);
-
-    SendMultipleLines(AConnection, lines, '.');
-  except
-    lines.Free();
-    raise;
-  end;
-end;
-
 procedure TMyServer.HandleCLOSE(AConnection: TclCommandConnection; const ACommand: string; AParams: TclTcpCommandParams);
 begin
   try
@@ -164,7 +133,9 @@ var
   size: Int64;
 begin
   size := StrToInt64Def(AParams.Parameters, 0);
-  AcceptData(AConnection, TclProcessStreamDataHandler.Create(TclMyCommandInfo.Create(ACommand, HandleDATAEnd), HandleStreamData, size));
+  AcceptData(AConnection,
+    TclProcessStreamDataHandler.Create(Self, HandleStreamData,
+      TclMyCommandInfo.Create(ACommand, HandleDATAEnd), size));
   SendResponse(AConnection, ACommand, '100');
 end;
 
@@ -202,14 +173,6 @@ begin
   end;
 end;
 
-procedure TMyServer.DoHandleLines(AConnection: TclCommandConnection; ALines: TStrings);
-begin
-  if Assigned(OnHandleLines) then
-  begin
-    OnHandleLines(Self, AConnection, ALines);
-  end;
-end;
-
 procedure TMyServer.ProcessUnhandledError(AConnection: TclCommandConnection;
   AParameters: TclTcpCommandParams; E: Exception);
 begin
@@ -220,7 +183,6 @@ procedure TMyServer.GetCommands;
 begin
   Commands.Add(TclMyCommandInfo.Create('LOGIN', HandleLOGIN));
   Commands.Add(TclMyCommandInfo.Create('CLOSE', HandleCLOSE));
-  Commands.Add(TclMyCommandInfo.Create('LINES', HandleLINES));
   Commands.Add(TclMyCommandInfo.Create('DATA', HandleDATA));
 end;
 
@@ -239,10 +201,10 @@ end;
 
 { TclProcessStreamDataHandler }
 
-constructor TclProcessStreamDataHandler.Create(ACommand: TclTcpCommandInfo;
-  AHandler: TclProcessDataEvent; ASize: Int64);
+constructor TclProcessStreamDataHandler.Create(AServer: TclTcpCommandServer;
+  AHandler: TclProcessDataEvent; ACommand: TclTcpCommandInfo; ASize: Int64);
 begin
-  inherited Create(ACommand, AHandler);
+  inherited Create(AServer, AHandler, ACommand);
   FSize := ASize;
 end;
 
@@ -291,7 +253,7 @@ end;
 
 constructor TclProcessStreamDataContext.Create(ACommand: TclTcpCommandInfo);
 begin
-  inherited Create(ACommand, False);
+  inherited Create(ACommand);
   FData := TMemoryStream.Create();
 end;
 

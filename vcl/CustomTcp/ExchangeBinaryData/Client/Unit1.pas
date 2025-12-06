@@ -8,10 +8,8 @@ uses
 
 type
   TForm1 = class(TForm)
-    Button1: TButton;
     Memo1: TMemo;
     Button2: TButton;
-    procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
@@ -25,43 +23,6 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TForm1.Button1Click(Sender: TObject);
-var
-  client: TMyClient;
-  lines: TStrings;
-begin
-  client := TMyClient.Create(nil);
-  try
-    client.Server := 'localhost';
-    client.Port := 2110;
-    client.TimeOut := 1000;
-    client.UserName := 'testuser';
-    client.Open();
-
-    client.Login();
-
-    lines := TStringList.Create();
-    try
-      lines.Clear();
-      lines.Add('<root>');
-      lines.Add('<somedata>data</somedata>');
-      lines.Add('</root>');
-
-      client.ExchangeLines(lines);
-
-      Memo1.Lines.AddStrings(client.Response);
-    finally
-      lines.Free();
-    end;
-
-    client.Close();
-
-    Memo1.Lines.Add('');
-  finally
-    client.Free();
-  end;
-end;
 
 procedure TForm1.Button2Click(Sender: TObject);
 var

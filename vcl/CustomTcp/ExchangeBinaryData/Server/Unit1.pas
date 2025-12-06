@@ -17,7 +17,6 @@ type
 
     procedure DoConnect(Sender: TObject; AConnection: TclUserConnection; var Handled: Boolean);
     procedure DoDisconnect(Sender: TObject; AConnection: TclUserConnection);
-    procedure DoHandleLines(Sender: TObject; AConnection: TclCommandConnection; ALines: TStrings);
     procedure DoHandleData(Sender: TObject; AConnection: TclCommandConnection; AData: TStream);
     procedure PutLogMessage(const ALogMessage: string);
   end;
@@ -37,7 +36,6 @@ begin
 
   FServer.OnAcceptConnection := DoConnect;
   FServer.OnCloseConnection := DoDisconnect;
-  FServer.OnHandleLines := DoHandleLines;
   FServer.OnHandleData := DoHandleData;
 
   FServer.Start();
@@ -71,18 +69,6 @@ procedure TForm1.DoDisconnect(Sender: TObject; AConnection: TclUserConnection);
 begin
   PutLogMessage('Close Connection. Host: ' + AConnection.PeerIP);
   PutLogMessage('');
-end;
-
-procedure TForm1.DoHandleLines(Sender: TObject; AConnection: TclCommandConnection; ALines: TStrings);
-var
-  i: Integer;
-begin
-  PutLogMessage('Received Lines:');
-
-  for i := 0 to ALines.Count - 1 do
-  begin
-    PutLogMessage(ALines[i]);
-  end;
 end;
 
 procedure TForm1.DoHandleData(Sender: TObject; AConnection: TclCommandConnection; AData: TStream);

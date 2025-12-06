@@ -12,10 +12,9 @@ type
   TclMyCommandInfo = class(TclTcpCommandInfo)
   private
     FHandler: TclMyCommandHandler;
-  protected
-    procedure Execute(AConnection: TclCommandConnection; AParams: TclTcpCommandParams); override;
   public
     constructor Create(const AName: string; AHandler: TclMyCommandHandler);
+    procedure Execute(AConnection: TclCommandConnection; AParams: TclTcpCommandParams); override;
   end;
 
   TMySendLinesEvent = procedure (Sender: TObject; AConnection: TclCommandConnection; ALines: TStrings) of object;
