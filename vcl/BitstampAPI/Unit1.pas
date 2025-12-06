@@ -13,6 +13,7 @@ type
     http: TclHttp;
     request: TclHttpRequest;
     memResponse: TMemo;
+    Label1: TLabel;
     procedure btnSubmitClick(Sender: TObject);
   private
     function GenerateNonce: string;
