@@ -9,7 +9,7 @@ See also:
 [How to write a REST client with JSON in Delphi](../RestClientSendReceiveJson)
 
 
-!\[Screenshot](bitstamp-api.jpg)
+![Screenshot](bitstamp-api.jpg)
 
 
 # Repository
