@@ -1,8 +1,9 @@
 # Data URL Embedding
 
-<img align="left" src="Image\ImageURL-Social.jpg"/>
+<img src="Image\ImageURL-Social.jpg"/>
 
-The Data URL Embedding project is a code example for the[Data URL Embedding](https://www.clevercomponents.com/portal/kb/a162/data-url-embedding.aspx) tutorial.
+
+The Data URL Embedding project is a code example for the [Data URL Embedding](https://www.clevercomponents.com/portal/kb/a162/data-url-embedding.aspx) tutorial.
 
 Watch on [YouTube](https://youtu.be/KIQzuNb4n08).
 
