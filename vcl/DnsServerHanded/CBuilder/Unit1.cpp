@@ -123,7 +123,7 @@ void __fastcall TForm1::clDnsServer1GetHandedRecords(TObject *Sender, TclUdpUser
   ARecords->Add(aRec);
 
   aRec->Name = AName;
-  aRec->IPAddress = "111.222.333.444";
+  aRec->IPAddress = "111.222.77.188";
   aRec->TTL = 60000;
 }
 //---------------------------------------------------------------------------

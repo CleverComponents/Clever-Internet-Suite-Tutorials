@@ -140,7 +140,7 @@ begin
   ARecords.Add(aRec);
 
   aRec.Name := AName;
-  aRec.IPAddress := '111.222.333.444';
+  aRec.IPAddress := '111.222.77.188';
   aRec.TTL := 60000;
 end;
 
