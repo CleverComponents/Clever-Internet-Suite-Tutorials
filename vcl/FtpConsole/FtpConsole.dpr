@@ -4,7 +4,7 @@ program FtpConsole;
 
 uses
   Classes, SysUtils, Windows, clUtils, clFtp, clFtpUtils, clSocketUtils, clTcpClient,
-  clTlsSocket, clCertificate;
+  clTcpClientTls, clCertificate;
 
 type
   EclConsoleFtpError = class(Exception);
@@ -16,7 +16,7 @@ type
     FStdHandle: THandle;
     FCursorInfo: TConsoleScreenBufferInfo;
 
-    function StrAnsiToOem(const S: AnsiString): AnsiString;
+    function EnsureConsoleEncoding(const S: string): string;
     function GetPassword(const InputMask: Char = '*'): string;
     procedure PrepareProgress;
     procedure DoneProgress;
@@ -116,7 +116,7 @@ begin
 
   if (not AVerified) then
   begin
-    WriteLn(StrAnsiToOem(AStatusText));
+    WriteLn(EnsureConsoleEncoding(AStatusText));
     Write('Do you want to proceed? y/n ');
 
     GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), OldMode);
@@ -279,7 +279,7 @@ end;
 
 procedure TclConsoleFtpClient.HandleConsoleFtpError(E: EclConsoleFtpError);
 begin
-  WriteLn(StrAnsiToOem('Error: ' + E.Message));
+  WriteLn(EnsureConsoleEncoding('Error: ' + E.Message));
 end;
 
 procedure TclConsoleFtpClient.HandleDel(ACmd: TStrings);
@@ -401,7 +401,7 @@ begin
 
   if ACmd.Count > 2 then
   begin
-    FClient.Port := StrToIntDef(ACmd[2], cDefaultFtpPort);
+    FClient.Port := StrToIntDef(ACmd[2], DefaultFtpPort);
   end;
 
   Write('User: ');
@@ -483,15 +483,30 @@ begin
   WriteLn('The directory "' + ACmd[1] + '" was removed.');
 end;
 
-function TclConsoleFtpClient.StrAnsiToOem(const S: AnsiString): AnsiString;
+function TclConsoleFtpClient.EnsureConsoleEncoding(const S: string): string;
+{$IFNDEF UNICODE}
+var
+  AnsiResult: AnsiString;
+{$ENDIF}
 begin
-  SetLength(Result, Length(S));
-  AnsiToOemBuff(@S[1], @Result[1], Length(S));
+  {$IFDEF UNICODE}
+  // For Delphi 2009 and above (Unicode) - return string as is
+  // In modern systems it's recommended to use:
+  // SetConsoleOutputCP(CP_UTF8) for UTF-8 support in console
+  Result := S;
+  {$ELSE}
+  // For older Delphi versions (ANSI) - convert ANSI -> OEM
+  // for correct display of international characters in Windows console
+  // This solves the "garbage characters" issue for non-ASCII text
+  SetLength(AnsiResult, Length(S));
+  AnsiToOemBuff(PAnsiChar(AnsiString(S)), PAnsiChar(AnsiResult), Length(S));
+  Result := string(AnsiResult);
+  {$ENDIF}
 end;
 
 procedure TclConsoleFtpClient.HandleSocketError(E: EclSocketError);
 begin
-  WriteLn(StrAnsiToOem('Error occurred, code: ' + IntToStr(E.ErrorCode) + ', message: ' + E.Message));
+  WriteLn(EnsureConsoleEncoding('Error occurred, code: ' + IntToStr(E.ErrorCode) + ', message: ' + E.Message));
 end;
 
 procedure TclConsoleFtpClient.HandleTls(ACmd: TStrings);
