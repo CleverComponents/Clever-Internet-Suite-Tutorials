@@ -8,6 +8,7 @@ A practical demonstration of email reply and forward functionality implemented w
 
 The ForwardReply project is a code example for the [E-mail replying / forwarding](https://www.clevercomponents.com/portal/kb/a64/e-mail-replying-forwarding.aspx) tutorial.   
 
+![E-mail replying](Image\ForwordReply-Form.jpg)
 
 ## Overview
 
