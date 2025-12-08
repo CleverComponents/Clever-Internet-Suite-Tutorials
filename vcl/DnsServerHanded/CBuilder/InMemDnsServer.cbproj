@@ -4,7 +4,7 @@
         <ProjectVersion>14.4</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
         <AppType>Application</AppType>
-        <MainSource>DnsServer.cpp</MainSource>
+        <MainSource>InMemDnsServer.cpp</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -42,7 +42,7 @@
     <PropertyGroup Condition="'$(Base)'!=''">
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <_TCHARMapping>wchar_t</_TCHARMapping>
-        <AllPackageLibs>rtl.lib;vcl.lib;clinetsuitebXE3.lib;dbrtl.lib;inet.lib;soaprtl.lib;xmlrtl.lib;dsnap.lib</AllPackageLibs>
+        <AllPackageLibs>rtl.lib;vcl.lib;clinetsuite_xe3.lib;dbrtl.lib;inet.lib;soaprtl.lib;xmlrtl.lib;dsnap.lib</AllPackageLibs>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <Multithreaded>true</Multithreaded>
         <ProjectType>CppVCLApplication</ProjectType>
@@ -62,11 +62,11 @@
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <PackageImports>bindcompfmx;DBXSqliteDriver;vcldbx;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;bindcomp;inetdb;vclib;inetdbbde;DBXInterBaseDriver;DataSnapCommon;xmlrtl;ibxpress;DbxCommonDriver;vclimg;IndyProtocols;dbxcds;DBXMySQLDriver;MetropolisUILiveTile;soaprtl;vclactnband;bindengine;vcldb;bindcompdbx;vcldsnap;bindcompvcl;clinetsuitebXE3;vclie;clinetsuiteSSHbXE3;vcltouch;bcbsmp;websnap;CustomIPTransport;VclSmp;dsnap;IndyIPServer;fmxase;vcl;IndyCore;IndyIPCommon;CloudService;dsnapcon;inet;fmxobj;vclx;inetdbxpress;webdsnap;fmxdae;bdertl;dbexpress;bcbie;adortl;IndyIPClient;$(PackageImports)</PackageImports>
+        <PackageImports>bindcompfmx;DBXSqliteDriver;vcldbx;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;bindcomp;inetdb;vclib;inetdbbde;DBXInterBaseDriver;DataSnapCommon;xmlrtl;ibxpress;DbxCommonDriver;vclimg;IndyProtocols;dbxcds;DBXMySQLDriver;MetropolisUILiveTile;soaprtl;vclactnband;bindengine;vcldb;bindcompdbx;vcldsnap;bindcompvcl;clinetsuite_xe3;vclie;vcltouch;bcbsmp;websnap;CustomIPTransport;VclSmp;dsnap;IndyIPServer;fmxase;vcl;IndyCore;IndyIPCommon;CloudService;dsnapcon;inet;fmxobj;vclx;inetdbxpress;webdsnap;fmxdae;bdertl;dbexpress;bcbie;adortl;IndyIPClient;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <BCC_PCHName_Clang>DnsServerPCH1.h</BCC_PCHName_Clang>
+        <BCC_PCHName_Clang>InMemDnsServerPCH1.h</BCC_PCHName_Clang>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
         <PackageImports>bindcompfmx;DBXSqliteDriver;fmx;rtl;dbrtl;DbxClientDriver;IndySystem;bindcomp;inetdb;DBXInterBaseDriver;DataSnapCommon;xmlrtl;DbxCommonDriver;vclimg;IndyProtocols;dbxcds;DBXMySQLDriver;soaprtl;vclactnband;bindengine;vcldb;bindcompdbx;vcldsnap;bindcompvcl;vclie;vcltouch;websnap;CustomIPTransport;VclSmp;dsnap;IndyIPServer;fmxase;vcl;IndyCore;IndyIPCommon;dsnapcon;inet;fmxobj;vclx;inetdbxpress;webdsnap;fmxdae;dbexpress;IndyIPClient;$(PackageImports)</PackageImports>
     </PropertyGroup>
@@ -94,7 +94,7 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <ILINK_LibraryPath>c:\Users\Public\Documents\RAD Studio\10.0\Dcp;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <LinkPackageImports>rtl.bpi;vcl.bpi;clinetsuitebXE3.bpi;dbrtl.bpi;inet.bpi;soaprtl.bpi;xmlrtl.bpi;dsnap.bpi</LinkPackageImports>
+        <LinkPackageImports>rtl.bpi;vcl.bpi;clinetsuite_xe3.bpi;dbrtl.bpi;inet.bpi;soaprtl.bpi;xmlrtl.bpi;dsnap.bpi</LinkPackageImports>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <IncludePath>c:\Users\Public\Documents\RAD Studio\10.0\hpp;$(IncludePath)</IncludePath>
@@ -104,10 +104,10 @@
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="DnsServer.cpp">
+        <CppCompile Include="InMemDnsServer.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
-        <PCHCompile Include="DnsServerPCH1.h">
+        <PCHCompile Include="InMemDnsServerPCH1.h">
             <BuildOrder>1</BuildOrder>
         </PCHCompile>
         <CppCompile Include="Unit1.cpp">
@@ -175,7 +175,7 @@
                     <ProjectProperties Name="VerifyPackages">True</ProjectProperties>
                 </ProjectProperties>
                 <Source>
-                    <Source Name="MainSource">DnsServer.cpp</Source>
+                    <Source Name="MainSource">InMemDnsServer.cpp</Source>
                 </Source>
             </CPlusPlusBuilder.Personality>
             <Deployment/>

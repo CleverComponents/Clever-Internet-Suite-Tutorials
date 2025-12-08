@@ -1,4 +1,4 @@
-program Project1;
+program InMemDnsServer;
 
 uses
   Vcl.Forms,

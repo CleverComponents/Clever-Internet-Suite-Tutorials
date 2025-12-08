@@ -3,7 +3,7 @@
         <ProjectGuid>{B849BE12-36B5-4920-8167-24D8133937EB}</ProjectGuid>
         <ProjectVersion>14.4</ProjectVersion>
         <FrameworkType>VCL</FrameworkType>
-        <MainSource>Project1.dpr</MainSource>
+        <MainSource>InMemDnsServer.dpr</MainSource>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
@@ -139,7 +139,7 @@
                     <VersionInfoKeys Name="CFBundleExecutable"/>
                 </VersionInfoKeys>
                 <Source>
-                    <Source Name="MainSource">Project1.dpr</Source>
+                    <Source Name="MainSource">InMemDnsServer.dpr</Source>
                 </Source>
             </Delphi.Personality>
             <Deployment/>

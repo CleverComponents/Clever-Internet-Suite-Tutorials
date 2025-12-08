@@ -1,8 +1,39 @@
-# Build a DNS server that responds with an in-memory list of IPs based on the name submitted
+# DnsServerHanded - In-Memory DNS Server Implementation
 
-The DnsServerHanded project represents a code example for the [Build a DNS server that responds with an in-memory list of IPs based on the name submitted](https://www.clevercomponents.com/portal/kb/a89/build-a-dns-server-that-responds-with-an-in-memory-list-of-ips-based-on-the-name-submitted_.aspx) tutorial.   
+A lightweight, customizable DNS server that resolves domain names using an in-memory data store. Built with **Clever Internet Suite** for robust DNS protocol handling. Designed for educational purposes, testing, and custom DNS routing scenarios.  
 
-This tutorial represents a DNS server that responds with an in-memory list of IPs based on the name submitted.   
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository represents a list of examples, code snippets and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/) article. This list will be periodically updated, new projects will be added.   
-Please stay tuned to new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+**Built with** [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) – comprehensive library for Internet protocols.
+
+![In-Memory DNS Server](InMemoryDnsServer.png)
+
+## Overview
+
+This project implements a DNS server that:
+
+* Uses **Clever Internet Suite** for DNS protocol implementation
+* Stores domain-to-IP mappings in memory (hash table/dictionary)
+* Responds to DNS queries with predefined IP addresses
+* Serves as a teaching tool for DNS protocol understanding
+* Provides a foundation for custom DNS solutions
+
+
+## Features
+
+* Simple in-memory domain-IP mapping
+* Basic DNS query handling (A records)
+* Easy configuration and extension
+* Educational code structure with clear comments
+
+
+## Tutorial
+
+This code accompanies the tutorial: [Build a DNS server that responds with an in-memory list of IPs based on the name submitted](https://www.clevercomponents.com/portal/kb/a89/build-a-dns-server-that-responds-with-an-in-memory-list-of-ips-based-on-the-name-submitted_.aspx)
+
+
+## Repository
+
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+
+Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+
