@@ -77,38 +77,38 @@ begin
 
   FNeedShowText := cbShowText.Checked;
   task := TTask.Create(procedure()
-var
-  html: TStrings;
-begin
-  html := TStringList.Create();
-  try
-    TThread.Synchronize(nil, procedure()
+    var
+      html: TStrings;
     begin
-      Memo1.Lines.Clear();
+      html := TStringList.Create();
+      try
+        TThread.Synchronize(nil, procedure()
+        begin
+          Memo1.Lines.Clear();
+        end);
+        clHttp1.Get(edtUrl.Text, html);
+
+        if FNeedShowText then
+        begin
+          clHtmlParser1.Parse(html);
+        end else
+        begin
+          TThread.Synchronize(nil, procedure()
+          begin
+            Memo1.Lines.Assign(html);
+          end);
+        end;
+
+      finally
+        FAccessor.Enter();
+        try
+          FWorkInProgress := False;
+        finally
+          FAccessor.Leave();
+        end;
+        html.Free();
+      end;
     end);
-    clHttp1.Get(edtUrl.Text, html);
-
-    if FNeedShowText then
-    begin
-      clHtmlParser1.Parse(html);
-    end else
-    begin
-      TThread.Synchronize(nil, procedure()
-      begin
-        Memo1.Lines.Assign(html);
-      end);
-    end;
-
-  finally
-    FAccessor.Enter();
-    try
-      FWorkInProgress := False;
-    finally
-      FAccessor.Leave();
-    end;
-    html.Free();
-  end;
-end);
   task.Start();
 end;
 
