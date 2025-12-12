@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Rtti, System.Classes,
   System.Variants, FMX.Types, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.Layouts,
-  FMX.Memo, FMX.Edit, clHtmlParser;
+  FMX.Memo, FMX.Edit, clHtmlParser, FMX.Memo.Types, FMX.ScrollBox, FMX.StdCtrls,
+  FMX.Controls.Presentation;
 
 type
   TForm1 = class(TForm)
