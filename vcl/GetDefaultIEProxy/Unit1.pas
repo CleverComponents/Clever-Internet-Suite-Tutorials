@@ -1,10 +1,10 @@
-unit Unit1;
+﻿unit Unit1;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, clWinInet;
+  Dialogs, StdCtrls, clWinInet, clWUtils;
 
 type
   TForm1 = class(TForm)
@@ -13,6 +13,7 @@ type
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
+    function GetSystemProxySettings: string;
   public
     { Public declarations }
   end;
@@ -26,30 +27,59 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 var
+  s: string;
+begin
+  Memo1.Clear;
+  
+  // System/IE proxy settings
+  s := GetSystemProxySettings;
+
+  Memo1.Text := s + sLineBreak + sLineBreak +
+    'Note: Modern browsers like Microsoft Edge use these system settings ' +
+    'when configured to use system proxy.';
+
+  ShowMessage('Done');
+end;
+
+function TForm1.GetSystemProxySettings: string;
+var
   proxy: PInternetProxyInfo;
   proxyBuf: Pointer;
   proxyBufLen: DWORD;
   b: BOOL;
-  s: string;
 begin
+  Result := '';
   proxyBufLen := 4096;
   GetMem(proxyBuf, proxyBufLen);
   try
     b := InternetQueryOption(nil, INTERNET_OPTION_PROXY, proxyBuf, proxyBufLen);
-    if not b then raise Exception.Create('Failed to get proxy info');
+    if not b then 
+    begin
+      Result := 'Failed to get system proxy info. Error: ' + IntToStr(GetLastError);
+      Exit;
+    end;
+    
     proxy := PInternetProxyInfo(proxyBuf);
+    Result := 'System Proxy Settings:' + sLineBreak + sLineBreak;
+    
+    if Assigned(proxy.lpszProxy) and (proxy.lpszProxy^ <> #0) then
+    begin
+      Result := Result + 'Proxy Server: ' + string(PclChar(GetTclString(proxy.lpszProxy))) + sLineBreak;
+    end else
+    begin
+      Result := Result + 'Proxy Server: Not configured' + sLineBreak;
+    end;
 
-    s := PChar(proxy.lpszProxy);
-    //returns for separated settings: 'https=localhost:8081 http=localhost:8080 gopher=localhost:8080 ftp=192.168.19.10:8080 socks=212.12.0.1:1080'
-    //returns for http settings only: localhost:8080
-    //returns for https settings only: https=localhost:8081
-    //returns empty string if no proxy selected
-    //returns empty string if autoproxy or proxy.pac specified
-
-    Memo1.Lines.Delimiter := #32;
-    Memo1.Lines.DelimitedText := s;
-
-    ShowMessage('Done');
+    if Assigned(proxy.lpszProxyBypass) and (proxy.lpszProxyBypass^ <> #0) then
+    begin
+      Result := Result + 'Proxy Bypass: ' + string(PclChar(GetTclString(proxy.lpszProxyBypass))) + sLineBreak;
+    end else
+    begin
+      Result := Result + 'Proxy Bypass: Not configured' + sLineBreak;
+    end;
+    
+    Result := Result + 'Access Type: ' + IntToStr(proxy.dwAccessType);
+    
   finally
     FreeMem(proxyBuf);
   end;

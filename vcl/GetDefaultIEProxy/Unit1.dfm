@@ -2,21 +2,20 @@ object Form1: TForm1
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  Caption = 'Get IE proxy settings'
-  ClientHeight = 216
-  ClientWidth = 349
+  Caption = 'Get Browser Proxy Settings'
+  ClientHeight = 324
+  ClientWidth = 366
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  Position = poScreenCenter
   TextHeight = 13
   object Button1: TButton
-    Left = 16
-    Top = 16
+    Left = 8
+    Top = 24
     Width = 75
     Height = 25
     Caption = 'GO'
@@ -25,13 +24,11 @@ object Form1: TForm1
   end
   object Memo1: TMemo
     Left = 0
-    Top = 74
-    Width = 349
-    Height = 142
+    Top = 55
+    Width = 366
+    Height = 269
     Align = alBottom
     ReadOnly = True
     TabOrder = 1
-    ExplicitTop = 64
-    ExplicitWidth = 339
   end
 end
