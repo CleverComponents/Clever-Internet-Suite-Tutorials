@@ -10,8 +10,6 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
     Left = 0
@@ -163,15 +161,16 @@ object Form1: TForm1
     end
     object cbProxyType: TComboBox
       Left = 56
-      Top = 98
+      Top = 96
       Width = 145
       Height = 21
       Style = csDropDownList
-      ItemIndex = 0
+      ItemIndex = 1
       TabOrder = 4
       Text = 'HTTP Proxy'
       OnChange = cbProxyTypeChange
       Items.Strings = (
+        'No Proxy'
         'HTTP Proxy'
         'SOCKS4 Firewall'
         'SOCKS5 Firewall')

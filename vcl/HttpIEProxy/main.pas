@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ExtCtrls, clTcpClient, clHttp, clHtmlParser, clFirewallUtils,
-  clTcpClientTls, clWinInet, clUtils, clUriUtils;
+  clTcpClientTls, clWinInet, clUtils, clUriUtils, clWUtils;
 
 type
   TForm1 = class(TForm)
@@ -67,7 +67,7 @@ begin
     try
       if InternetQueryOption(nil, INTERNET_OPTION_PROXY, pInfo, len) then
       begin
-        SplitText(string(pInfo.lpszProxy), AList, ' ');
+        SplitText(string(PclChar(GetTclString(pInfo.lpszProxy))), AList, ' ');
       end;
     finally
       FreeMem(pInfo);
@@ -89,7 +89,7 @@ begin
     begin
       proxy := proxyList[0];
     end else
-    if cbProxyType.ItemIndex = 0 then
+    if cbProxyType.ItemIndex = 1 then
     begin
       url := TclUrlParser.Create();
       try
@@ -138,7 +138,7 @@ begin
     clHttp1.FirewallSettings.Server := '';
     clHttp1.ProxySettings.Server := '';
 
-    if cbProxyType.ItemIndex = 0 then
+    if cbProxyType.ItemIndex = 1 then
     begin
       clHttp1.ProxySettings.Server := edtProxyServer.Text;
       clHttp1.ProxySettings.Port := StrToIntDef(edtProxyPort.Text, 8080);
@@ -146,7 +146,7 @@ begin
       clHttp1.ProxySettings.Password := edtProxyPassword.Text;
     end else
     begin
-      if cbProxyType.ItemIndex = 1 then
+      if cbProxyType.ItemIndex = 2 then
       begin
         clHttp1.FirewallSettings.FirewallType := ftSocks4;
       end else
@@ -177,8 +177,8 @@ end;
 procedure TForm1.cbProxyTypeChange(Sender: TObject);
 begin
   case cbProxyType.ItemIndex of
-    0: edtProxyPort.Text := '8080';
-    1, 2: edtProxyPort.Text := '1080';
+    1: edtProxyPort.Text := '8080';
+    2, 3: edtProxyPort.Text := '1080';
   end;
 end;
 
