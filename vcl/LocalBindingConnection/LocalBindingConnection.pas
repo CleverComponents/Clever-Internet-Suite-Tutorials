@@ -76,7 +76,7 @@ begin
       InitTimeOutTicks();
 
       repeat
-        if WaitForEvent(SocketEvent, FAbortEvent, FTimeOutTicks, TimeOut) then
+        if WaitForEvent(SocketEvent, FAbortEvent, FTimeOutTicks, TimeOut, False) then
         begin
           res := WSAEnumNetworkEvents(Socket.Socket, SocketEvent, @networkEvents);
           if (res = SOCKET_ERROR) then
