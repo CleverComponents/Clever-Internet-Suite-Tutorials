@@ -1,9 +1,10 @@
 From: john@example.com
 To: peter@domain.com
-Subject: subject line
-Date: Thu, 9 Jun 2016 18:35:40 +0300
+Subject: Test email with UTF-8 characters (auto-detect)
+Date: Tue, 16 Dec 2025 18:08:18 +0300
 MIME-Version: 1.0
 Content-Type: text/plain; charset="UTF-8"
 Content-Transfer-Encoding: quoted-printable
 
-Text with umlauts =C3=84=C3=96=C3=9C=C3=9F
+Text with German umlauts: =C3=84=C3=96=C3=9C=C3=9F and special characte=
+rs: =C2=A9=C2=AE=E2=82=AC
