@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, System.ImageList, System.Generics.Collections,
-  Vcl.ImgList, RichViewActions, System.Actions, Vcl.ActnList, Vcl.ComCtrls,
+  Vcl.ImgList, System.Actions, Vcl.ActnList, Vcl.ComCtrls,
   Vcl.StdCtrls, Vcl.ExtCtrls, clMailMessage, Vcl.ToolWin, VCL.TMSFNCTypes,
   VCL.TMSFNCUtils, VCL.TMSFNCGraphics, VCL.TMSFNCGraphicsTypes,
   VCL.TMSFNCScrollControl, VCL.TMSFNCRichEditorBase, VCL.TMSFNCRichEditor,
