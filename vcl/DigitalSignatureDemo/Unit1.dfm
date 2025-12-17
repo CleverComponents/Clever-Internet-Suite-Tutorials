@@ -1,18 +1,17 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  BorderStyle = bsToolWindow
+  BorderStyle = bsDialog
   Caption = 'Making and Extracting the content of a .p7m file.'
-  ClientHeight = 443
-  ClientWidth = 544
+  ClientHeight = 432
+  ClientWidth = 540
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  Position = poScreenCenter
   TextHeight = 13
   object Label3: TLabel
     Left = 5

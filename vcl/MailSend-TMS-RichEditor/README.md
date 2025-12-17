@@ -119,9 +119,9 @@ Before running this tutorial, ensure you have:
 
 ## Related Examples
 
-- [GMail SMTP Client](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/Delphi/GMailSMTP): Example using OAUTH2.0 authentication with GMail
-- [SMTP Client SSL](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/Delphi/SmtpClientSSL): Example demonstrating SSL/TLS connections to mail servers
-- [MailMessage Umlauts](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/Delphi/MailMessageUmlauts): Example handling international characters in emails
+- [GMail SMTP Client](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/GMailSMTP): Example using OAUTH2.0 authentication with GMail
+- [SMTP Client SSL](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/SmtpClientSSL): Example demonstrating SSL/TLS connections to mail servers
+- [MailMessage Umlauts](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/MailMessageUmlauts): Example handling international characters in emails
 
 ## Repository
 

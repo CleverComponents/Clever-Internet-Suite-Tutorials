@@ -3,9 +3,9 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, clEncryptor, Vcl.StdCtrls, clCertificate,
-  clCertificateStore, Vcl.ExtCtrls;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, clEncryptor, StdCtrls, clCertificate,
+  clCertificateStore, ExtCtrls;
 
 type
   TForm1 = class(TForm)
@@ -159,6 +159,20 @@ begin
     dst := TFileStream.Create(edtDestinationFile.Text, fmCreate);
 
     cert := clCertificateStore1.Items[cbCertificate.ItemIndex];
+
+    // Use the signature algorithm from the certificate itself
+    // This ensures compatibility with the certificate's capabilities
+    clEncryptor1.SignAlgorithm := cert.SignatureAlgorithm;
+
+    // IANA recommended algorithm for P7M signatures (SHA-512)
+    // clEncryptor1.SignAlgorithm := '2.16.840.1.101.3.4.2.3'; // SHA-512
+
+    // Alternative algorithm for better Windows compatibility (SHA-256)
+    // clEncryptor1.SignAlgorithm := '2.16.840.1.101.3.4.2.1'; // SHA-256
+
+    // Another alternative for maximum compatibility (SHA-1) - less secure
+    // clEncryptor1.SignAlgorithm := '1.3.14.3.2.26'; // SHA-1
+
     clEncryptor1.Sign(src, dst, False, True, cert, nil);
   finally
     dst.Free();
