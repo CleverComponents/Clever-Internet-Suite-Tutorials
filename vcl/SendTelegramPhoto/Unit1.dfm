@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 401
-  ClientWidth = 764
+  ClientHeight = 402
+  ClientWidth = 768
   Color = clBtnFace
   Constraints.MinHeight = 440
   Constraints.MinWidth = 780
@@ -12,14 +12,13 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
+  OnCreate = FormCreate
   DesignSize = (
-    764
-    401)
-  PixelsPerInch = 96
+    768
+    402)
   TextHeight = 13
   object Image1: TImage
-    Left = 439
+    Left = 443
     Top = 79
     Width = 300
     Height = 300
@@ -820,12 +819,14 @@ object Form1: TForm1
   object memResponse: TMemo
     Left = 24
     Top = 79
-    Width = 392
-    Height = 297
+    Width = 396
+    Height = 298
     Anchors = [akLeft, akTop, akRight, akBottom]
     ReadOnly = True
     ScrollBars = ssBoth
     TabOrder = 2
+    ExplicitWidth = 392
+    ExplicitHeight = 297
   end
   object edtChannelName: TEdit
     Left = 120
@@ -833,7 +834,16 @@ object Form1: TForm1
     Width = 297
     Height = 21
     TabOrder = 1
-    Text = '@channel_name'
+    Text = '@channel_name or ID'
+  end
+  object btnLoadImage: TButton
+    Left = 443
+    Top = 24
+    Width = 75
+    Height = 25
+    Caption = 'Load Image'
+    TabOrder = 3
+    OnClick = btnLoadImageClick
   end
   object clHttpRequest: TclHttpRequest
     Header.Accept = '*/*'
@@ -845,5 +855,9 @@ object Form1: TForm1
     UserAgent = 'Mozilla/4.0 (compatible; Clever Internet Suite)'
     Left = 232
     Top = 192
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 552
+    Top = 24
   end
 end
