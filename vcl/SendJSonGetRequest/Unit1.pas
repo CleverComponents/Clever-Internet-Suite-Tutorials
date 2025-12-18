@@ -9,90 +9,59 @@ uses
 
 type
   TForm1 = class(TForm)
-    btnSendJSonString: TButton;
+    btnSendJSONString: TButton;
     clHttp1: TclHttp;
     clHttpRequest1: TclHttpRequest;
     btnSendSerializedObject: TButton;
-    btnSendJSonObject: TButton;
-    procedure btnSendJSonStringClick(Sender: TObject);
+    btnSendJSONObject: TButton;
+    memResult: TMemo;
+    procedure btnSendJSONStringClick(Sender: TObject);
     procedure btnSendSerializedObjectClick(Sender: TObject);
-    procedure btnSendJSonObjectClick(Sender: TObject);
+    procedure btnSendJSONObjectClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-    { Private declarations }
+    FBaseURL: string;
+    FMethod: string;
+    procedure DisplayResponse(const AMethod: string; AResponseBody: TStringStream);
+    procedure HandleHTTPError(const AOperation: string; AHttp: TclHttp);
   public
     { Public declarations }
   end;
 
-  TCreateJobServiceRequest = class
+  TPostRequest = class
   private
-    FCustomerPostcode: string;
-    FCustomerAddress: string;
-    FCustomerFirstname: string;
-    FGeneralInstructions: string;
-    FFurnitureManufacturer: string;
-    FClientRef: string;
-    FFurnitureColour: string;
-    FFurnitureModel: string;
-    FClientsClient: string;
-    FCustomerTelephone: string;
-    FCustomerSurname: string;
-    FCustomerTitle: string;
-    FFurnitureDeliveryDate: string;
-    FFurnitureBatch: string;
-    FFaultsClientDescription: string;
+    FTitle: string;
+    FBody: string;
+    FUserId: Integer;
   public
-    [TclJsonString('client_ref')]
-    property ClientRef: string read FClientRef write FClientRef;
+    [TclJsonString('title')]
+    property Title: string read FTitle write FTitle;
 
-    [TclJsonString('customer_title')]
-    property CustomerTitle: string read FCustomerTitle write FCustomerTitle;
+    [TclJsonString('body')]
+    property Body: string read FBody write FBody;
 
-    [TclJsonString('customer_firstname')]
-    property CustomerFirstname: string read FCustomerFirstname write FCustomerFirstname;
-
-    [TclJsonString('customer_surname')]
-    property CustomerSurname: string read FCustomerSurname write FCustomerSurname;
-
-    [TclJsonString('customer_address')]
-    property CustomerAddress: string read FCustomerAddress write FCustomerAddress;
-
-    [TclJsonString('customer_postcode')]
-    property CustomerPostcode: string read FCustomerPostcode write FCustomerPostcode;
-
-    [TclJsonString('customer_telephone')]
-    property CustomerTelephone: string read FCustomerTelephone write FCustomerTelephone;
-
-    [TclJsonString('faults_client_description')]
-    property FaultsClientDescription: string read FFaultsClientDescription write FFaultsClientDescription;
-
-    [TclJsonString('clients_client')]
-    property ClientsClient: string read FClientsClient write FClientsClient;
-
-    [TclJsonString('furniture_manufacturer')]
-    property FurnitureManufacturer: string read FFurnitureManufacturer write FFurnitureManufacturer;
-
-    [TclJsonString('furniture_model')]
-    property FurnitureModel: string read FFurnitureModel write FFurnitureModel;
-
-    [TclJsonString('furniture_batch')]
-    property FurnitureBatch: string read FFurnitureBatch write FFurnitureBatch;
-
-    [TclJsonString('furniture_colour')]
-    property FurnitureColour: string read FFurnitureColour write FFurnitureColour;
-
-    [TclJsonString('furniture_delivery_date')]
-    property FurnitureDeliveryDate: string read FFurnitureDeliveryDate write FFurnitureDeliveryDate;
-
-    [TclJsonString('general_instructions')]
-    property GeneralInstructions: string read FGeneralInstructions write FGeneralInstructions;
+    [TclJsonProperty('userId')]
+    property UserId: Integer read FUserId write FUserId;
   end;
 
-  TCreateJobServiceResponse = class
+  TPostResponse = class
   private
-    FIsmReference: string;
+    FId: Integer;
+    FTitle: string;
+    FBody: string;
+    FUserId: Integer;
   public
-    [TclJsonString('ism_reference')]
-    property IsmReference: string read FIsmReference write FIsmReference;
+    [TclJsonProperty('id')]
+    property Id: Integer read FId write FId;
+
+    [TclJsonString('title')]
+    property Title: string read FTitle write FTitle;
+
+    [TclJsonString('body')]
+    property Body: string read FBody write FBody;
+
+    [TclJsonProperty('userId')]
+    property UserId: Integer read FUserId write FUserId;
   end;
 
 var
@@ -102,125 +71,210 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.btnSendJSonStringClick(Sender: TObject);
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  // Demo configuration with JSONPlaceholder
+  // Note: JSONPlaceholder expects POST for creating resources
+  // but this tutorial demonstrates GET with JSON data
+  FBaseURL := 'https://jsonplaceholder.typicode.com';
+  FMethod := 'POST';
+
+  //{
+  // For real API usage, comment the line above and uncomment below:
+  // FBaseURL := 'https://service.domain.com';
+  // FMethod := 'GET';
+  // Also update JSON structures and endpoints accordingly
+  //}
+
+  memResult.Clear();
+  memResult.Lines.Add('JSON GET Request Demo');
+  memResult.Lines.Add('Using JSONPlaceholder service');
+  memResult.Lines.Add('================================');
+  memResult.Lines.Add('');
+end;
+
+procedure TForm1.HandleHTTPError(const AOperation: string; AHttp: TclHttp);
+begin
+  memResult.Lines.Add(Format('Error %s: Status %d - %s',
+    [AOperation, AHttp.StatusCode, AHttp.StatusText]));
+end;
+
+procedure TForm1.DisplayResponse(const AMethod: string; AResponseBody: TStringStream);
+begin
+  memResult.Lines.Add('');
+  memResult.Lines.Add(Format('=== Response from %s ===', [AMethod]));
+  memResult.Lines.Add(AResponseBody.DataString);
+  memResult.Lines.Add('================================');
+end;
+
+procedure TForm1.btnSendJSONStringClick(Sender: TObject);
 var
   request: string;
-  response: TStringStream;
+  responseBody: TStringStream;
+  responseHeader: TStringList;
 begin
+  memResult.Lines.Add('');
+  memResult.Lines.Add('Method 1: Raw JSON String');
+  memResult.Lines.Add('Creating JSON request as raw string...');
+
+  // Method 1: Raw JSON string
   request :=
 '{' +
-' "client_ref": "ABC123456",' +
-' "customer_title": "Mr",' +
-' "customer_firstname": "John",' +
-' "customer_surname": "Smith",' +
-' "customer_address": "123 The Lane, Sunnyvale",' +
-' "customer_postcode": "ZZ1 1AA",' +
-' "customer_telephone": "07711911911",' +
-' "faults_client_description": "Issue with PROBLEM MIDDLE STITCHING IS MISSING (DIMPLE)",' +
-' "clients_client": "Tony''s furniture shop",' +
-' "furniture_manufacturer": "Manufacturer Name",' +
-' "furniture_model": "Model Name",' +
-' "furniture_batch": "12334",' +
-' "furniture_colour": "Red",' +
-' "furniture_delivery_date": "2019-07-08"' +
+'  "title": "JSON String Method",' +
+'  "body": "This request was created using raw JSON string",' +
+'  "userId": 1' +
 '}';
 
-  response := TStringStream.Create();
+  responseBody := nil;
+  responseHeader := nil;
   try
+    clHttpRequest1.Clear();
     clHttpRequest1.BuildJSONRequest(request);
-    clHttp1.SendRequest('GET', 'https://dev2.system.ism.furniture/apiv2/jobs/add', clHttpRequest1, response);
+
+    responseBody := TStringStream.Create('', TEncoding.UTF8);
+    responseHeader := TStringList.Create();
+
+    // Note: JSONPlaceholder expects POST for creating resources
+    // but this tutorial demonstrates GET with JSON data
+    clHttp1.SilentHTTP := True;
+    clHttp1.SendRequest(FMethod, FBaseURL + '/posts', clHttpRequest1, responseHeader, responseBody);
+
+    if (clHttp1.StatusCode = 201) then
+    begin
+      DisplayResponse('Raw JSON String Method', responseBody);
+    end else
+    begin
+      HandleHTTPError('JSON String Method', clHttp1);
+    end;
   finally
-    response.Free();
+    responseBody.Free();
+    responseHeader.Free();
   end;
 end;
 
 procedure TForm1.btnSendSerializedObjectClick(Sender: TObject);
 var
-  request: TCreateJobServiceRequest;
+  request: TPostRequest;
   requestBody: string;
-  response: TCreateJobServiceResponse;
+  response: TPostResponse;
   responseBody: TStringStream;
+  responseHeader: TStringList;
   serializer: TclJsonSerializer;
 begin
+  memResult.Lines.Add('');
+  memResult.Lines.Add('Method 2: Object Serialization');
+  memResult.Lines.Add('Creating JSON request via object serialization...');
+
   request := nil;
   response := nil;
   responseBody := nil;
+  responseHeader := nil;
   serializer := nil;
   try
-    request := TCreateJobServiceRequest.Create();
+    // Method 2: Object serialization using TclJsonSerializer
+    request := TPostRequest.Create();
 
-    request.ClientRef := 'ABC123456';
-    request.CustomerTitle := 'Mr';
-    request.CustomerFirstname := 'John';
-    request.CustomerSurname := 'Smith';
-    request.CustomerAddress := '123 The Lane,'#13#10' Sunnyvale';
-    request.CustomerPostcode := 'ZZ1 1AA';
-    request.CustomerTelephone := '07711911911';
-    request.FaultsClientDescription := 'Issue with PROBLEM MIDDLE STITCHING IS MISSING (DIMPLE)';
-    request.ClientsClient := 'Tony''s furniture shop';
-    request.FurnitureManufacturer := 'Manufacturer Name';
-    request.FurnitureModel := 'Model Name';
-    request.FurnitureBatch := '12334';
-    request.FurnitureColour := 'Red';
-    request.FurnitureDeliveryDate := '2019-07-08';
-    request.GeneralInstructions := 'Ring customer ASAP';
+    request.Title := 'Serialized Object Method';
+    request.Body := 'This request was created using object serialization with TclJsonSerializer';
+    request.UserId := 1;
 
     serializer := TclJsonSerializer.Create();
 
+    // Convert object to JSON string
     requestBody := serializer.ObjectToJson(request);
+    memResult.Lines.Add('Serialized JSON: ' + requestBody);
 
+    clHttpRequest1.Clear();
     clHttpRequest1.BuildJSONRequest(requestBody);
 
-    responseBody := TStringStream.Create();
+    responseBody := TStringStream.Create('', TEncoding.UTF8);
+    responseHeader := TStringList.Create();
 
-    clHttp1.SendRequest('GET', 'https://dev2.system.ism.furniture/apiv2/jobs/add', clHttpRequest1, responseBody);
+    // Note: JSONPlaceholder expects POST for creating resources
+    // but this tutorial demonstrates GET with JSON data
+    clHttp1.SilentHTTP := True;
+    clHttp1.SendRequest(FMethod, FBaseURL + '/posts', clHttpRequest1, responseHeader, responseBody);
 
-    response := serializer.JsonToObject(TCreateJobServiceResponse, responseBody.DataString) as TCreateJobServiceResponse;
+    if (clHttp1.StatusCode = 201) then
+    begin
+      // Deserialize response back to object
+      response := serializer.JsonToObject(TPostResponse, responseBody.DataString) as TPostResponse;
+
+      memResult.Lines.Add('');
+      memResult.Lines.Add('=== Deserialized Response ===');
+      memResult.Lines.Add(Format('ID: %d', [response.Id]));
+      memResult.Lines.Add(Format('Title: %s', [response.Title]));
+      memResult.Lines.Add(Format('Body: %s', [response.Body]));
+      memResult.Lines.Add(Format('User ID: %d', [response.UserId]));
+      memResult.Lines.Add('================================');
+    end else
+    begin
+      HandleHTTPError('Object Serialization Method', clHttp1);
+    end;
   finally
     serializer.Free();
     responseBody.Free();
+    responseHeader.Free();
     response.Free();
     request.Free();
   end;
 end;
 
-procedure TForm1.btnSendJSonObjectClick(Sender: TObject);
+procedure TForm1.btnSendJSONObjectClick(Sender: TObject);
 var
   request: TclJSONObject;
   response: TclJSONObject;
   responseBody: TStringStream;
+  responseHeader: TStringList;
 begin
+  memResult.Lines.Add('');
+  memResult.Lines.Add('Method 3: TclJSONObject API');
+  memResult.Lines.Add('Creating JSON request using TclJSONObject class...');
+
   request := nil;
   response := nil;
   responseBody := nil;
+  responseHeader := nil;
   try
+    // Method 3: Direct TclJSONObject manipulation
     request := TclJSONObject.Create();
 
-    request.AddString('client_ref', 'ABC123456');
-    request.AddString('customer_title', 'Mr');
-    request.AddString('customer_firstname', 'John');
-    request.AddString('customer_surname', 'Smith');
-    request.AddString('customer_address', '123 The Lane,'#13#10' Sunnyvale');
-    request.AddString('customer_postcode', 'ZZ1 1AA');
-    request.AddString('customer_telephone', '07711911911');
-    request.AddString('faults_client_description', 'Issue with PROBLEM MIDDLE STITCHING IS MISSING (DIMPLE)');
-    request.AddString('clients_client', 'Tony''s furniture shop');
-    request.AddString('furniture_manufacturer', 'Manufacturer Name');
-    request.AddString('furniture_model', 'Model Name');
-    request.AddString('furniture_batch', '12334');
-    request.AddString('furniture_colour', 'Red');
-    request.AddString('furniture_delivery_date', '2019-07-08');
-    request.AddString('general_instructions', 'Ring customer ASAP');
+    request.AddString('title', 'TclJSONObject API Method');
+    request.AddString('body', 'This request was created using TclJSONObject API');
+    // Use AddValue for numeric values
+    request.AddValue('userId', '1');
 
+    memResult.Lines.Add('Created JSON: ' + request.GetJSONString());
+
+    clHttpRequest1.Clear();
     clHttpRequest1.BuildJSONRequest(request);
 
-    responseBody := TStringStream.Create();
+    responseBody := TStringStream.Create('', TEncoding.UTF8);
+    responseHeader := TStringList.Create();
 
-    clHttp1.SendRequest('GET', 'https://dev2.system.ism.furniture/apiv2/jobs/add', clHttpRequest1, responseBody);
+    // Note: JSONPlaceholder expects POST for creating resources
+    // but this tutorial demonstrates GET with JSON data
+    clHttp1.SilentHTTP := True;
+    clHttp1.SendRequest(FMethod, FBaseURL + '/posts', clHttpRequest1, responseHeader, responseBody);
 
-    response := TclJSONObject.ParseObject(responseBody.DataString);
+    if (clHttp1.StatusCode = 201) then
+    begin
+      response := TclJSONObject.ParseObject(responseBody.DataString);
+
+      memResult.Lines.Add('');
+      memResult.Lines.Add('=== Parsed Response ===');
+      memResult.Lines.Add(Format('ID: %s', [response.ValueByName('id')]));
+      memResult.Lines.Add(Format('Title: %s', [response.ValueByName('title')]));
+      memResult.Lines.Add(Format('Body: %s', [response.ValueByName('body')]));
+      memResult.Lines.Add(Format('User ID: %s', [response.ValueByName('userId')]));
+      memResult.Lines.Add('================================');
+    end else
+    begin
+      HandleHTTPError('TclJSONObject API Method', clHttp1);
+    end;
   finally
     responseBody.Free();
+    responseHeader.Free();
     response.Free();
     request.Free();
   end;
