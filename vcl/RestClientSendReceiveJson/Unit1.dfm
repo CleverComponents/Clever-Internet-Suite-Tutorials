@@ -1,6 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
   Caption = 'Send a JSON request to a REST Service and receive a response'
   ClientHeight = 511
   ClientWidth = 637
@@ -10,9 +11,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 17
@@ -147,7 +146,7 @@ object Form1: TForm1
     Width = 198
     Height = 21
     TabOrder = 10
-    Text = 'DEF12345'
+    Text = '1'
   end
   object customer_title: TEdit
     Left = 130
