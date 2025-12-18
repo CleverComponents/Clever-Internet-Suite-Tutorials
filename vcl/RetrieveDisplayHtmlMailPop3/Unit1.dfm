@@ -10,8 +10,9 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  DesignSize = (
+    597
+    406)
   TextHeight = 13
   object Label1: TLabel
     Left = 16
@@ -62,6 +63,7 @@ object Form1: TForm1
     Top = 165
     Width = 561
     Height = 225
+    Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 1
     ControlData = {
       4C000000FB390000411700000000000000000000000000000000000000000000

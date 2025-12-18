@@ -3,9 +3,9 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, clMailMessage,
-  clTcpClient, clTcpClientTls, clTcpCommandClient, clMC, clPop3, Vcl.OleCtrls,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, clMailMessage, clUtils,
+  clTcpClient, clTcpClientTls, clTcpCommandClient, clMC, clPop3, OleCtrls,
   SHDocVw;
 
 type
@@ -48,7 +48,14 @@ var
   stringToDisplay: string;
   image: TclImageBody;
   msg: TStrings;
+  path: string;
 begin
+  if (edtFolder.Text = '') then
+  begin
+    edtFolder.Text := 'c:\downloads\';
+  end;
+  ForceFileDirectories(edtFolder.Text);
+
   clPop31.Server := edtServer.Text;
   clPop31.UserName := edtUserName.Text;
   clPop31.Password := edtPassword.Text;
@@ -67,15 +74,17 @@ begin
       edtFolder.Text + image.FileName, [rfIgnoreCase, rfReplaceAll]);
   end;
 
+  path := AddTrailingBackSlash(edtFolder.Text) + 'temp.htm';
+
   msg := TStringList.Create();
   try
     msg.Text := stringToDisplay;
-    msg.SaveToFile(edtFolder.Text + 'temp.htm');
+    msg.SaveToFile(path);
   finally
     msg.Free();
   end;
 
-  WebBrowser1.Navigate(edtFolder.Text + 'temp.htm');
+  WebBrowser1.Navigate(path);
 
   clPop31.Close();
 end;
