@@ -10,11 +10,9 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   DesignSize = (
     658
     425)
-  PixelsPerInch = 96
   TextHeight = 13
   object btnLoad: TButton
     Left = 327
@@ -40,8 +38,8 @@ object Form1: TForm1
     Width = 600
     Height = 330
     Anchors = [akLeft, akTop, akRight, akBottom]
-    Constraints.MinHeight = 330
-    Constraints.MinWidth = 600
+    Constraints.MinHeight = 329
+    Constraints.MinWidth = 596
     ReadOnly = True
     ScrollBars = ssBoth
     TabOrder = 5

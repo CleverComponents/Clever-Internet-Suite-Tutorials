@@ -3,8 +3,8 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, System.Generics.Collections, clMailMessage,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, System.Generics.Collections, clMailMessage,
   clSMimeMessage, clCertificate;
 
 type
@@ -110,6 +110,24 @@ begin
 
     cert := clSMimeMessage1.Certificates.CreateSelfSigned(
       'CN=CleverTester,O=CleverComponents,E=' + msg.From.Email, 0);
+
+    // Use the signature algorithm from the certificate itself
+    // This ensures compatibility with the certificate's capabilities
+    clSMimeMessage1.Config.SignAlgorithm := cert.SignatureAlgorithm;
+    clSMimeMessage1.Config.SignAlgorithmName := cert.SignatureAlgorithmName;
+
+    // Alternatively, you can set a specific algorithm:
+    // IANA recommended algorithm for P7M signatures (SHA-512)
+    // clSMimeMessage1.Config.SignAlgorithm := '2.16.840.1.101.3.4.2.3'; // SHA-512 OID
+    // clSMimeMessage1.Config.SignAlgorithmName := 'sha-512';            // Corresponding name
+
+    // Alternative algorithm for better Windows compatibility (SHA-256)
+    // clSMimeMessage1.Config.SignAlgorithm := '2.16.840.1.101.3.4.2.1'; // SHA-256 OID
+    // clSMimeMessage1.Config.SignAlgorithmName := 'sha-256';            // Corresponding name
+
+    // Another alternative for maximum compatibility (SHA-1) - less secure
+    // clSMimeMessage1.Config.SignAlgorithm := '1.3.14.3.2.26';          // SHA-1 OID
+    // clSMimeMessage1.Config.SignAlgorithmName := 'sha-1';              // Corresponding name
 
     //Generated certificates are not added automatically to the collection.
     //You must do it yourself.
