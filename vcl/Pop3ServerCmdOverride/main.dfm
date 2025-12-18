@@ -26,8 +26,6 @@ object MainForm: TMainForm
     Align = alTop
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = -69
-    ExplicitWidth = 623
     object imLogoLeft: TImage
       Left = 0
       Top = 0
@@ -3288,7 +3286,6 @@ object MainForm: TMainForm
         0174ED0174ED0174ED0174ED0174ED0174ED0174ED0174ED0174ED0174ED0174
         ED0174ED0174ED0174ED}
       Stretch = True
-      ExplicitWidth = 8
     end
     object imLogoRight: TImage
       Left = 405
@@ -4831,7 +4828,6 @@ object MainForm: TMainForm
         74EC0174EC0174EC0174EC0174EC0174EC0174EC0174EC0174EC0174EC0174EC
         0174EC0174EC0174EC0174EC0174ED0374EC0375ED0174EE0676EC1881EF2788
         EF0879ED0375EB0175EC0075EC0175EC0275ED0275EB0174EC00}
-      ExplicitLeft = 414
     end
   end
   object pnlMain: TPanel
@@ -4842,10 +4838,6 @@ object MainForm: TMainForm
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitLeft = 8
-    ExplicitTop = 102
-    ExplicitWidth = 620
-    ExplicitHeight = 371
     DesignSize = (
       614
       363)

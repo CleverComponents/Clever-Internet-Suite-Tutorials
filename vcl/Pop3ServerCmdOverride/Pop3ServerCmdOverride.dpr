@@ -1,7 +1,7 @@
 program Pop3ServerCmdOverride;
 
 uses
-  Vcl.Forms,
+  Forms,
   main in 'main.pas' {MainForm};
 
 {$R *.res}

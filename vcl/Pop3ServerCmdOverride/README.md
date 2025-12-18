@@ -1,25 +1,57 @@
 # How to Override Default POP3 Server Command Handlers
 
-The program provides a Delphi tutorial that utilizes the Clever POP3 Server component together with the POP3 File Handler component to deliver Emails to clients from your own application.   
+This Delphi VCL example demonstrates how to customize POP3 server command handlers using Clever Internet Suite components.
 
 ![Screenshot](pop3-server-cmd-ovr.jpg)
 
-The [TclPop3Server](https://www.clevercomponents.com/products/inetsuite/popserver.asp) component represents a fully functional multithreaded server with the ability to customize the user and thread performance settings. The server supports all POP3 extensions, according to the RFC 1939, RFC 1734, and RFC 2449 protocols.   
+## Overview
+This example shows:
+- How to create a POP3 server using TclPop3Server component
+- How to override default POP3 command handlers (STAT and LIST)
+- How to use TclPop3FileHandler for file-based mailbox storage
+- How to implement custom POP3 command logic
 
-The other component, TclPop3FileHandler, implements the file-based storage for the user mailboxes and messages on the disk.   
+## Features
+- Uses TclPop3Server component for POP3 protocol implementation
+- Uses TclPop3FileHandler component for message storage
+- Demonstrates command handler overriding technique
+- Supports POP and SASL authentication methods (LOGIN, CRAM-MD5, NTLM)
+- Shows multithreaded server capabilities
 
-The given example shows how to override the default POP3 command handlers and implement your own ones. Please check out the STAT and the LIST overrides. Comments within the source code will help you to understand how the code works.   
+## Usage
+1. Open the project in Delphi IDE
+2. Ensure Clever Internet Suite is installed
+3. Set the mailbox directory path
+4. Configure server port (default: 110)
+5. Start the server
+6. Connect using any POP3 client with credentials:
+   - Username: CleverTester
+   - Password: clevertester
 
-This program is mostly a simple demos, and by no means, a complete application. It has one predefined user, "CleverTester", with the password "clevertester". You are free to add any number of desired users using the TclPop3Server.UserAccounts property. The server supports both the POP and SASL authorization methods: LOGIN, CRAM-MD5, NTLM, and Kerberos.    
+## Application Scenarios
+This example is useful for:
+- Building custom POP3 servers with specialized behavior
+- Learning POP3 protocol implementation
+- Creating mail server applications with custom commands
+- Testing POP3 client applications
 
-See also: [Clever Mail Server](https://github.com/CleverComponents/Clever-Mail-Server)
+## Requirements
+- **Delphi:** 7 or higher
+- **Clever Internet Suite:** version 12 or higher
 
-How to compile:   
-1. Please clone the [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository.
-2. Download and install the [Clever Internet Suite](https://www.clevercomponents.com/downloads/inetsuite/suitedownload.asp) library.
-3. Open and compile the Pop3ServerCmdOverride.dproj project in your Delphi IDE.
-4. Enjoy.
+The project was compiled with Clever Internet Suite version 12.  
+Tutorials and project files for previous versions of Clever Internet Suite can be found in the [Releases](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/releases) section.
 
-Please feel free to [Contact Us](https://www.clevercomponents.com/support/) and ask any program related questions.   
+## Compilation Instructions
+1. Clone the [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository
+2. Download and install [Clever Internet Suite](https://www.clevercomponents.com/downloads/inetsuite/suitedownload.asp)
+3. Open the Pop3ServerCmdOverride.dproj project in Delphi IDE
+4. Compile and run the application
 
-Keep updated on [Facebook](http://www.facebook.com/clevercomponents)   [YouTube](https://www.youtube.com/channel/UC9Si4WNQVSeXQMjdEJ8j1fg)   [Twitter](https://twitter.com/CleverComponent)   [Telegram](https://t.me/clevercomponents)   [Newsletter](https://www.clevercomponents.com/home/maillist.asp)   
+## Related Examples
+- [Clever Mail Server](https://github.com/CleverComponents/Clever-Mail-Server): Complete mail server implementation
+
+## Repository
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+
+Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
