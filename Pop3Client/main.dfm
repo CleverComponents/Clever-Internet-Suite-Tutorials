@@ -1,6 +1,8 @@
 object Form1: TForm1
   Left = 192
   Top = 114
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'POP3 client '
   ClientHeight = 364
   ClientWidth = 623
@@ -10,8 +12,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = True
-  PixelsPerInch = 96
+  Position = poScreenCenter
   TextHeight = 13
   object Label1: TLabel
     Left = 12
