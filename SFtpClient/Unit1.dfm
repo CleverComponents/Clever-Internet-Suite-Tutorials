@@ -1,6 +1,8 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'SFtp Client '
   ClientHeight = 465
   ClientWidth = 667
@@ -10,9 +12,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 8
@@ -66,9 +66,9 @@ object Form1: TForm1
   object Label8: TLabel
     Left = 8
     Top = 185
-    Width = 64
+    Width = 62
     Height = 13
-    Caption = 'Remove Host'
+    Caption = 'Remote Host'
   end
   object Label9: TLabel
     Left = 312
@@ -229,6 +229,7 @@ object Form1: TForm1
   end
   object clSFtp1: TclSFtp
     SshAgent = 'Clever_Internet_Suite'
+    CharSet = 'utf-8'
     OnVerifyServer = clSFtp1VerifyServer
     OnDirectoryListing = clSFtp1DirectoryListing
     Left = 296
