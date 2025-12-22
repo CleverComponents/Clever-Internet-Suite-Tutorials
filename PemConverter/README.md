@@ -1,5 +1,7 @@
 # RSA Public Key to X509 Subject Key Info Converter
 
+The PemConverter project is a code example for the [Convert RSA Public Key format to X509 Subject Key Info format](https://www.clevercomponents.com/portal/kb/a80/convert-rsa-public-key-format-to-x509-subject-key-info-format.aspx) tutorial.  
+
 This project demonstrates how to convert RSA public keys into the X509 Subject Public Key Info format using the Clever Internet Suite library. This conversion is essential for certificate operations, security contexts, and interoperability between different cryptographic systems.
 
 ## Overview

@@ -11,8 +11,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  Position = poScreenCenter
   TextHeight = 13
   object Label1: TLabel
     Left = 24
