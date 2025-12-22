@@ -3,10 +3,10 @@ unit main;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, System.UITypes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, clCertificateStore, clCertificate,
+  Windows, Messages, SysUtils, Variants, Classes, UITypes,
+  Graphics, Controls, Forms, Dialogs, StdCtrls, clCertificateStore, clCertificate,
   clTcpClient, clTcpClientTls, clTcpCommandClient, clMC, clSmtp, clMailMessage,
-  clSMimeMessage, Vcl.ComCtrls, clCryptAPI;
+  clSMimeMessage, ComCtrls, clCryptAPI;
 
 type
   TForm1 = class(TForm)

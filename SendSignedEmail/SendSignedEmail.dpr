@@ -1,7 +1,7 @@
 program SendSignedEmail;
 
 uses
-  Vcl.Forms,
+  Forms,
   main in 'main.pas' {Form1};
 
 {$R *.res}
