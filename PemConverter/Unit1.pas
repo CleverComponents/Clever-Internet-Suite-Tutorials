@@ -3,8 +3,8 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, clCryptSignature, clUtils, clEncoder, clCryptEncoder;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, clCryptSignature, clUtils, clEncoder, clCryptEncoder;
 
 type
   TForm1 = class(TForm)
@@ -16,6 +16,7 @@ type
     btnConverRsaPemKey: TButton;
     Label1: TLabel;
     memRsaPublicPemKey: TMemo;
+    cbUsePEMFormat: TCheckBox;
     procedure btnConverRsaKeyClick(Sender: TObject);
     procedure btnConverRsaPemKeyClick(Sender: TObject);
   private
@@ -32,11 +33,13 @@ implementation
 {$R *.dfm}
 
 //converts from RSA Public Key format to X509 Subject Key Info format
-function Rsa2X509Convert(const ARsaPublicKey: string): string;
+function Rsa2X509Convert(const ARsaPublicKey: string; AUsePemFormat: Boolean): string;
 var
   rsaKey: TclRsaKey;
   key: TclByteArray;
+  encoder: TclCryptEncoder;
 begin
+  encoder := TclCryptEncoder.Create(nil);
   rsaKey := TclCryptApiRsaKey.Create();
   try
     rsaKey.Init();
@@ -46,14 +49,22 @@ begin
     rsaKey.SetRsaPublicKey(key);
     key := rsaKey.GetPublicKeyInfo();
 
-    Result := TclEncoder.Encode(key, cmBase64);
+    if AUsePemFormat then
+    begin
+      encoder.DataType := dtRsaPublicKey;
+      Result := encoder.Encode(key);
+    end else
+    begin
+      Result := TclEncoder.Encode(key, cmBase64);
+    end;
   finally
     rsaKey.Free();
+    encoder.Free();
   end;
 end;
 
 //converts from RSA Public Key PEM format to X509 Subject Key Info PEM format
-function Rsa2X509PemConvert(const ARsaPublicKey: string): string;
+function Rsa2X509PemConvert(const ARsaPublicKey: string; AUsePemFormat: Boolean): string;
 var
   rsaKey: TclRsaKey;
   key: TclByteArray;
@@ -69,7 +80,13 @@ begin
     rsaKey.SetRsaPublicKey(key);
     key := rsaKey.GetPublicKeyInfo();
 
-    Result := encoder.Encode(key);
+    if AUsePemFormat then
+    begin
+      Result := encoder.Encode(key);
+    end else
+    begin
+      Result := TclEncoder.Encode(key, cmBase64);
+    end;
   finally
     rsaKey.Free();
     encoder.Free();
@@ -82,7 +99,7 @@ var
 begin
   RsaKey := memRsaPublicKey.Lines.Text;
 
-  x509KeyInfo := Rsa2X509Convert(RsaKey);
+  x509KeyInfo := Rsa2X509Convert(RsaKey, cbUsePEMFormat.Checked);
 
   memX509SubjectKeyInfo.Lines.Text := x509KeyInfo;
 end;
@@ -93,7 +110,7 @@ var
 begin
   RsaKeyPem := memRsaPublicPemKey.Lines.Text;
 
-  x509KeyInfo := Rsa2X509PemConvert(RsaKeyPem);
+  x509KeyInfo := Rsa2X509PemConvert(RsaKeyPem, cbUsePEMFormat.Checked);
 
   memX509SubjectKeyInfo.Lines.Text := x509KeyInfo;
 end;

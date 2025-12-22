@@ -3,17 +3,15 @@ object Form1: TForm1
   Top = 0
   BorderStyle = bsToolWindow
   Caption = 'RSA Public Key converter'
-  ClientHeight = 298
-  ClientWidth = 723
+  ClientHeight = 313
+  ClientWidth = 727
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   Position = poDesktopCenter
-  PixelsPerInch = 96
   TextHeight = 13
   object Label2: TLabel
     Left = 16
@@ -24,7 +22,7 @@ object Form1: TForm1
   end
   object Label3: TLabel
     Left = 16
-    Top = 159
+    Top = 166
     Width = 107
     Height = 13
     Caption = 'X509 Subject Key Info'
@@ -37,12 +35,12 @@ object Form1: TForm1
     Caption = 'RSA Public PEM Key'
   end
   object btnConverRsaKey: TButton
-    Left = 16
-    Top = 119
+    Left = 264
+    Top = 125
     Width = 97
     Height = 34
     Caption = 'Convert'
-    TabOrder = 1
+    TabOrder = 3
     OnClick = btnConverRsaKeyClick
   end
   object memRsaPublicKey: TMemo
@@ -58,19 +56,19 @@ object Form1: TForm1
   end
   object memX509SubjectKeyInfo: TMemo
     Left = 16
-    Top = 178
+    Top = 185
     Width = 696
     Height = 109
     ReadOnly = True
-    TabOrder = 4
+    TabOrder = 5
   end
   object btnConverRsaPemKey: TButton
-    Left = 367
-    Top = 119
+    Left = 615
+    Top = 125
     Width = 97
     Height = 34
     Caption = 'Convert'
-    TabOrder = 3
+    TabOrder = 4
     OnClick = btnConverRsaPemKeyClick
   end
   object memRsaPublicPemKey: TMemo
@@ -84,6 +82,14 @@ object Form1: TForm1
       '+Tp2pZ7wfTyKhpSkYzqkRAwdmvNdvUVwgh8mwBAOdt9Mvhx+O'
       'VokrzfLIJqeBBkbwTzxfgVeU6CL3AgMBAAE='
       '-----END RSA PUBLIC KEY-----')
+    TabOrder = 1
+  end
+  object cbUsePEMFormat: TCheckBox
+    Left = 16
+    Top = 133
+    Width = 145
+    Height = 17
+    Caption = 'Use PEM Format'
     TabOrder = 2
   end
 end
