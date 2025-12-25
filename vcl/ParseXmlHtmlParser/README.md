@@ -93,7 +93,7 @@ This example highlights the dual capability of the `TclHtmlParser` component to 
 ## Related Resources
 
 - [HTML Parsing Examples](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/HtmlParser) - Additional examples of HTML/XML parsing capabilities.
-- [Clever Internet Suite Documentation](https://www.clevercomponents.com/products/inetsuite/) - Complete product information and support.
+- [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) - Complete product information and support.
 
 ## Repository
 
