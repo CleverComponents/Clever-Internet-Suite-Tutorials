@@ -1,6 +1,6 @@
 # MailSend with TMS FNC RichEditor
 
-The MailSendTMSRichEditor project is a code example for the [MailSend with TMS FNC RichEditor](https://www.clevercomponents.com/portal/news/122/mailsend-with-tms-fnc-richeditor.aspx) tutorial.
+The MailSendTMSRichEditor project is a code example for the [MailSend with TMS FNC RichEditor](https://www.clevercomponents.com/portal/kb/a178/mail-send-with-tms-fnc-richeditor.aspx) tutorial.
 
 This Delphi program demonstrates how to use TMS FNC UI RichEditor component together with Clever Internet Suite SMTP and MailMessage components to compose and send HTML emails with rich text formatting, attachments, and embedded images.
 
