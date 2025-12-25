@@ -1,7 +1,7 @@
 program SFtpClientHostKey;
 
 uses
-  Vcl.Forms,
+  Forms,
   Main in 'Main.pas' {MainForm},
   KnownHosts in 'KnownHosts.pas' {KnownHostsForm};
 

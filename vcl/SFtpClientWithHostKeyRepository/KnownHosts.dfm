@@ -28,7 +28,6 @@ object KnownHostsForm: TKnownHostsForm
     Anchors = [akLeft, akTop, akRight, akBottom]
     ItemHeight = 13
     TabOrder = 0
-    ExplicitHeight = 355
   end
   object btnDelete: TButton
     Left = 353
@@ -39,7 +38,6 @@ object KnownHostsForm: TKnownHostsForm
     Caption = 'Delete'
     TabOrder = 1
     OnClick = btnDeleteClick
-    ExplicitLeft = 351
   end
   object btnClear: TButton
     Left = 353
@@ -50,7 +48,6 @@ object KnownHostsForm: TKnownHostsForm
     Caption = 'Clear All'
     TabOrder = 2
     OnClick = btnClearClick
-    ExplicitLeft = 351
   end
   object btnOK: TButton
     Left = 353
@@ -62,8 +59,6 @@ object KnownHostsForm: TKnownHostsForm
     Default = True
     ModalResult = 1
     TabOrder = 3
-    ExplicitLeft = 351
-    ExplicitTop = 194
   end
   object btnCancel: TButton
     Left = 353
@@ -75,7 +70,5 @@ object KnownHostsForm: TKnownHostsForm
     Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 4
-    ExplicitLeft = 351
-    ExplicitTop = 225
   end
 end

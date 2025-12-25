@@ -3,9 +3,9 @@ unit Main;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
-  System.UITypes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls,
-  Vcl.Imaging.pngimage, Vcl.ExtCtrls, clTcpClient, clSFtp, Vcl.StdCtrls, clSFtpUtils,
+  Windows, Messages, SysUtils, Variants, Classes,
+  UITypes, Graphics, Controls, Forms, Dialogs, ComCtrls,
+  pngimage, ExtCtrls, clTcpClient, clSFtp, StdCtrls, clSFtpUtils,
   clTcpClientSsh, KnownHosts;
 
 type

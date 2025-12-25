@@ -828,8 +828,6 @@ object MainForm: TMainForm
     Height = 17
     Align = alBottom
     TabOrder = 9
-    ExplicitTop = 448
-    ExplicitWidth = 667
   end
   object btnLogin: TButton
     Left = 535
