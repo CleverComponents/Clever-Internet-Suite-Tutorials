@@ -1,6 +1,6 @@
 # Email Forwarding and Replying Example
 
-A practical demonstration of email reply and forward functionality implemented with [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/)  
+A practical demonstration of email reply and forward functionality implemented with Clever Internet Suite.  
 
 The ForwardReply project is a code example for the [E-mail replying / forwarding](https://www.clevercomponents.com/portal/kb/a64/e-mail-replying-forwarding.aspx) tutorial.   
 
