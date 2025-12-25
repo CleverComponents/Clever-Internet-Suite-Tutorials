@@ -2,13 +2,11 @@
 
 The HttpServerFormFieldRequests project is a code example for the [HttpServer - handling form-field requests](https://www.clevercomponents.com/portal/kb/a170/httpserver-handling-form-field-requests.aspx) tutorial.
 
-This tutorial demonstrates how to create a simple HTTP server using the TclHttpServer component from the [Http-Server repository (https://github.com/CleverComponents/Http-Server)](https://github.com/CleverComponents/Http-Server). The primary focus is on handling HTTP POST requests with form-field data - parsing form submissions, extracting field values, and processing user input.
+This tutorial demonstrates how to create a simple HTTP server using the TclHttpServer component from the [Http-Server](https://github.com/CleverComponents/Http-Server) repository. The primary focus is on handling HTTP POST requests with form-field data - parsing form submissions, extracting field values, and processing user input.
 
 ![Screenshot](HttpServerFormFieldRequests.jpg)
 
-See also:  
-[Write your own HTTPS Server in Delphi](https://www.clevercomponents.com/articles/article050)  
-[Download HttpServer Component and Demo Program on GitHub](https://github.com/CleverComponents/Http-Server)
+See also: [Write your own HTTPS Server in Delphi](https://www.clevercomponents.com/articles/article050)   
 
 ## Overview
 
@@ -20,16 +18,16 @@ This tutorial demonstrates core form processing capabilities:
 - **Form Data Handling**: Access submitted data through the TclHttpRequest component
 - **Dynamic Responses**: Generate appropriate HTTP responses based on form input
 
-The implementation uses TclHttpServer from the [Http-Server repository (https://github.com/CleverComponents/Http-Server)](https://github.com/CleverComponents/Http-Server), which provides robust form parsing capabilities built on Clever Internet Suite components.
+The implementation uses the TclHttpServer component, which provides robust form parsing capabilities built on Clever Internet Suite components.
 
 ## Important Notes
 
 ### About TclHttpServer Component
-The TclHttpServer component used in this tutorial is **not part of the standard Clever Internet Suite distribution**. It is a separate open-source component available from the [Http-Server repository on GitHub (https://github.com/CleverComponents/Http-Server)](https://github.com/CleverComponents/Http-Server).
+The TclHttpServer component used in this tutorial is **not part of the standard Clever Internet Suite distribution**. It is a separate open-source component available from the [Http-Server repository on GitHub](https://github.com/CleverComponents/Http-Server)
 
 To use this tutorial, you need to:
 1. Have Clever Internet Suite installed
-2. Download the TclHttpServer component from the [Http-Server repository (https://github.com/CleverComponents/Http-Server)](https://github.com/CleverComponents/Http-Server)
+2. Download the TclHttpServer sources
 3. Install the component to your Delphi environment
 
 ### About Port Selection
@@ -63,7 +61,7 @@ Tutorials and project files for previous versions of Clever Internet Suite can b
 Before running this tutorial, ensure you have:
 
 1. **Clever Internet Suite** (version 12 or compatible) installed
-2. **TclHttpServer component** downloaded from [Http-Server repository (https://github.com/CleverComponents/Http-Server)](https://github.com/CleverComponents/Http-Server)
+2. **TclHttpServer** component
 3. The component added to your Delphi component palette
 4. Delphi 7 or later (compatible with wide range of Delphi versions)
 
@@ -95,7 +93,7 @@ Before running this tutorial, ensure you have:
 
 ## Components Used
 
-### TclHttpServer (from [Http-Server repository (https://github.com/CleverComponents/Http-Server)](https://github.com/CleverComponents/Http-Server))
+### TclHttpServer
 The main HTTP server component that handles incoming connections, parses HTTP requests, and manages response sending. This component is built on Clever Internet Suite and provides robust form parsing capabilities.
 
 ### Clever Internet Suite Components:
@@ -163,7 +161,7 @@ This tutorial's form processing techniques can be applied to:
 
 - **Delphi 7 or later** (compatible with wide range of Delphi versions)
 - **Clever Internet Suite 12** or compatible version
-- **TclHttpServer component** from [Http-Server repository (https://github.com/CleverComponents/Http-Server)](https://github.com/CleverComponents/Http-Server)
+- **TclHttpServer component** from [Http-Server](https://github.com/CleverComponents/Http-Server) repository
 - **Windows** compatible operating system
 
 ## Extending Form Processing

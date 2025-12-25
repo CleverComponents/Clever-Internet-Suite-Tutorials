@@ -1,6 +1,6 @@
 # TCP Client Connection Binding to Specific Interface and Port
 
-The LocalBindingConnection project represents a code example for the [Binding of TcpClientConnection to the specified interface and port number, LocalBindingConnection.](https://www.clevercomponents.com/portal/kb/a101/binding-of-tcpclientconnection-to-the-specified-interface-and-port-number-localbindingconnection_.aspx) tutorial.
+The LocalBindingConnection project represents a code example for the [Binding of TcpClientConnection to the specified interface and port number, LocalBindingConnection](https://www.clevercomponents.com/portal/kb/a101/binding-of-tcpclientconnection-to-the-specified-interface-and-port-number-localbindingconnection_.aspx) tutorial.
 
 This tutorial provides a special `TLocalBindingConnection` class that connects to a remote server while binding to a specified local interface and port number.
 

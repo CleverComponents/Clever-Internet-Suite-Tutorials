@@ -4,7 +4,7 @@
 
 The Send S/MIME Message project demonstrates how to send signed and encrypted Email messages using the S/MIME protocol with X.509 certificates and the Clever Internet Suite library. This example shows how to protect Email messages with digital signatures and encryption before sending them via SMTP.
 
-The complete tutorial and detailed step-by-step instructions can be found at [Clever Components Portal: Send S/MIME Message](https://www.clevercomponents.com/portal/kb/a150/send-s-mime-message.aspx)
+The complete tutorial and detailed step-by-step instructions can be found at [Send S/MIME Message](https://www.clevercomponents.com/portal/kb/a150/send-s-mime-message.aspx)
 
 ## Overview
 

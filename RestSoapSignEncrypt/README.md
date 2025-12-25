@@ -4,7 +4,8 @@
 
 This tutorial demonstrates a complete cross-platform example of secure SOAP over HTTP (often referred to as REST-style SOAP) communication with WS-Security protection. The solution consists of three parts: a **Delphi client application** built with Clever Internet Suite, a **C# WCF service** hosting three endpoints with varying security levels, and an **auxiliary C# WCF client** for service testing. The service implements a simple temperature conversion algorithm (Celsius to Fahrenheit and vice versa). Both SOAP requests and responses can be digitally signed and encrypted using x.509 cryptographic keys, showcasing enterprise-level security integration. The Delphi client utilizes the `TclHttpRio` component from the Clever Internet Suite library.
 
-This is the official tutorial: [Delphi REST SOAP Client with WSS Signatures and Encryption](https://www.clevercomponents.com/portal/kb/a157/delphi-rest-soap-client-with-wss-signatures-and-encryption.aspx). You can also watch a video guide on [YouTube](https://youtu.be/YrvUzdfTpFA).
+This is the official tutorial: [Delphi REST SOAP Client with WSS Signatures and Encryption](https://www.clevercomponents.com/portal/kb/a157/delphi-rest-soap-client-with-wss-signatures-and-encryption.aspx)  
+You can also watch a video guide on [YouTube](https://youtu.be/YrvUzdfTpFA)
 
 ## Overview
 

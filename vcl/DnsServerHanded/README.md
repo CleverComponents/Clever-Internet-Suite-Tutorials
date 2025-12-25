@@ -1,9 +1,8 @@
 # DnsServerHanded - In-Memory DNS Server Implementation
 
-A lightweight, customizable DNS server that resolves domain names using an in-memory data store. Built with **Clever Internet Suite** for robust DNS protocol handling. Designed for educational purposes, testing, and custom DNS routing scenarios.  
+A lightweight, customizable DNS server that resolves domain names using an in-memory data store. Built with [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) for robust DNS protocol handling. Designed for educational purposes, testing, and custom DNS routing scenarios.   
 
-
-**Built with** [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) – comprehensive library for Internet protocols.
+This code accompanies the tutorial: [Build a DNS server that responds with an in-memory list of IPs based on the name submitted](https://www.clevercomponents.com/portal/kb/a89/build-a-dns-server-that-responds-with-an-in-memory-list-of-ips-based-on-the-name-submitted_.aspx)
 
 ![In-Memory DNS Server](InMemoryDnsServer.png)
 
@@ -24,12 +23,6 @@ This project implements a DNS server that:
 * Basic DNS query handling (A records)
 * Easy configuration and extension
 * Educational code structure with clear comments
-
-
-## Tutorial
-
-This code accompanies the tutorial: [Build a DNS server that responds with an in-memory list of IPs based on the name submitted](https://www.clevercomponents.com/portal/kb/a89/build-a-dns-server-that-responds-with-an-in-memory-list-of-ips-based-on-the-name-submitted_.aspx)
-
 
 ## Project folders
 

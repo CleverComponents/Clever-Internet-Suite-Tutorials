@@ -10,7 +10,7 @@ This example shows:
 - How to handle load balancer scenarios with Clever Internet Suite server components
 
 ## About the PROXY Protocol
-The **PROXY protocol** is an open standard developed by HAProxy to preserve a client's original connection information (such as IP address and port) when the connection passes through a TCP proxy or load balancer. Unlike HTTP-specific headers (e.g., `X-Forwarded-For`), it operates at the TCP layer (Layer 4), making it suitable for any TCP-based protocol like IMAP, SMTP, or FTP. The protocol works by prepending a small header containing the client's connection details to the data stream right after the TCP handshake.
+The [PROXY protocol](http://www.haproxy.org/download/1.5/doc/proxy-protocol.txt) is an open standard developed by HAProxy to preserve a client's original connection information (such as IP address and port) when the connection passes through a TCP proxy or load balancer. Unlike HTTP-specific headers (e.g., `X-Forwarded-For`), it operates at the TCP layer (Layer 4), making it suitable for any TCP-based protocol like IMAP, SMTP, or FTP. The protocol works by prepending a small header containing the client's connection details to the data stream right after the TCP handshake.
 
 ## Features
 - Uses TclImap4Server component for IMAP protocol implementation

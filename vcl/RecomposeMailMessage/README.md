@@ -1,6 +1,8 @@
 # Recompose Mail Message with Attachments
 
-This Delphi application demonstrates how to work with email messages containing attachments using the Clever Internet Suite components. The program utilizes the TclMailMessage and TclSMimeMessage components to parse and compose email messages in MIME format with file or image attachments.
+This Delphi application demonstrates how to work with email messages containing attachments using the Clever Internet Suite components. The program utilizes the TclMailMessage and TclSMimeMessage components to parse and compose email messages in MIME format with file or image attachments.  
+
+The complete tutorial and detailed step-by-step instructions can be found at [How to Recompose Received MailMessage with Attachments](https://www.clevercomponents.com/portal/kb/a188/how-to-recompose-received-mailmessage-with-attachments.aspx)  
 
 ![Application Screenshot](recompose-mail-message.jpg)
 
