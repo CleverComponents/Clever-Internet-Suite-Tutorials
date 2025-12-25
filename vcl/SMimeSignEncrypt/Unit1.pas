@@ -3,10 +3,10 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, clMailMessage, clSMimeMessage,
-  clTcpClient, clTcpClientTls, clTcpCommandClient, clMC, clSmtp, clCryptApi, Vcl.StdCtrls,
-  clCertificateStore, clCertificate, Data.DB;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, clMailMessage, clSMimeMessage,
+  clTcpClient, clTcpClientTls, clTcpCommandClient, clMC, clSmtp, clCryptApi, StdCtrls,
+  clCertificateStore, clCertificate;
 
 type
   TForm1 = class(TForm)
