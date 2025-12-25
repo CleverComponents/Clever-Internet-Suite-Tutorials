@@ -3,8 +3,8 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, clUploader, clSingleDC,
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, clUploader, clSingleDC,
   clDownLoader, clMultiUploader, clMultiDC, clMultiDownLoader, clTcpClient,
   clTcpClientTls, clHttp, clHttpProxy, clTcpCommandClient, clFtp, clFtpUtils,
   clMC, clSmtp;
