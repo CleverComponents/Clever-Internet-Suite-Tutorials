@@ -1,25 +1,53 @@
 # Silent Socket Receiver in Delphi
 
-The tutorial represents a Delphi program that starts listening to an incoming connection, accepts the connection, receives all data over the established connection, and sends no data back to the client.   
-
-This Delphi program represents a mostly simple demos and by no means, a complete application. It's intended to demonstrate how to use the TcpServerConnection socket class from the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library to start listening on the specified local port and receive TCP packets over the Network.  
-
-This functionality might be useful when you debug a Network app and want to analyze the produced TCP traffic. You can run the Silent Socket Receiver app and capture the Network packets between the client and the server, e.g. using the [Wireshark](https://www.wireshark.org/download.html) utility. In this case your Network app acts as the client, and the Silent Socket Receiver app as the server.   
-
-You can even modify the Silent Socket Receiver program to send TCP response back to the connected client.   
-
-[Read the article](https://www.clevercomponents.com/portal/kb/a180/silent-socket-receiver-in-delphi.aspx)   
-
-See also the [TCP client / server connection](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/CustomSocket) project and the [Read a fixed number of bytes from the socket using TcpClientConnection](https://www.clevercomponents.com/portal/kb/a96/read-a-fixed-number-of-bytes-from-the-socket-using-tcpclientconnection.aspx) article.
+This project represents a code example for the [Silent Socket Receiver in Delphi](https://www.clevercomponents.com/portal/kb/a180/silent-socket-receiver-in-delphi.aspx) tutorial. It demonstrates how to create a TCP server that listens for incoming connections, receives data, and sends no responses back to the client.
 
 ![Screenshot](silent-socket.jpg)
 
-How to compile:   
-1. Please clone the [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository.
-2. Download and install the [Clever Internet Suite](https://www.clevercomponents.com/downloads/inetsuite/suitedownload.asp) library.
-3. Open and compile the SilentSocketReceiver project in your Delphi IDE.
-4. Enjoy.
+## Overview
+This Delphi application implements a silent TCP socket receiver using the `TclTcpServerConnection` class from the Clever Internet Suite library. The server accepts connections on a specified port and logs all incoming data without sending any response. This functionality is particularly useful for network debugging and protocol analysis when used alongside tools like [Wireshark](https://www.wireshark.org/download.html). The functionality can be easily extended to implement echo servers or other custom response logic as needed.
 
-Please feel free to [Contact Us](https://www.clevercomponents.com/support/) and ask any program related questions.   
+*   **Passive Listening**: Listens on a configurable port for incoming TCP connections.
+*   **Data Reception**: Receives and logs all incoming data from connected clients.
+*   **Silent Operation**: Does not send any responses back to clients.
+*   **Connection Management**: Provides start/stop control for the server.
+*   **Debugging Utility**: Useful for capturing and analyzing TCP traffic between client and server applications.
 
-Keep updated on [Facebook](http://www.facebook.com/clevercomponents)   [YouTube](https://www.youtube.com/channel/UC9Si4WNQVSeXQMjdEJ8j1fg)   [Twitter](https://twitter.com/CleverComponent)   [Telegram](https://t.me/clevercomponents)   [Newsletter](https://www.clevercomponents.com/home/maillist.asp)   
+## Features
+*   Low-level TCP server implementation using `TclTcpServerConnection` from the Clever Internet Suite socket classes.
+*   Configurable listening port (default: 2110).
+*   Real-time logging of received data size.
+*   Proper socket initialization and cleanup with `StartupSocket()` and `CleanupSocket()`.
+*   Graceful connection termination and error handling.
+*   Complete component documentation is available at [Clever Internet Suite Components](https://www.clevercomponents.com/products/inetsuite/components.asp)
+
+## Usage
+1.  Open the `SilentSocketReceiver` project in your Delphi IDE.
+2.  Ensure the Clever Internet Suite components are installed and accessible.
+3.  Build and run the application.
+4.  Enter the port number to listen on (default is 2110).
+5.  Click **Listen** to start the server and begin accepting connections.
+6.  Connect to the server from a client application to send data.
+7.  The application will log the size of received data packets in the memo control.
+8.  Click **Stop** to terminate the server and close all connections.
+
+## Application Scenarios
+*   Network protocol debugging and analysis.
+*   Capturing and inspecting TCP traffic between client and server applications using tools like Wireshark.
+*   Testing client applications that send data to TCP servers.
+*   Educational purposes to understand low-level TCP socket programming in Delphi.
+*   As a foundation for building custom TCP servers with response capabilities.
+
+## Requirements
+*   **Delphi**: Delphi 7 or newer.
+*   **Clever Internet Suite**: Version 10.0 or newer.
+*   The project was compiled with Clever Internet Suite version 12. Tutorials and project files for previous versions can be found in the [Releases](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/releases) section.
+
+## Related Examples
+*   [TCP client / server connection](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/CustomSocket)
+*   [Read a fixed number of bytes from the socket using TcpClientConnection](https://www.clevercomponents.com/portal/kb/a96/read-a-fixed-number-of-bytes-from-the-socket-using-tcpclientconnection.aspx)
+
+## Repository
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+
+Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
