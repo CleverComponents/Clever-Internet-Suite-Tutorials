@@ -53,15 +53,18 @@ bool __fastcall TSmtpWorkItem::IsStop(void)
 
 TDataSet *__fastcall TSmtpWorkItem::CreateDataSet(void)
 {
-  return NULL; //TODO create a dataset(query), connect it to a database using m_connectionString
+  //TODO create a dataset(query), connect it to a database using m_connectionString
+  // For a complete implementation example using FireDAC and SQLite,
+  // see the README.md file in this project.
+  return NULL;
 }
 
 void __fastcall TSmtpWorkItem::ComposeEmail(TDataSet *ds)
 {
   //TODO replace it with your field names
-  m_message->BuildMessage(ds->FieldByName("text")->AsString, ds->FieldByName("html")->AsString);
+  m_message->BuildMessage(ds->FieldByName("text_content")->AsString, ds->FieldByName("html_content")->AsString);
   m_message->Subject = ds->FieldByName("subject")->AsString;
-  m_message->From->FullAddress = ds->FieldByName("from")->AsString;
+  m_message->From->FullAddress = ds->FieldByName("from_address")->AsString;
   m_message->ToList->Add(ds->FieldByName("tolist")->AsString);
 }
 

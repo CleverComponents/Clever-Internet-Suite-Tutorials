@@ -75,9 +75,9 @@ implementation
 procedure TSmtpWorkItem.ComposeEmail(ADs: TDataSet);
 begin
   //TODO replace it with your field names
-  FMessage.BuildMessage(ADs.FieldByName('text').AsString, ADs.FieldByName('html').AsString);
+  FMessage.BuildMessage(ADs.FieldByName('text_content').AsString, ADs.FieldByName('html_content').AsString);
   FMessage.Subject := ADs.FieldByName('subject').AsString;
-  FMessage.From.FullAddress := ADs.FieldByName('from').AsString;
+  FMessage.From.FullAddress := ADs.FieldByName('from_address').AsString;
   FMessage.ToList.Add(ADs.FieldByName('tolist').AsString);
 end;
 

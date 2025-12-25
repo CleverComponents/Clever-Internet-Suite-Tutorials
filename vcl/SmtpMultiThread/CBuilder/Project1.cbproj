@@ -44,8 +44,8 @@
         <VerInfo_Locale>1049</VerInfo_Locale>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
         <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <LinkPackageStatics>vcl.lib;rtl.lib;clinetsuitebXE3.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib</LinkPackageStatics>
-        <PackageImports>vcl.bpi;rtl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclx.bpi;ibxpress.bpi;dsnap.bpi;bcbsmp.bpi;bdertl.bpi;vcldbx.bpi;clinetsuitebXE3.bpi;$(PackageImports)</PackageImports>
+        <LinkPackageStatics>vcl.lib;rtl.lib;clinetsuite_xe.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib</LinkPackageStatics>
+        <PackageImports>vcl.bpi;rtl.bpi;dbrtl.bpi;adortl.bpi;vcldb.bpi;vclx.bpi;ibxpress.bpi;dsnap.bpi;bcbsmp.bpi;bdertl.bpi;vcldbx.bpi;clinetsuite_xe.bpi;$(PackageImports)</PackageImports>
         <TASM_Defines>_DEBUG;$(TASM_Defines)</TASM_Defines>
         <BRCC_Defines>_DEBUG;$(BRCC_Defines)</BRCC_Defines>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
@@ -62,7 +62,7 @@
         <BCC_GenerateWindowsApp>true</BCC_GenerateWindowsApp>
         <OutputExt>exe</OutputExt>
         <TASM_AdditionalSwitches> /w2</TASM_AdditionalSwitches>
-        <AllPackageLibs>vcl.lib;rtl.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;clinetsuitebXE3.lib;inet.lib;soaprtl.lib;dsnap.lib</AllPackageLibs>
+        <AllPackageLibs>vcl.lib;rtl.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;clinetsuite_xe.lib;inet.lib;soaprtl.lib;dsnap.lib</AllPackageLibs>
         <BCC_DisableOptimizations>true</BCC_DisableOptimizations>
         <DynamicRTL>true</DynamicRTL>
         <ILINK_LibraryPath>$(BDS)\lib\obj;$(BDS)\lib;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
@@ -98,7 +98,7 @@
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
-        <LinkPackageStatics>vcl.lib;rtl.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;clinetsuitebXE3.lib;inet.lib;soaprtl.lib;dsnap.lib</LinkPackageStatics>
+        <LinkPackageStatics>vcl.lib;rtl.lib;dbrtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;clinetsuite_xe.lib;inet.lib;soaprtl.lib;dsnap.lib</LinkPackageStatics>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <BCC_Defines>NDEBUG;$(BCC_Defines);$(BCC_Defines)</BCC_Defines>

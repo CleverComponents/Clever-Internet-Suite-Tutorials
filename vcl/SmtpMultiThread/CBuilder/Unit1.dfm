@@ -11,20 +11,18 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
     Left = 24
     Top = 16
-    Width = 62
+    Width = 60
     Height = 13
     Caption = 'SMTP server'
   end
   object Label2: TLabel
     Left = 24
     Top = 40
-    Width = 53
+    Width = 52
     Height = 13
     Caption = 'User Name'
   end
@@ -38,7 +36,7 @@ object Form1: TForm1
   object Label4: TLabel
     Left = 24
     Top = 88
-    Width = 72
+    Width = 70
     Height = 13
     Caption = 'DB Connection'
   end
