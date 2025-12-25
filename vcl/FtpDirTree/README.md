@@ -2,7 +2,7 @@
 
 Windows VCL application that visually displays the complete directory structure of an FTP server using Clever Internet Suite.
 
-The FtpDirTree project is a code example for the [Get the complete FTP directory tree.](https://www.clevercomponents.com/portal/kb/a72/get-the-complete-ftp-directory-tree_.aspx) tutorial.   
+The FtpDirTree project is a code example for the [Get the complete FTP directory tree](https://www.clevercomponents.com/portal/kb/a72/get-the-complete-ftp-directory-tree_.aspx) tutorial.   
 
 
 ## Overview
