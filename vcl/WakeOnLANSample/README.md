@@ -1,7 +1,5 @@
 # Wake On LAN Sample
 
-<img src="Images/WakeOnLAN.jpg"/>
-
 This Delphi example demonstrates how to send Wake-on-LAN (WOL) magic packets to remotely wake up computers on a local network using the Clever Internet Suite library. The application implements a simple WOL client that sends the standard magic packet format to broadcast addresses.
 
 This project represents a code example for the [Wake up on LAN](https://www.clevercomponents.com/portal/kb/a54/wake-up-on-lan.aspx) tutorial.
