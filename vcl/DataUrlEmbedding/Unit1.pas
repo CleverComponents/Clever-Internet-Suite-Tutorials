@@ -3,8 +3,8 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, clHtmlParser, Vcl.StdCtrls, clEncoder, clUtils;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, clHtmlParser, StdCtrls, clEncoder, clUtils;
 
 type
   TForm1 = class(TForm)

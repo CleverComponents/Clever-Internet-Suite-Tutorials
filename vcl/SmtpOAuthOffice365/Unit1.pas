@@ -3,9 +3,9 @@ unit Unit1;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, clMailMessage,
-  clTcpClient, clTcpClientTls, clTcpCommandClient, clMC, clSmtp, clOAuth;
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, clMailMessage,
+  clTcpClient, clTcpClientTls, clTcpCommandClient, clMC, clSmtp, clOAuth, clEncoder;
 
 type
   TForm1 = class(TForm)
@@ -38,17 +38,17 @@ implementation
 
 procedure TForm1.btnSendClick(Sender: TObject);
 begin
-  if (clSmtp1.Active or clOAuth1.Active) then Exit;
+  if (clSmtp1.Active) then Exit;
 
-  clOAuth1.AuthUrl := 'https://login.live.com/oauth20_authorize.srf';
-  clOAuth1.TokenUrl := 'https://login.live.com/oauth20_token.srf';
+  clOAuth1.AuthUrl := 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize';
+  clOAuth1.TokenUrl := 'https://login.microsoftonline.com/common/oauth2/v2.0/token';
   clOAuth1.RedirectUrl := 'http://localhost';
 
-  //Use both Client ID and Client Secret from the Azure Active Directory for your app.
-  clOAuth1.ClientID := 'a0a907aa-1e38-4bdb-8764-c4f931051018';
-  clOAuth1.ClientSecret := '6FYd=PdPS-06UgOdNlFon2TXo*BDyAi-';
+  // Use your registered App Client ID and Client Secret from Azure AD
+  clOAuth1.ClientID := 'a0a907aa-1e38-4bdb-8764-c4f931051018'; // Replace with your Client ID
+  clOAuth1.ClientSecret := '6FYd=PdPS-06UgOdNlFon2TXo*BDyAi-'; // Replace with your Client Secret
 
-  clOAuth1.Scope := 'https://outlook.office.com/SMTP.Send';
+  clOAuth1.Scope := 'https://outlook.office.com/SMTP.Send offline_access';
 
   clSmtp1.Server := edtServer.Text;
   clSmtp1.Port := 587;
@@ -60,6 +60,8 @@ begin
 
   clSmtp1.Open();
   try
+    clMailMessage1.CharSet := 'utf-8';
+    clMailMessage1.Encoding := cmQuotedPrintable;
     clMailMessage1.BuildMessage(memText.Text, '');
     clMailMessage1.From.FullAddress := edtFrom.Text;
     clMailMessage1.ToList.EmailAddresses := edtTo.Text;
