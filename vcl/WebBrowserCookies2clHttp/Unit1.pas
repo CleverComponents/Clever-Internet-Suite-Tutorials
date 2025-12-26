@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, clTcpClient, clHttp, SHDocVw, ExtCtrls, mshtml, clUtils,
-  clCookies;
+  clCookieManager, clTcpClientTls;
 
 type
   TForm1 = class(TForm)
