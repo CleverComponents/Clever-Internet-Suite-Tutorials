@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   BorderStyle = bsDialog
-  Caption = 'SSL Server'
+  Caption = 'TLS Server'
   ClientHeight = 292
   ClientWidth = 369
   Color = clBtnFace
@@ -11,8 +11,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  Position = poScreenCenter
   TextHeight = 13
   object Label1: TLabel
     Left = 32
@@ -34,7 +33,7 @@ object Form1: TForm1
     Width = 76
     Height = 21
     TabOrder = 0
-    Text = '9002'
+    Text = '2110'
   end
   object btnStart: TButton
     Left = 168
@@ -62,5 +61,7 @@ object Form1: TForm1
     Align = alBottom
     ScrollBars = ssVertical
     TabOrder = 3
+    ExplicitTop = 76
+    ExplicitWidth = 365
   end
 end

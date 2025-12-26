@@ -34,6 +34,7 @@ private:	// User declarations
   void __fastcall server_ConnectionRead(TObject* Sender, TclUserConnection* AConnection, TStream* AData);
   void __fastcall server_Started(TObject* Sender);
   void __fastcall server_Stopped(TObject* Sender);
+  void __fastcall server_ServerError(System::TObject* Sender, TclUserConnection* AConnection, System::Sysutils::Exception* E);
 public:		// User declarations
   __fastcall TForm1(TComponent* Owner);
   virtual __fastcall ~TForm1(void);

@@ -1,8 +1,7 @@
 //---------------------------------------------------------------------------
-
-#include <vcl.h>
 #pragma hdrstop
 
+#include <vcl.h>
 #include "Unit1.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -34,22 +33,22 @@ void __fastcall TForm1::btnConnectClick(TObject *Sender)
     m_client->CertificateFlags = TclCertificateVerifyFlags()
       << cfIgnoreCommonNameInvalid << cfIgnoreUnknownAuthority;
 
-    //specifies TLS 1.0 protocols (also available SSL 2.0 and SSL 3.0)
-    m_client->TLSFlags = TclTlsFlags() << tfUseTLS;
+    //specifies TLS 1.2 protocols (also available TLS 1.3)
+    m_client->TLSFlags = TclTlsFlags() << tfUseTLS12;
 
     //forces the component to start SSL negotiation immediately once connecting
     m_client->UseTLS = ctImplicit;
 
     m_client->Open();
 
-    this->Text = "SSL Client - Connected";
+    this->Text = "TLS Client - Connected";
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::btnDisconnectClick(TObject *Sender)
 {
     m_client->Close();
-    this->Text = "SSL Client";
+    this->Text = "TLS Client";
 }
 //---------------------------------------------------------------------------
 

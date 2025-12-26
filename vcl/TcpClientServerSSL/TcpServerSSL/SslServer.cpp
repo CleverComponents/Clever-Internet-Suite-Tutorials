@@ -3,9 +3,10 @@
 
 #pragma hdrstop
 
+#include <vcl.h>
 #include "SslServer.h"
 
-#pragma link "clTcpServer"
+#pragma link "clTcpServerTls"
 
 
 TclUserConnection* __fastcall TMySslServer::CreateDefaultConnection() {
@@ -16,13 +17,13 @@ void __fastcall TMySslServer::DoReadConnection(TclUserConnection* AConnection, C
   if(AData->Size == 0)
     return;
 
-	TclTcpServer::DoReadConnection(AConnection, AData);
+  TclTcpServer::DoReadConnection(AConnection, AData);
 
   //send the size of data to the client
   TStream *stream = new TMemoryStream();
   __try {
     DWORD len = AData->Size;
-    stream->Write(&len, 8);
+    stream->Write(&len, 4);
     stream->Position = 0;
     AConnection->WriteData(stream);
   }

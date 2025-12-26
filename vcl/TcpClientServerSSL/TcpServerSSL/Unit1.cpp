@@ -1,9 +1,9 @@
 //---------------------------------------------------------------------------
-
-#include <vcl.h>
 #pragma hdrstop
 
+#include <vcl.h>
 #include "Unit1.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -23,6 +23,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
   m_server->OnReadConnection = server_ConnectionRead;
   m_server->OnStart = server_Started;
   m_server->OnStop = server_Stopped;
+  m_server->OnServerError = server_ServerError;
 }
 
 __fastcall TForm1::~TForm1(void) {
@@ -78,6 +79,12 @@ void __fastcall TForm1::server_Stopped(TObject* Sender) {
   PutLogMessage("=== Stop");
 }
 
+void __fastcall TForm1::server_ServerError(System::TObject* Sender, TclUserConnection* AConnection,
+  System::Sysutils::Exception* E) {
+  PutLogMessage("Error: " + E->Message);
+}
+
+
 void __fastcall TForm1::btnStartClick(TObject *Sender)
 {
   m_server->Port = StrToInt(edtPort->Text);
@@ -85,8 +92,8 @@ void __fastcall TForm1::btnStartClick(TObject *Sender)
   //forces the component to start SSL negotiation immediately once connecting
   m_server->UseTLS = stImplicit;
 
-  //specifies TLS 1.0 protocols (also available SSL 2.0 and SSL 3.0)
-  m_server->TLSFlags = TclTlsFlags() << tfUseTLS;
+  //specifies TLS 1.2 protocols (also available TLS 1.3)
+  m_server->TLSFlags = TclTlsFlags() << tfUseTLS12;
 
   //do not request client certificate for impersonation purposes
   m_server->RequireClientCertificate = false;
