@@ -36,14 +36,25 @@ end;
 function TForm1.GetWakeUpPacket(const AMac: string): TBytes;
 var
   i, j: Integer;
+  macParts: TArray<string>;
+  cleanMac: string;
 begin
+  // Validate MAC format
+  cleanMac := StringReplace(AMac, ':', '-', [rfReplaceAll]);
+  macParts := cleanMac.Split(['-']);
+
+  if Length(macParts) <> 6 then
+    raise Exception.Create('Invalid MAC address format. Use: 12-34-56-78-9A-BC');
+
   SetLength(Result, 102);
 
+  // 6 bytes of FF
   for i := 0 to 5 do
   begin
     Result[i] := $FF;
   end;
 
+  // 16 repetitions of MAC address
   for i := 0 to 15 do
   begin
      for j := 0 to 5 do
