@@ -4,7 +4,7 @@ The VKontakteOAuth project represents a code example for the [VK Authorization, 
 
 This tutorial demonstrates how to authorize at VK.com social Network and get access to the user's photo gallery.   
 
-## ⚠️ Important Update
+## ⚠️ Important Note
 
 **This tutorial code is outdated** and demonstrates the legacy VK OAuth implementation. Modern VK authentication uses **VK ID** - the new unified authentication system from VK.
 
