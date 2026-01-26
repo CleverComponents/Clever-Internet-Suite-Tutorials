@@ -165,13 +165,13 @@ begin
     clEncryptor1.SignAlgorithm := cert.SignatureAlgorithm;
 
     // IANA recommended algorithm for P7M signatures (SHA-512)
-    // clEncryptor1.SignAlgorithm := '2.16.840.1.101.3.4.2.3'; // SHA-512
+    // clEncryptor1.SignAlgorithm := '1.2.840.113549.1.1.13'; // SHA-512
 
     // Alternative algorithm for better Windows compatibility (SHA-256)
-    // clEncryptor1.SignAlgorithm := '2.16.840.1.101.3.4.2.1'; // SHA-256
+    //clEncryptor1.SignAlgorithm := '1.2.840.113549.1.1.11'; // SHA-256
 
     // Another alternative for maximum compatibility (SHA-1) - less secure
-    // clEncryptor1.SignAlgorithm := '1.3.14.3.2.26'; // SHA-1
+    // clEncryptor1.SignAlgorithm := '1.2.840.113549.1.1.5'; // SHA-1
 
     clEncryptor1.Sign(src, dst, False, True, cert, nil);
   finally
