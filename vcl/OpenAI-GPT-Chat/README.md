@@ -93,8 +93,8 @@ This forces a stable TLS 1.2 connection and prevents connection timeouts in cert
 
 ## Related Examples
 
-- **[How to send a GET request with JSON data](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/SendJSonGetRequest** - This tutorial demonstrates how to create and send JSON requests using Clever Internet Suite.
-- **[How to Build and Parse a JSON String with Objects](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/BuildParseJSON** - This tutorial makes a JSON request, which includes objects and object properties. It also includes code, which parses received JSON response and extracts all included object properties.
+- [How to send a GET request with JSON data](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/SendJSonGetRequest) - This tutorial demonstrates how to create and send JSON requests using Clever Internet Suite.
+- [How to Build and Parse a JSON String with Objects](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/BuildParseJSON) - This tutorial makes a JSON request, which includes objects and object properties. It also includes code, which parses received JSON response and extracts all included object properties.
 
 ## Repository
 
