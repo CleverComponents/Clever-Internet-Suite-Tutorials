@@ -1,6 +1,6 @@
 # Clever Internet Suite Tutorials
 
-<img align="left" src="https://www.clevercomponents.com/images/suitesamples-4.jpg"/>
+![Screenshot](55-tutorials-fb.jpg)
 
 Now, after more than 20 years on the market, the Clever Internet Suite has accumulated extensive feedback and real-world usage experience. Many customers have asked for code examples, demos, and “How To” snippets.  
 
