@@ -1,5 +1,7 @@
 # Get Emails from Office365 via POP3 with OAuth 2.0
 
+![Screenshot](pop3-oauth-office365-fb.png)
+
 This project demonstrates how to retrieve emails from Office365 POP3 server using OAuth 2.0 authentication with the Clever Internet Suite library for Delphi. It provides a modern, secure approach to email access that complies with Microsoft's updated security requirements.
 
 ## Overview
