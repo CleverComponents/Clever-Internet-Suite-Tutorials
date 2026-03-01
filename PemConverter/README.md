@@ -11,6 +11,18 @@ This Delphi application provides a simple GUI tool that demonstrates two convers
 - Convert an RSA public key in PEM format to X509 Subject Key Info format
 - Support for output in both base64 and PEM formats
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## Features
 
 - **Dual Conversion Methods**: Convert both raw base64 and PEM-formatted RSA public keys
@@ -45,6 +57,6 @@ This Delphi application provides a simple GUI tool that demonstrates two convers
 
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+It is updated periodically with new integration scenarios and component examples.

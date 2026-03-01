@@ -18,6 +18,18 @@ This tutorial demonstrates how to:
 - **Persist Email Data**: Save and load messages locally between sessions
 - **Support SSL/TLS Connections**: Secure email transmission with encryption
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## Components Used
 
 ### Clever Internet Suite Components:
@@ -113,12 +125,13 @@ The project was compiled with Clever Internet Suite version 12. Tutorials and pr
 ## Related Examples
 
 - [MailSend with TMS FNC RichEditor](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/MailSend-TMS-RichEditor): Simple email composition and sending example
-- [GMail SMTP Client](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/GMailSMTP): Example using OAUTH2.0 authentication with GMail
+- [GMail SMTP Client](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/GMailSMTP): Example using OAuth2.0 authentication with GMail
 - [POP3 Client SSL](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/Pop3ClientSSL): Example demonstrating SSL/TLS connections to POP3 servers
 - [MailMessage Umlauts](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/tree/master/vcl/MailMessageUmlauts): Example handling international characters in emails
 
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+It is updated periodically with new integration scenarios and component examples.
+

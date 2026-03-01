@@ -16,6 +16,16 @@ The project is designed as a **learning and demonstration example** for Delphi d
 
 ---
 
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## Architecture
 
 ```
@@ -40,8 +50,6 @@ WhatsApp Cloud API (TclHttp)
 
 All components are part of the **Clever Internet Suite library**.
 
----
-
 ## Configuration
 
 The application uses an INI file located next to the executable.
@@ -57,8 +65,6 @@ OPENAI_API_KEY=your_openai_key
 PORT=5000
 ```
 
----
-
 ## How It Works
 
 ### 1. Webhook Verification (GET)
@@ -71,8 +77,6 @@ Meta sends:
 
 The server validates `hub.verify_token` and returns `hub.challenge`.
 
----
-
 ### 2. Message Handling (POST)
 
 * Incoming JSON is parsed using `TclJSONObject`
@@ -83,8 +87,6 @@ The server validates `hub.verify_token` and returns `hub.challenge`.
   * Message text
 * HTTP 200 (`EVENT_RECEIVED`) is returned immediately
 * Message processing continues in a background thread
-
----
 
 ### 3. OpenAI Integration
 
@@ -110,8 +112,6 @@ User request:
 
 No chat history is stored (simplified demo design).
 
----
-
 ### 4. WhatsApp Reply
 
 The generated response is sent via:
@@ -122,8 +122,6 @@ POST https://graph.facebook.com/v21.0/{PHONE_NUMBER_ID}/messages
 
 Only **text messages** are supported in this demo.
 
----
-
 ## Testing Notes
 
 Due to Meta development restrictions:
@@ -133,8 +131,6 @@ Due to Meta development restrictions:
 
 To simplify testing, a **Test Reply button** is included.
 It allows sending a message to OpenAI and replying via WhatsApp without waiting for a webhook event.
-
----
 
 ## TLS Configuration
 
@@ -165,8 +161,6 @@ The demo shows how to import or create a certificate, assign it to the server, a
 
 For local development, HTTP + ngrok tunneling is sufficient.
 
----
-
 ## Requirements
 
 ### Delphi Compatibility
@@ -178,8 +172,6 @@ Delphi XE7 and higher.
 * Clever Internet Suite v10 or higher
 * Valid OpenAI API key
 * WhatsApp Cloud API credentials
-
----
 
 ## Educational Purpose
 
@@ -193,8 +185,6 @@ It is intended to show:
 * How to call WhatsApp Cloud API
 * How to manage asynchronous processing safely
 
----
-
 ## Related Projects
 
 * Delphi OpenAI GPT Chat:
@@ -202,10 +192,8 @@ It is intended to show:
 * Clever Internet Suite Tutorials repository:
   [https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials)
 
----
-
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+It is updated periodically with new integration scenarios and component examples.

@@ -11,6 +11,18 @@ This Delphi application demonstrates a multithreaded approach to email sending u
 *   **Connection Resilience**: Automatically reconnects on socket errors.
 *   **Progress Tracking**: Monitors active thread count and logs operations.
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## Features
 *   Multithreaded email sending using `TclThreadPool` and `TclWorkItem` descendants.
 *   Thread-safe logging with `TclThreadSynchronizer`.
@@ -136,6 +148,7 @@ CREATE TABLE emails (
 **Note on FireDAC:** If you plan to use the provided FireDAC database examples, note that FireDAC is fully integrated starting from Delphi XE6 (2014). For earlier versions (XE-XE5), you may need to use alternative database access technologies such as dbExpress, ADO, or BDE.
 
 ## Repository
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
+
+It is updated periodically with new integration scenarios and component examples.

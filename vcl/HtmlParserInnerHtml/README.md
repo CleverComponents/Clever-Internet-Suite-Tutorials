@@ -4,9 +4,7 @@ The HtmlParserInnerHtml project represents a code example for the [Parse inner H
 
 The sample demonstrates how to extract inner HTML content from specific tags using the TclHtmlParser component with dynamic filtering capabilities.   
 
-<img align="left" src="HtmlParser.jpg"/>
-
-<br clear="both">
+<img src="HtmlParser.jpg"/>
 
 ## Overview
 
@@ -15,6 +13,17 @@ This project shows how to parse HTML documents and extract inner HTML content fr
 The project was compiled with Clever Internet Suite version 12.  
 Tutorials and project files for previous versions of Clever Internet Suite can be found in the [Releases](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/releases) section.
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
 
 ## Features
 
@@ -129,6 +138,6 @@ end;
 
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+It is updated periodically with new integration scenarios and component examples.

@@ -2,6 +2,8 @@
 
 This project demonstrates how to send emails through Office365 SMTP server using OAuth 2.0 authentication with the Clever Internet Suite library for Delphi. It provides a modern, secure approach to email sending that complies with Microsoft's updated security requirements.
 
+![Screenshot](smtp-oauth-office365-fb2.png)
+
 ## Overview
 
 The SmtpOAuthOffice365 project is a Delphi application that shows how to:
@@ -12,6 +14,18 @@ The SmtpOAuthOffice365 project is a Delphi application that shows how to:
 - Handle secure token acquisition and management
 
 This example demonstrates the modern authentication approach that became mandatory for Office365.
+
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
 
 ## Features
 
@@ -133,6 +147,7 @@ If you encounter issues not covered here:
 
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+It is updated periodically with new integration scenarios and component examples.
+

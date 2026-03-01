@@ -8,6 +8,17 @@ The FtpConsole project is a code example for the [Console FTP client](https://ww
 
 Console-based FTP client that demonstrates core FTP operations through a simple command interface. Built with `TclFtp` component from Clever Internet Suite, featuring TLS support, progress reporting, and certificate verification.  
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
 
 ## Key Features
 
@@ -17,7 +28,6 @@ Console-based FTP client that demonstrates core FTP operations through a simple 
 - TLS/SSL encryption support
 - Certificate validation with user prompts
 - Console-optimized password input (masked)
-
 
 ## Technical Implementation
 
@@ -65,7 +75,6 @@ Tutorials and project files for previous versions of Clever Internet Suite can b
 
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
-
+It is updated periodically with new integration scenarios and component examples.

@@ -8,3 +8,11 @@ The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com
 Please stay tuned to new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
 
 **How to compile and run** - see [Lib/ReadMe](./Lib/ReadMe.md)   
+
+---
+
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
+
+---
+

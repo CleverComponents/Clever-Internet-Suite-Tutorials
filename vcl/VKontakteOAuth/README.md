@@ -10,5 +10,15 @@ This tutorial demonstrates how to authorize at VK.com social Network and get acc
 
 For production applications, please refer to the official [VK ID OAuth documentation](https://id.vk.com/about/business/go/docs/ru/vkid/latest/oauth-vk) which provides up-to-date endpoints, security practices, and implementation guidelines.
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository represents a list of examples, code snippets and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/) article. This list will be periodically updated, new projects will be added.   
-Please stay tuned to new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+---
+
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
+
+---
+
+## Repository
+
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
+
+It is updated periodically with new integration scenarios and component examples.

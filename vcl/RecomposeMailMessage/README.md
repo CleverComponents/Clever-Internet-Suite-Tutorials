@@ -16,6 +16,18 @@ This application uses both components and also allows saving digitally signed/ve
 
 Using this tutorial as a starting point, you can implement your own storage for attached files and images, including database tables and in-memory streams.
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## Features
 - Parse and compose email messages in MIME format
 - Handle file and image attachments in memory streams
@@ -51,6 +63,7 @@ The project was compiled with Clever Internet Suite version 12. Tutorials and pr
 - [Adding text and attachments to the E-mail message](https://www.clevercomponents.com/portal/kb/a124/adding-text-and-attachments-to-the-e-mail-message.aspx)
 
 ## Repository
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
+
+It is updated periodically with new integration scenarios and component examples.

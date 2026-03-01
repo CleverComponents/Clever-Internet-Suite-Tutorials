@@ -9,6 +9,18 @@ This example shows:
 - How to extract client connection information (source IP, port) from proxy headers
 - How to handle load balancer scenarios with Clever Internet Suite server components
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## About the PROXY Protocol
 The [PROXY protocol](http://www.haproxy.org/download/1.5/doc/proxy-protocol.txt) is an open standard developed by HAProxy to preserve a client's original connection information (such as IP address and port) when the connection passes through a TCP proxy or load balancer. Unlike HTTP-specific headers (e.g., `X-Forwarded-For`), it operates at the TCP layer (Layer 4), making it suitable for any TCP-based protocol like IMAP, SMTP, or FTP. The protocol works by prepending a small header containing the client's connection details to the data stream right after the TCP handshake.
 
@@ -55,6 +67,7 @@ Tutorials and project files for previous versions of Clever Internet Suite can b
 - [Clever Mail Server](https://github.com/CleverComponents/Clever-Mail-Server): Complete mail server implementation
 
 ## Repository
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
+
+It is updated periodically with new integration scenarios and component examples.

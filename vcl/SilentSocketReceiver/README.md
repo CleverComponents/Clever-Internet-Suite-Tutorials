@@ -13,6 +13,18 @@ This Delphi application implements a silent TCP socket receiver using the `TclTc
 *   **Connection Management**: Provides start/stop control for the server.
 *   **Debugging Utility**: Useful for capturing and analyzing TCP traffic between client and server applications.
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## Features
 *   Low-level TCP server implementation using `TclTcpServerConnection` from the Clever Internet Suite socket classes.
 *   Configurable listening port (default: 2110).
@@ -48,6 +60,7 @@ This Delphi application implements a silent TCP socket receiver using the `TclTc
 *   [Read a fixed number of bytes from the socket using TcpClientConnection](https://www.clevercomponents.com/portal/kb/a96/read-a-fixed-number-of-bytes-from-the-socket-using-tcpclientconnection.aspx)
 
 ## Repository
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
+
+It is updated periodically with new integration scenarios and component examples.

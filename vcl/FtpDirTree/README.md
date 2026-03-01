@@ -9,6 +9,12 @@ The FtpDirTree project is a code example for the [Get the complete FTP directory
 
 This application connects to an FTP server and recursively scans its directory tree, displaying the structure in a text format with visual indentation. The tool uses tab characters to represent directory levels, creating a clear hierarchical view of the server's contents.
 
+---
+
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
+
+---
 
 ## Key Features
 
@@ -35,7 +41,6 @@ Tutorials and project files for previous versions of Clever Internet Suite can b
 
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
-
+It is updated periodically with new integration scenarios and component examples.

@@ -10,6 +10,18 @@ This example demonstrates the configuration of HTTP proxy server settings for va
 *   **FTP Client Button**: Configures HTTP CONNECT proxy for the `TclFtp` component and opens a connection.
 *   **SMTP Client Button**: Configures a standalone `TclHttpProxy` component and assigns it to the `TclSmtp` component's `Proxy` property, then opens a connection.
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## Features
 *   Proxy configuration (`Server`, `Port`, `UserName`, `Password`) for downloader/uploader components (`TclDownLoader`, `TclUploader`, `TclMultiDownLoader`, `TclMultiUploader`).
 *   Proxy configuration for the HTTP client component (`TclHttp`).
@@ -29,6 +41,7 @@ This example demonstrates the configuration of HTTP proxy server settings for va
 *   The project was compiled with Clever Internet Suite version 12. Tutorials and project files for previous versions can be found in the [Releases](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials/releases) section.
 
 ## Repository
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
+
+It is updated periodically with new integration scenarios and component examples.

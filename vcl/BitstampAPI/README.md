@@ -1,10 +1,10 @@
 # Connect Bitstamp API from Delphi
 
+![Screenshot](bitstamp-api.jpg)
+
 The BitstampAPI project is a code example for the [Connect Bitstamp API from Delphi](https://www.clevercomponents.com/portal/kb/a176/connect-bitstamp-api-from-delphi.aspx) tutorial.
 
 This program is a C++ example converted to Delphi, originally published in the Bitstamp API documentation. The example demonstrates authenticating with the Bitstamp REST service, filling the required request fields, and making a sample API call.
-
-![Screenshot](bitstamp-api.jpg)
 
 ## Overview
 
@@ -14,6 +14,18 @@ This tutorial demonstrates how to connect to the Bitstamp cryptocurrency exchang
 - **Handling timestamp and nonce generation** for request security
 - **Sending authenticated POST requests** to Bitstamp's REST API
 - **Processing API responses** for user transactions and other data
+
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
 
 ## Features
 
@@ -85,6 +97,7 @@ All components are included in the standard Clever Internet Suite installation.
 
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+It is updated periodically with new integration scenarios and component examples.
+

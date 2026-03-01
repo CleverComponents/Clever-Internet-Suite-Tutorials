@@ -13,6 +13,18 @@ This Delphi application demonstrates the use of the `TclSFtp` component from the
 *   **File Operations**: Allows browsing directories, downloading, and uploading files.
 *   **Repository Management**: Provides an interface to view and manage the list of trusted hosts.
 
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
+
 ## Features
 *   Secure SFTP connections using the `TclSFtp` component.
 *   Host-key verification with automatic acceptance of known hosts.
@@ -51,6 +63,7 @@ This Delphi application demonstrates the use of the `TclSFtp` component from the
 *   [SFTP Server Example](https://github.com/CleverComponents/Clever-Internet-Suite-Examples/tree/master/Delphi/SFtpServer)
 
 ## Repository
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
+
+It is updated periodically with new integration scenarios and component examples.

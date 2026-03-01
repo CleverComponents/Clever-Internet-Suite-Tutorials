@@ -11,11 +11,15 @@ See also:
 [How to Post JSON data](https://www.clevercomponents.com/portal/kb/a78/how-to-post-json-data.aspx)  
 [How to make a PUT HTTP request with JSON data](https://www.clevercomponents.com/portal/kb/a110/how-to-make-the-put-http-request-with-json-data.aspx)
 
+---
 
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
 
-# Repository
+---
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+## Repository
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
+It is updated periodically with new integration scenarios and component examples.

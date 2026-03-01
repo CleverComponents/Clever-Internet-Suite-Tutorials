@@ -1,6 +1,6 @@
 # Send SMTP email with Office365 account in .NET
 
-<img align="left" src="Smpt-Office365.jpg"/>
+<img src="Smpt-Office365.jpg"/>
 
 The SmtpOffice365 project represents a code example for the [Send SMTP email with Office365 account](https://www.clevercomponents.com/portal/kb/a143/send-smtp-email-with-office365-account.aspx) tutorial.   
 
@@ -10,3 +10,10 @@ The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com
 Please stay tuned to new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
 
 **How to compile and run** - see [Lib/ReadMe](./Lib/ReadMe.md)   
+
+---
+
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
+
+---

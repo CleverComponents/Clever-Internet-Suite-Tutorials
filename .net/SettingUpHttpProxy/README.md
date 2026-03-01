@@ -1,6 +1,6 @@
 # Setting Up HTTP Proxy Parameters in TCP-based Client Components in .NET
 
-<img align="left" src="SettingUpHttpProxy.jpg"/>
+<img src="SettingUpHttpProxy.jpg"/>
 
 The SettingUpHttpProxy project represents a code example for the [Setting Up HTTP Proxy Parameters in TCP-based Client Components](https://www.clevercomponents.com/portal/kb/a142/setting-up-http-proxy-parameters-in-tcp-based-client-components.aspx) tutorial.   
 
@@ -10,3 +10,10 @@ The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com
 Please stay tuned to new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
 
 **How to compile and run** - see [Lib/ReadMe](./Lib/ReadMe.md)   
+
+---
+
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
+
+---

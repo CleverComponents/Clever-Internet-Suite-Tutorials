@@ -1,6 +1,6 @@
 # Get the complete FTP directory tree in .NET
 
-<img align="left" src="FtpDirTree..jpg"/>
+<img src="FtpDirTree..jpg"/>
 
 The FtpDirTree project represents a code example for the [Get the complete FTP directory tree](https://www.clevercomponents.com/portal/kb/a139/get-the-complete-ftp-directory-tree_.aspx) tutorial.   
 
@@ -10,3 +10,10 @@ The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com
 Please stay tuned to new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
 
 **How to compile and run** - see [Lib/ReadMe](./Lib/ReadMe.md)   
+
+---
+
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
+
+---

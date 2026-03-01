@@ -1,10 +1,8 @@
 # ICMP Ping Client
 
-The PingClient project is a code example for the [Ping client](https://www.clevercomponents.com/portal/kb/a75/ping-client.aspx) tutorial.
+This project demonstrates how to implement a simple ICMP Ping client using the Clever Internet Suite library. It shows how to send ICMP Echo Request packets and receive responses to measure network connectivity and latency. The example requires administrator privileges to run on modern Windows systems and demonstrates low-level binary packet manipulation.
 
 <img src="PingClientRun.jpg"/>
-
-This project demonstrates how to implement a simple ICMP Ping client using the Clever Internet Suite library. It shows how to send ICMP Echo Request packets and receive responses to measure network connectivity and latency. The example requires administrator privileges to run on modern Windows systems and demonstrates low-level binary packet manipulation.
 
 ## Overview
 
@@ -14,6 +12,20 @@ This Delphi application provides a simple GUI tool that allows users to ping net
 - Measuring round-trip time (RTT) for network packets
 - Displaying detailed response information including sequence numbers and TTL values
 - Working with binary structures of ICMP and IP packets
+
+The PingClient project is a code example for the [Ping client](https://www.clevercomponents.com/portal/kb/a75/ping-client.aspx) tutorial.
+
+---
+
+## 🔔 Get Updates
+
+We publish practical integration examples and technical guides for Clever Components products.
+
+If you'd like to receive updates when new tutorials and component examples are released, you can subscribe here:
+
+👉 https://www.clevercomponents.com/home/maillist.asp
+
+---
 
 ## Features
 
@@ -67,6 +79,6 @@ This project uses raw sockets for ICMP operations. Ensure your Delphi environmen
 
 ## Repository
 
-The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects for the [Clever Internet Suite Tutorials](https://www.clevercomponents.com/articles/article035/). It will be updated periodically with new projects.
+The [GitHub/CleverComponents/Clever-Internet-Suite-Tutorials](https://github.com/CleverComponents/Clever-Internet-Suite-Tutorials) repository contains a collection of examples, code snippets, and demo projects.
 
-Stay tuned for new examples and use cases of the [Clever Internet Suite](https://www.clevercomponents.com/products/inetsuite/) library.
+It is updated periodically with new integration scenarios and component examples.

@@ -19,6 +19,9 @@ Please stay tuned to new examples and use cases of the [Clever Internet Suite](h
 Join us on  [Facebook](https://www.facebook.com/clevercomponents)  [YouTube](https://www.youtube.com/channel/UC9Si4WNQVSeXQMjdEJ8j1fg)  [Twitter](https://twitter.com/CleverComponent)  [Telegram](https://t.me/clevercomponents)  [Newsletter](https://www.clevercomponents.com/home/maillist.asp)   
 
 
-Kind regards   
-Clever Components team   
-[www.CleverComponents.com](https://www.clevercomponents.com/)
+---
+
+🔔 New integration examples are published regularly.
+Subscribe: https://www.clevercomponents.com/home/maillist.asp
+
+---
